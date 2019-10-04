@@ -15,7 +15,7 @@ main() {
 function quit_system_preferences() {
     # Close any open System Preferences panes, to prevent them from overriding
     # settings we’re about to change
-    osascript -e 'tell application "System Preferences" to quit' > /dev/null 2>&1
+    quit "System Preferences"
 }
 
 function configure_system() {
@@ -65,7 +65,6 @@ function configure_system() {
 }
 
 function configure_dock() {
-    quit "Dock"
     # Set the icon size of Dock items to 53 pixels
     defaults write com.apple.dock tilesize -int 53
 
@@ -97,7 +96,9 @@ function configure_dock() {
     ## Bottom right screen corner → Desktop
     defaults write com.apple.dock wvous-br-corner -int 4
     defaults write com.apple.dock wvous-br-modifier -int 0
-    open "Dock"
+
+    # Restart
+    quit "Dock"
 }
 
 function configure_finder() {
@@ -146,10 +147,13 @@ function configure_finder() {
     	OpenWith -bool true \
     	Privileges -bool true
 
+    # Restart
     quit "Finder"
 }
 
 function configure_xcode() {
+    quit "Xcode"
+
     # Trim trailing whitespace
     defaults write com.apple.dt.Xcode DVTTextEditorTrimTrailingWhitespace -bool true
 
@@ -164,6 +168,8 @@ function configure_xcode() {
 }
 
 function configure_safari() {
+    quit "Safari"
+
     # Show the full URL in the address bar (note: this still hides the scheme)
     defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
@@ -185,6 +191,8 @@ function configure_safari() {
 }
 
 function configure_text_edit() {
+    quit "TextEdit"
+
     # Use plain text mode for new TextEdit documents
     defaults write com.apple.TextEdit RichText -int 0
     # Open and save files as UTF-8 in TextEdit
@@ -193,6 +201,8 @@ function configure_text_edit() {
 }
 
 function configure_app_store() {
+    quit "App Store"
+
     # Enable the WebKit Developer Tools in the Mac App Store
     defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
@@ -230,16 +240,6 @@ function configure_misc() {
 function quit() {
     app=$1
     killall "$app" > /dev/null 2>&1
-}
-
-function open() {
-    app=$1
-    osascript << EOM
-tell application "$app" to activate
-tell application "System Events" to tell process "Terminal"
-set frontmost to true
-end tell
-EOM
 }
 
 main "$@"
