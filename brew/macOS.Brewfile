@@ -14,6 +14,7 @@ brew "git"
 brew "python"
 brew "python@2"
 brew "rbenv"
+brew "swiftlint"
 
 ############################################################################
 # cask
@@ -29,6 +30,7 @@ cask "qlstephen"
 cask "qlmarkdown"
 cask "quicklook-json"
 cask "qlimagesize"
+cask "fastlane"
 
 ############################################################################
 # mas
