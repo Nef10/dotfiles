@@ -162,23 +162,10 @@ function configure_xcode() {
 
     # Show line numbers
     defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
-
-    # Enable internal debug menu
-    defaults write com.apple.dt.Xcode ShowDVTDebugMenu -bool true
 }
 
 function configure_safari() {
     quit "Safari"
-
-    # Show the full URL in the address bar (note: this still hides the scheme)
-    defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
-
-    # Set up Safari for development.
-    defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-    defaults write com.apple.Safari IncludeDevelopMenu -bool true
-    defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-    defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-    defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
     # Disable AutoFill
     defaults write com.apple.Safari AutoFillFromAddressBook -bool false
@@ -203,12 +190,6 @@ function configure_text_edit() {
 function configure_app_store() {
     quit "App Store"
 
-    # Enable the WebKit Developer Tools in the Mac App Store
-    defaults write com.apple.appstore WebKitDeveloperExtras -bool true
-
-    # Enable Debug Menu in the Mac App Store
-    defaults write com.apple.appstore ShowDebugMenu -bool true
-
     # Enable the automatic update check
     defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 
@@ -225,13 +206,6 @@ function configure_app_store() {
 function configure_misc() {
     # Prevent Time Machine from prompting to use new hard drives as backup volume
     defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-    # Enable the debug menu in Address Book
-    defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
-    # Enable the debug menu in Disk Utility
-    defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-    defaults write com.apple.DiskUtility advanced-image-options -bool true
 
     # Prevent Photos from opening automatically when devices are plugged in
     defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
