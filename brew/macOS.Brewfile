@@ -35,7 +35,7 @@ cask "fastlane"
 ############################################################################
 # mas
 ############################################################################
-mas "Microsoft Remote Desktop", id: 715768417
+mas "Microsoft Remote Desktop", id: 1295203466
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
