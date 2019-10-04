@@ -5,6 +5,7 @@ main() {
     configure_system
     configure_dock
     configure_finder
+    configure_xcode
     configure_safari
     configure_text_edit
     configure_app_store
@@ -14,7 +15,7 @@ main() {
 function quit_system_preferences() {
     # Close any open System Preferences panes, to prevent them from overriding
     # settings we’re about to change
-    osascript -e 'tell application "System Preferences" to quit'
+    osascript -e 'tell application "System Preferences" to quit' > /dev/null 2>&1
 }
 
 function configure_system() {
@@ -101,6 +102,7 @@ function configure_dock() {
 
 function configure_finder() {
     # open new windows in my home dir
+    defaults write com.apple.finder NewWindowTarget -string "PfHm"
     defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
 
     # Show icons for hard drives, servers, and removable media on the desktop
@@ -144,6 +146,21 @@ function configure_finder() {
     	OpenWith -bool true \
     	Privileges -bool true
 
+    quit "Finder"
+}
+
+function configure_xcode() {
+    # Trim trailing whitespace
+    defaults write com.apple.dt.Xcode DVTTextEditorTrimTrailingWhitespace -bool true
+
+    # Trim whitespace only lines
+    defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -bool true
+
+    # Show line numbers
+    defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
+
+    # Enable internal debug menu
+    defaults write com.apple.dt.Xcode ShowDVTDebugMenu -bool true
 }
 
 function configure_safari() {
@@ -219,7 +236,7 @@ function open() {
     app=$1
     osascript << EOM
 tell application "$app" to activate
-tell application "System Events" to tell process "iTerm2"
+tell application "System Events" to tell process "Terminal"
 set frontmost to true
 end tell
 EOM
