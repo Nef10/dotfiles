@@ -5,6 +5,7 @@ main() {
     configure_system
     configure_dock
     configure_finder
+    configure_menu_bar
     configure_xcode
     configure_safari
     configure_text_edit
@@ -19,6 +20,12 @@ function quit_system_preferences() {
 }
 
 function configure_system() {
+    # Enable Power Nap on all power modes
+    sudo pmset -a darkwakes 1
+
+    # Enable minimize on double click
+    defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool true
+
     # Increase window resize speed for Cocoa applications
     defaults write NSGlobalDomain NSWindowResizeTime -float 0.07
 
@@ -151,6 +158,29 @@ function configure_finder() {
     quit "Finder"
 }
 
+function configure_menu_bar() {
+    # Show some more icons
+    defaults write com.apple.systemuiserver menuExtras -array
+      "/System/Library/CoreServices/Menu Extras/Bluetooth.menu",
+      "/System/Library/CoreServices/Menu Extras/Battery.menu",
+      "/System/Library/CoreServices/Menu Extras/Clock.menu",
+      "/System/Library/CoreServices/Menu Extras/User.menu",
+      "/System/Library/CoreServices/Menu Extras/AirPort.menu",
+      "/System/Library/CoreServices/Menu Extras/Volume.menu",
+      "/System/Library/CoreServices/Menu Extras/Displays.menu"
+
+    # Show battery percentage
+    defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+    # Format for clock
+    defaults write com.apple.menuextra.clock DateFormat 'EEE MMM d  HH:mm:ss'
+    defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
+    defaults write com.apple.menuextra.clock IsAnalog -bool false
+
+    # Restart
+    quit SystemUIServer
+}
+
 function configure_xcode() {
     quit "Xcode"
 
@@ -180,8 +210,15 @@ function configure_safari() {
 function configure_text_edit() {
     quit "TextEdit"
 
+    # Enable Grammar check
+    defaults write com.apple.TextEdit CheckGrammarWithSpelling -bool true
+
     # Use plain text mode for new TextEdit documents
     defaults write com.apple.TextEdit RichText -int 0
+
+    # Show HTML as source code
+    defaults write com.apple.TextEdit IgnoreHTML -bool true
+
     # Open and save files as UTF-8 in TextEdit
     defaults write com.apple.TextEdit PlainTextEncoding -int 4
     defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
