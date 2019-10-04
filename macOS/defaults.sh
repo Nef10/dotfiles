@@ -25,6 +25,7 @@ function configure_system() {
 
     # Enable minimize on double click
     defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool true
+    defaults write NSGlobalDomain AppleActionOnDoubleClick "Minimize"
 
     # Increase window resize speed for Cocoa applications
     defaults write NSGlobalDomain NSWindowResizeTime -float 0.07
@@ -160,13 +161,13 @@ function configure_finder() {
 
 function configure_menu_bar() {
     # Show some more icons
-    defaults write com.apple.systemuiserver menuExtras -array
-      "/System/Library/CoreServices/Menu Extras/Bluetooth.menu",
-      "/System/Library/CoreServices/Menu Extras/Battery.menu",
-      "/System/Library/CoreServices/Menu Extras/Clock.menu",
-      "/System/Library/CoreServices/Menu Extras/User.menu",
-      "/System/Library/CoreServices/Menu Extras/AirPort.menu",
-      "/System/Library/CoreServices/Menu Extras/Volume.menu",
+    defaults write com.apple.systemuiserver menuExtras -array \
+      "/System/Library/CoreServices/Menu Extras/Bluetooth.menu", \
+      "/System/Library/CoreServices/Menu Extras/Battery.menu", \
+      "/System/Library/CoreServices/Menu Extras/Clock.menu", \
+      "/System/Library/CoreServices/Menu Extras/User.menu", \
+      "/System/Library/CoreServices/Menu Extras/AirPort.menu", \
+      "/System/Library/CoreServices/Menu Extras/Volume.menu", \
       "/System/Library/CoreServices/Menu Extras/Displays.menu"
 
     # Show battery percentage
