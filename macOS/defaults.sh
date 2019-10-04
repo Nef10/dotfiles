@@ -162,12 +162,12 @@ function configure_finder() {
 function configure_menu_bar() {
     # Show some more icons
     defaults write com.apple.systemuiserver menuExtras -array \
-      "/System/Library/CoreServices/Menu Extras/Bluetooth.menu", \
-      "/System/Library/CoreServices/Menu Extras/Battery.menu", \
-      "/System/Library/CoreServices/Menu Extras/Clock.menu", \
-      "/System/Library/CoreServices/Menu Extras/User.menu", \
-      "/System/Library/CoreServices/Menu Extras/AirPort.menu", \
-      "/System/Library/CoreServices/Menu Extras/Volume.menu", \
+      "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+      "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+      "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+      "/System/Library/CoreServices/Menu Extras/User.menu" \
+      "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+      "/System/Library/CoreServices/Menu Extras/Volume.menu" \
       "/System/Library/CoreServices/Menu Extras/Displays.menu"
 
     # Show battery percentage
