@@ -6,5 +6,5 @@ My dotfiles, inspried by https://github.com/sam-hosseini/dotfiles and https://gi
 
 To install use the following line at own risk
 ```
-   curl --silent https://raw.githubusercontent.com/Nef10/dotfiles/master/setup-mac-os.sh | bash
+curl --silent https://raw.githubusercontent.com/Nef10/dotfiles/master/setup-mac-os.sh | bash
 ```
