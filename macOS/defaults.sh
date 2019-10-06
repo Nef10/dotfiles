@@ -6,6 +6,7 @@ main() {
     configure_dock
     configure_finder
     configure_menu_bar
+    configure_calendar
     configure_xcode
     configure_safari
     configure_text_edit
@@ -180,6 +181,25 @@ function configure_menu_bar() {
 
     # Restart
     quit SystemUIServer
+}
+
+function configure_calendar() {
+  quit "Calendar"
+
+  # Start Week on Monday
+  defaults write com.apple.iCal "first day of week" -int 1
+
+  # Show week numbers
+  defaults write com.apple.iCal "Show Week Numbers" -bool true
+
+  # Show events in year view
+  defaults write com.apple.iCal "Show heat map in Year View" -bool true
+
+  # Enable time zone support
+  defaults write com.apple.iCal "TimeZone support enabled" -bool true
+
+  # Show 18 hours
+  defaults write com.apple.iCal "number of hours displayed" -int 18
 }
 
 function configure_xcode() {
