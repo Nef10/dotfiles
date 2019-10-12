@@ -44,7 +44,7 @@ function addToZshrcIfNeeded() {
             error "Failed to set up ${2} in $FILE"
             exit 1
         fi
-    fi  
+    fi
 }
 
 function createZshrcIfNeeded() {
@@ -91,12 +91,12 @@ function configure_zsh() {
 
     ZSH_FUNCTIONS_DIR="$HOME/.zfunctions"
     addToZshrcIfNeeded "fpath=( \"\$HOME/.zfunctions\" \$fpath )" ".zfunctions"
-    
+
     ZSH_PLUGIN_DIR="$HOME/.zsh-plugins"
 
     SPACESHIP_DIR="$ZSH_PLUGIN_DIR/spaceship-prompt"
     clone_or_update "Spaceship promt" $SPACESHIP_DIR "https://github.com/denysdovhan/spaceship-prompt.git"
-    
+
     step "Linking spaceship promt"
     if test -L "$ZSH_FUNCTIONS_DIR/prompt_spaceship_setup"; then
         info "spaceship promt already linked"
@@ -104,7 +104,7 @@ function configure_zsh() {
         step "creating $ZSH_FUNCTIONS_DIR dir"
         if test -e $ZSH_FUNCTIONS_DIR; then
             info "$ZSH_FUNCTIONS_DIR already exists"
-        else 
+        else
             if mkdir $ZSH_FUNCTIONS_DIR; then
                 success "$ZSH_FUNCTIONS_DIR dir created"
                 if ln -sf "$SPACESHIP_DIR/spaceship.zsh" "$ZSH_FUNCTIONS_DIR/prompt_spaceship_setup"; then
@@ -123,8 +123,10 @@ function configure_zsh() {
     addToZshrcIfNeeded "autoload -U promptinit; promptinit" "autoload promitinit"
     addToZshrcIfNeeded "prompt spaceship" "prompt spaceship"
 
-    SYNTAX_HIGHLIGHTING_DIR="$ZSH_PLUGIN_DIR/zsh-syntax-highlighting" 
+    SYNTAX_HIGHLIGHTING_DIR="$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
     clone_or_update "zsh-syntax-highlighting" $SYNTAX_HIGHLIGHTING_DIR "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+
+    addToZshrcIfNeeded "ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)" "zsh-syntax-highlighting config"
     addToZshrcIfNeeded "source $SYNTAX_HIGHLIGHTING_DIR/zsh-syntax-highlighting.zsh" "zsh-syntax-highlighting"
 }
 
