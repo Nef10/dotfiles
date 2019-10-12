@@ -11,7 +11,7 @@ main() {
     setup_terminal_theme
 }
 
-DOTFILES_REPO=$HOME/dotfiles
+DOTFILES_REPO=$HOME/.dotfiles
 
 function ask_for_sudo() {
     step "Prompting for sudo password"
