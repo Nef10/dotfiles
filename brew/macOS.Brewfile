@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 ############################################################################
 # brew
@@ -31,6 +32,7 @@ cask "qlmarkdown"
 cask "quicklook-json"
 cask "qlimagesize"
 cask "fastlane"
+cask "font-fira-code"
 
 ############################################################################
 # mas

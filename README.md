@@ -1,6 +1,7 @@
 # Dotfiles
 
 My dotfiles, inspried by https://github.com/sam-hosseini/dotfiles and https://github.com/mathiasbynens/dotfiles
+The terminal theme is based on https://github.com/nathanbuchar/atom-one-dark-terminal
 
 ## Use
 
