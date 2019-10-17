@@ -9,7 +9,7 @@ main() {
     setup_rbenv
     setup_nodenv
     configure_zsh
-    setup_terminal_theme
+    finish
 }
 
 DOTFILES_REPO=$HOME/.dotfiles
@@ -68,14 +68,9 @@ function createZshrcIfNeeded() {
     fi
 }
 
-function setup_terminal_theme() {
+function finish() {
     echo ""
-    action "To finish the installation you need to set the terminal profile."
-    action "Therefore, we will open a new terminal window. Please open the settings in this new new window,"
-    action "go to profiles, select the current one, and click Default to finish the installation."
-    echo ""
-    read -s -k '?Press any key to continue.'
-    open ${DOTFILES_REPO}/terminal-theme/atom-one-dark.terminal
+    success "Finished successfully!"
 }
 
 function install_homebrew() {
@@ -230,10 +225,6 @@ function success() {
 
 function error() {
     coloredEcho "$1" red "===>"
-}
-
-function action() {
-    coloredEcho "$1" magenta "=>"
 }
 
 main "$@"

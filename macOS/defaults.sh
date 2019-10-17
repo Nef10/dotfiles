@@ -11,6 +11,7 @@ main() {
     configure_safari
     configure_text_edit
     configure_app_store
+    configure_terminal
     configure_misc
 }
 
@@ -259,6 +260,13 @@ function configure_app_store() {
 
     # Turn on app auto-update
     defaults write com.apple.commerce AutoUpdate -bool true
+}
+
+function configure_terminal() {
+    theme=$(<../terminal-theme/atom-one-dark.xml)
+    plutil -replace Window\ Settings.atom-one-dar -xml "$theme" ~/Library/Preferences/com.apple.Terminal.plist
+    defaults write com.apple.terminal "Default Window Settings" -string "atom-one-dark";
+    defaults write com.apple.terminal "Startup Window Settings" -string "atom-one-dark";
 }
 
 function configure_misc() {
