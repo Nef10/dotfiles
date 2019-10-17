@@ -16,6 +16,7 @@ brew "python"
 brew "python@2"
 brew "rbenv"
 brew "swiftlint"
+brew "nodenv"
 
 ############################################################################
 # cask

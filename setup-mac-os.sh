@@ -7,6 +7,7 @@ main() {
     install_packages_with_brewfile
     setup_macOS_defaults
     setup_rbenv
+    setup_nodenv
     configure_zsh
     setup_terminal_theme
 }
@@ -29,6 +30,11 @@ function ask_for_sudo() {
 function setup_rbenv() {
     step "Setting up rbenv"
     addToZshrcIfNeeded "eval \"\$(rbenv init -)\"" "rbenv"
+}
+
+function setup_nodenv() {
+    step "Setting up nodenv"
+    addToZshrcIfNeeded "eval \"\$(nodenv init -)\"" "nodenv"
 }
 
 function addToZshrcIfNeeded() {
