@@ -55,8 +55,8 @@ alias -g ......='../../../../..'
 
 alias md='mkdir -p'
 
-alias ll='ls -lhFpG'
-alias la='ls -AlhFpG'
+alias ll='ls -lhFpGO'
+alias la='ls -AlhFpGO'
 
 alias grep="grep --color=auto"
 
