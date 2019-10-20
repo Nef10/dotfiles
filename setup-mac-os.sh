@@ -163,7 +163,7 @@ function clone_or_update() {
 
 function pull_latest() {
     step "Pulling latest changes in ${1} repository"
-    if git -C $1 pull origin master &> /dev/null; then
+    if git -C $1 pull origin master; then
         success "Pull in ${1} successful"
     else
         error "Failed, Please pull latest changes in ${1} repository manually"
