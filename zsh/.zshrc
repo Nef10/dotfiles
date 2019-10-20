@@ -100,8 +100,15 @@ bindkey '^[[B' history-substring-search-down
 # Functions
 
 function update_dotfiles {
-    git pull $HOME/.dotfiles # pull first, so the script is updated before executing
-    $HOME/.dotfiles/setup-mac-os.sh
+    echo "Checking for updates..."
+    git -C $HOME/.dotfiles fetch &> /dev/null
+    if [ $(git -C $HOME/.dotfiles rev-parse HEAD) '==' $(git -C $HOME/.dotfiles rev-parse @{u}) ]; then
+        echo "Already up to date."
+    else
+        echo "Updating..."
+        git -C $HOME/.dotfiles pull # pull first, so the script is updated before executing
+        $HOME/.dotfiles/setup-mac-os.sh
+    fi
 }
 
 function hide {
