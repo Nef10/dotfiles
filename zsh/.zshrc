@@ -99,22 +99,23 @@ bindkey '^[[B' history-substring-search-down
 
 # Functions
 
-function update_dotfiles {
-    echo "Checking for updates..."
+function update_dotfiles() {
+    print -P "%F{blue}=> Checking for updates...%f"
     git -C $HOME/.dotfiles fetch &> /dev/null
     if [ $(git -C $HOME/.dotfiles rev-parse HEAD) '==' $(git -C $HOME/.dotfiles rev-parse @{u}) ]; then
-        echo "Already up to date."
+        print -P "%F{green}===> Already up to date.%f"
     else
-        echo "Updating..."
+        print -P "%F{white}===> Update needed%f"
+        print -P "%F{blue}=> Updating...%f"
         git -C $HOME/.dotfiles pull # pull first, so the script is updated before executing
         $HOME/.dotfiles/setup-mac-os.sh
     fi
 }
 
-function hide {
+function hide() {
     chflags hidden $1
 }
 
-function unhide {
+function unhide() {
     chflags nohidden $1
 }
