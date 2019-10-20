@@ -90,13 +90,13 @@ function configure_zsh() {
         else
             if mkdir $ZSH_FUNCTIONS_DIR; then
                 success "$ZSH_FUNCTIONS_DIR dir created"
-                if ln -sf "$SPACESHIP_DIR/spaceship.zsh" "$ZSH_FUNCTIONS_DIR/prompt_spaceship_setup"; then
-                    success "spaceship promt linked"
-                else
-                    error "spaceship promt linking failed"
-                fi
             else
                 error "failed to create $ZSH_FUNCTIONS_DIR dir"
+            fi
+            if ln -sf "$SPACESHIP_DIR/spaceship.zsh" "$ZSH_FUNCTIONS_DIR/prompt_spaceship_setup"; then
+                success "spaceship promt linked"
+            else
+                error "spaceship promt linking failed"
             fi
         fi
     fi
