@@ -97,7 +97,16 @@ export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=fg=black,bg=green,bold
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Update function
+# Functions
+
 function update_dotfiles {
     $HOME/.dotfiles/setup-mac-os.sh
+}
+
+function hide {
+    chflags hidden $1
+}
+
+function unhide {
+    chflags nohidden $1
 }
