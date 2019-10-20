@@ -56,6 +56,7 @@ function createZshrcIfNeeded() {
 function finish() {
     echo ""
     success "Finished successfully!"
+    info "Please restart your Terminal for the applied changes to take effect."
 }
 
 function install_homebrew() {
