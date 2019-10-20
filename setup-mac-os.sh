@@ -74,16 +74,13 @@ function install_homebrew() {
 }
 
 function configure_zsh() {
-    step "Configuring zsh"
-
-    ZSH_FUNCTIONS_DIR="$HOME/.zfunctions"
-
     ZSH_PLUGIN_DIR="$DOTFILES_REPO/checkout"
 
     SPACESHIP_DIR="$ZSH_PLUGIN_DIR/spaceship-prompt"
     clone_or_update "Spaceship promt" $SPACESHIP_DIR "https://github.com/denysdovhan/spaceship-prompt.git"
 
     step "Linking spaceship promt"
+    ZSH_FUNCTIONS_DIR="$HOME/.zfunctions"
     if test -L "$ZSH_FUNCTIONS_DIR/prompt_spaceship_setup"; then
         info "spaceship promt already linked"
     else
@@ -112,21 +109,26 @@ function configure_zsh() {
 
 function configure_vscode() {
     VSCODE_FOLDER=$DOTFILES_REPO/vscode
+    VSCODE_SETTINGS=$HOME/Library/Application\ Support/Code/User/settings.json
     step "Copying VSCode settings"
-    if cp $VSCODE_FOLDER/settings.json $HOME/Library/Application\ Support/Code/User/settings.json; then
-        success "VSCode settings copied"
-        for plugin in `cat $VSCODE_FOLDER/plugins.txt`
-        do
-            step "Installing VSCode plugin $plugin"
-            if code --install-extension $plugin; then
-                success "VSCode plugin $plugin installed successfully"
-            else
-                error "Failed to install VSCode plugin $plugin"
-            fi
-        done
+    if diff -q $VSCODE_FOLDER/settings.json $VSCODE_SETTINGS &> /dev/null; then
+        info "VSCode settings already the same"
     else
-        error "Failed to copy VSCode settings"
+        if cp $VSCODE_FOLDER/settings.json $VSCODE_SETTINGS; then
+            success "VSCode settings copied"
+        else
+            error "Failed to copy VSCode settings"
+        fi
     fi
+    for plugin in `cat $VSCODE_FOLDER/plugins.txt`
+    do
+        step "Installing VSCode plugin $plugin"
+        if code --install-extension $plugin; then
+            success "VSCode plugin $plugin installed successfully"
+        else
+            error "Failed to install VSCode plugin $plugin"
+        fi
+    done
 }
 
 function install_packages_with_brewfile() {
