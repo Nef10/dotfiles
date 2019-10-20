@@ -122,16 +122,16 @@ function configure_vscode() {
     fi
 
     EXTENSIONS_INSTALLED=$(code --list-extensions)
-    for plugin in `cat $VSCODE_FOLDER/plugins.txt`
+    for extension in `cat $VSCODE_FOLDER/extensions.txt`
     do
-        step "Installing VSCode plugin $plugin"
-        if echo $EXTENSIONS_INSTALLED | grep -c $plugin &> /dev/null; then
-            info "VSCode plugin $plugin already installed"
+        step "Installing VSCode extension $extension"
+        if echo $EXTENSIONS_INSTALLED | grep -c $extension &> /dev/null; then
+            info "VSCode extension $extension already installed"
         else
-            if code --install-extension $plugin &> /dev/null; then
-                success "VSCode plugin $plugin installed successfully"
+            if code --install-extension $extension &> /dev/null; then
+                success "VSCode extension $extension installed successfully"
             else
-                error "Failed to install VSCode plugin $plugin"
+                error "Failed to install VSCode extension $extension"
             fi
         fi
     done
