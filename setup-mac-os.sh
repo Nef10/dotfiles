@@ -6,8 +6,6 @@ main() {
     install_homebrew
     install_packages_with_brewfile
     setup_macOS_defaults
-    setup_rbenv
-    setup_nodenv
     configure_zsh
     finish
 }
@@ -25,16 +23,6 @@ function ask_for_sudo() {
         error "Sudo password update failed"
         exit 1
     fi
-}
-
-function setup_rbenv() {
-    step "Setting up rbenv"
-    addToZshrcIfNeeded "eval \"\$(rbenv init -)\"" "rbenv"
-}
-
-function setup_nodenv() {
-    step "Setting up nodenv"
-    addToZshrcIfNeeded "eval \"\$(nodenv init -)\"" "nodenv"
 }
 
 function addToZshrcIfNeeded() {
@@ -91,9 +79,8 @@ function configure_zsh() {
     step "Configuring zsh"
 
     ZSH_FUNCTIONS_DIR="$HOME/.zfunctions"
-    addToZshrcIfNeeded "fpath=( \"\$HOME/.zfunctions\" \$fpath )" ".zfunctions"
 
-    ZSH_PLUGIN_DIR="$HOME/.zsh-plugins"
+    ZSH_PLUGIN_DIR="$DOTFILES_REPO/checkout"
 
     SPACESHIP_DIR="$ZSH_PLUGIN_DIR/spaceship-prompt"
     clone_or_update "Spaceship promt" $SPACESHIP_DIR "https://github.com/denysdovhan/spaceship-prompt.git"
@@ -121,14 +108,10 @@ function configure_zsh() {
         fi
     fi
 
-    addToZshrcIfNeeded "autoload -U promptinit; promptinit" "autoload promitinit"
-    addToZshrcIfNeeded "prompt spaceship" "prompt spaceship"
-
     SYNTAX_HIGHLIGHTING_DIR="$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
     clone_or_update "zsh-syntax-highlighting" $SYNTAX_HIGHLIGHTING_DIR "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
-    addToZshrcIfNeeded "ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)" "zsh-syntax-highlighting config"
-    addToZshrcIfNeeded "source $SYNTAX_HIGHLIGHTING_DIR/zsh-syntax-highlighting.zsh" "zsh-syntax-highlighting"
+    addToZshrcIfNeeded "source $DOTFILES_REPO/zsh/.zshrc"
 }
 
 function install_packages_with_brewfile() {
