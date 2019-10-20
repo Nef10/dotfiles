@@ -62,6 +62,16 @@ alias grep="grep --color=auto"
 
 ## Git
 
+alias g='git'
+
+alias ga='git add'
+alias gaa='git add --all'
+
+alias gst='git status'
+alias gu='git push'
+alias gl='git pull'
+alias gf='git fetch'
+
 # Misc
 
 eval "$(nodenv init -)"
