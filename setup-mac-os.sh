@@ -7,6 +7,7 @@ main() {
     install_packages_with_brewfile
     setup_macOS_defaults
     configure_zsh
+    configure_vscode
     finish
 }
 
@@ -107,6 +108,25 @@ function configure_zsh() {
     clone_or_update "zsh-syntax-highlighting" $SYNTAX_HIGHLIGHTING_DIR "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
     addToZshrcIfNeeded "source $DOTFILES_REPO/zsh/.zshrc" "link to .zshrc"
+}
+
+function configure_vscode() {
+    VSCODE_FOLDER=$DOTFILES_REPO/vscode
+    step "Copying VSCode settings"
+    if cp $VSCODE_FOLDER/settings.json $HOME/Library/Application\ Support/Code/User/settings.json; then
+        success "VSCode settings copied"
+        for plugin in `cat $VSCODE_FOLDER/plugins.txt`
+        do
+            step "Installing VSCode plugin $plugin"
+            if code --install-extension $plugin; then
+                success "VSCode plugin $plugin installed successfully"
+            else
+                error "Failed to install VSCode plugin $plugin"
+            fi
+        done
+    else
+        error "Failed to copy VSCode settings"
+    fi
 }
 
 function install_packages_with_brewfile() {
