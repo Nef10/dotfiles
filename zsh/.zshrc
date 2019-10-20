@@ -100,6 +100,7 @@ bindkey '^[[B' history-substring-search-down
 # Functions
 
 function update_dotfiles {
+    git pull $HOME/.dotfiles # pull first, so the script is updated before executing
     $HOME/.dotfiles/setup-mac-os.sh
 }
 
