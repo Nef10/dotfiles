@@ -120,13 +120,19 @@ function configure_vscode() {
             error "Failed to copy VSCode settings"
         fi
     fi
+
+    EXTENSIONS_INSTALLED=$(code --list-extensions)
     for plugin in `cat $VSCODE_FOLDER/plugins.txt`
     do
         step "Installing VSCode plugin $plugin"
-        if code --install-extension $plugin; then
-            success "VSCode plugin $plugin installed successfully"
+        if echo $EXTENSIONS_INSTALLED | grep -c $plugin &> /dev/null; then
+            info "VSCode plugin $plugin already installed"
         else
-            error "Failed to install VSCode plugin $plugin"
+            if code --install-extension $plugin &> /dev/null; then
+                success "VSCode plugin $plugin installed successfully"
+            else
+                error "Failed to install VSCode plugin $plugin"
+            fi
         fi
     done
 }
