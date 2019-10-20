@@ -21,7 +21,6 @@ function ask_for_sudo() {
         success "Sudo password updated"
     else
         error "Sudo password update failed"
-        exit 1
     fi
 }
 
@@ -36,7 +35,6 @@ function addToZshrcIfNeeded() {
             success "${2} successfully set up in $FILE"
         else
             error "Failed to set up ${2} in $FILE"
-            exit 1
         fi
     fi
 }
@@ -51,7 +49,6 @@ function createZshrcIfNeeded() {
             success "$FILE created successfully"
         else
             error "$FILE could not be created"
-            exit 1
         fi
     fi
 }
@@ -70,7 +67,6 @@ function install_homebrew() {
             success "Homebrew installation succeeded"
         else
             error "Homebrew installation failed"
-            exit 1
         fi
     fi
 }
@@ -99,11 +95,9 @@ function configure_zsh() {
                     success "spaceship promt linked"
                 else
                     error "spaceship promt linking failed"
-                    exit 1
                 fi
             else
                 error "failed to create $ZSH_FUNCTIONS_DIR dir"
-                exit 1
             fi
         fi
     fi
@@ -124,7 +118,6 @@ function install_packages_with_brewfile() {
             success "Brewfile installation succeeded"
         else
             error "Brewfile installation failed"
-            exit 1
         fi
     fi
 }
@@ -143,7 +136,6 @@ function clone_or_update() {
             success "${1} repository cloned into ${2}"
         else
             error "${1} repository cloning failed"
-            exit 1
         fi
     fi
 }
@@ -153,7 +145,7 @@ function pull_latest() {
     if git -C $1 pull origin master &> /dev/null; then
         success "Pull in ${1} successful"
     else
-        error "Please pull latest changes in ${1} repository manually"
+        error "Failed, Please pull latest changes in ${1} repository manually"
     fi
 }
 
@@ -168,7 +160,6 @@ function setup_macOS_defaults() {
     else
         cd $current_dir
         error "macOS defaults update failed"
-        exit 1
     fi
 }
 
@@ -208,6 +199,8 @@ function success() {
 
 function error() {
     coloredEcho "$1" red "===>"
+    coloredEcho "Aborting" red "===>"
+    exit 1
 }
 
 main "$@"
