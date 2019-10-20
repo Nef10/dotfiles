@@ -96,3 +96,8 @@ source /usr/local/share/zsh-history-substring-search/zsh-history-substring-searc
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=fg=black,bg=green,bold
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Update function
+function update_dotfiles {
+    $HOME/.dotfiles/setup-mac-os.sh
+}
