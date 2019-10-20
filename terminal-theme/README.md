@@ -4,7 +4,7 @@ This terminal theme is based on https://github.com/nathanbuchar/atom-one-dark-te
 
 ## Use
 
-The theme will be installed by the main script by inserting the content of `atom-one-dark.xml` into the correct plist file. If you want to install in manually, just double click the `atom-one-dark.terminal` file.
+The theme will be installed by the main script by inserting the content of `atom-one-dark.xml` into the correct plist file. If you want to install it manually, open the `atom-one-dark.terminal` file.
 
 ## Adjust
 
