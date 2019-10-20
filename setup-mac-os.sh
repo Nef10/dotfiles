@@ -111,7 +111,7 @@ function configure_zsh() {
     SYNTAX_HIGHLIGHTING_DIR="$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
     clone_or_update "zsh-syntax-highlighting" $SYNTAX_HIGHLIGHTING_DIR "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
-    addToZshrcIfNeeded "source $DOTFILES_REPO/zsh/.zshrc"
+    addToZshrcIfNeeded "source $DOTFILES_REPO/zsh/.zshrc" "link to .zshrc"
 }
 
 function install_packages_with_brewfile() {

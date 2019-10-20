@@ -76,7 +76,7 @@ prompt spaceship
 # Syntax Highlighting
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-source /Users/Steffen/.zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.dotfiles/checkout/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # History Searching
 

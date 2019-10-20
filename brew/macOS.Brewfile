@@ -17,6 +17,7 @@ brew "python@2"
 brew "rbenv"
 brew "swiftlint"
 brew "nodenv"
+brew "zsh-history-substring-search"
 
 ############################################################################
 # cask
