@@ -82,6 +82,8 @@ eval "$(rbenv init -)"
 fpath=( "$HOME/.zfunctions" $fpath )
 autoload -U promptinit; promptinit
 prompt spaceship
+export SPACESHIP_EXIT_CODE_SHOW=true   # SHow exit code
+export SPACESHIP_GIT_STATUS_STASHED="" # Hide notification if a stash exists
 
 # Syntax Highlighting
 
