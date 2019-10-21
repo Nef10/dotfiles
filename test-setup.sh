@@ -8,10 +8,12 @@ main() {
     diff_vscode_settings
 }
 
+DOTFILES_REPO=$HOME/.dotfiles
+
 function diff_mas() {
     step "AppStore Apps"
     MAS_SAME=0
-    MAS_ID_TARGET=$(grep "mas \"" brew/macOS.Brewfile | grep -Eo '[0-9]+')
+    MAS_ID_TARGET=$(grep "mas \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo '[0-9]+')
     mas list | grep -Eo '^[0-9]+ ' | while read -r mas_id ;
     do
         if ! echo $MAS_ID_TARGET | grep -c $mas_id &> /dev/null; then
@@ -30,7 +32,7 @@ function diff_mas() {
 function diff_brew_packages() {
     step "Brew packages"
     BREW_SAME=0
-    BREW_TARGET=$(grep "brew \"" brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
+    BREW_TARGET=$(grep "brew \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
     brew leaves | while read -r brew_name ;
     do
         if ! echo $BREW_TARGET | grep -c $brew_name &> /dev/null; then
@@ -46,7 +48,7 @@ function diff_brew_packages() {
 function diff_brew_casks() {
     step "Brew Casks"
     CASKS_SAME=0
-    CASKS_TARGET=$(grep "cask \"" brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
+    CASKS_TARGET=$(grep "cask \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
     brew cask list | while read -r casks_name ;
     do
         if ! echo $CASKS_TARGET | grep -c $casks_name &> /dev/null; then
@@ -63,7 +65,7 @@ function diff_brew_casks() {
 function diff_vscode_extensions() {
     step "VSCode Extensions"
     EXTENSIONS_SAME=0
-    EXTENSIONS_TARGET=$(cat vscode/extensions.txt)
+    EXTENSIONS_TARGET=$(cat $DOTFILES_REPO/vscode/extensions.txt)
     code --list-extensions | while read -r extension_name ;
     do
         if ! echo $EXTENSIONS_TARGET | grep -c $extension_name &> /dev/null; then
@@ -79,11 +81,11 @@ function diff_vscode_extensions() {
 function diff_vscode_settings() {
     step "VSCode Settings"
     VSCODE_SETTINGS=$HOME/Library/Application\ Support/Code/User/settings.json
-    if diff -q $HOME/.dotfiles/vscode/settings.json $VSCODE_SETTINGS &> /dev/null; then
+    if diff -q $DOTFILES_REPO/vscode/settings.json $VSCODE_SETTINGS &> /dev/null; then
         success "No difference found"
     else
         warning "Settings are different:"
-        diff $HOME/.dotfiles/vscode/settings.json $VSCODE_SETTINGS || true
+        diff $DOTFILES_REPO/vscode/settings.json $VSCODE_SETTINGS || true
     fi
 }
 
