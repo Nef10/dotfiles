@@ -119,3 +119,7 @@ function hide() {
 function unhide() {
     chflags nohidden $1
 }
+
+function finder() {
+    open .
+}
