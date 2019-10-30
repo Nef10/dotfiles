@@ -84,7 +84,7 @@ eval "$(rbenv init -)"
 fpath=( "$HOME/.zfunctions" $fpath )
 autoload -U promptinit; promptinit
 prompt spaceship
-export SPACESHIP_EXIT_CODE_SHOW=true   # SHow exit code
+export SPACESHIP_EXIT_CODE_SHOW=true   # Show exit code
 export SPACESHIP_GIT_STATUS_STASHED="" # Hide notification if a stash exists
 
 # Syntax Highlighting
@@ -101,6 +101,8 @@ bindkey '^[[B' history-substring-search-down
 
 # Functions
 
+## dotfiles
+
 function update_dotfiles() {
     print -P "%F{blue}=> Checking for updates...%f"
     git -C $HOME/.dotfiles fetch &> /dev/null
@@ -113,6 +115,12 @@ function update_dotfiles() {
         $HOME/.dotfiles/setup-mac-os.sh
     fi
 }
+
+function diff_dotfiles_setup() {
+    $HOME/.dotfiles/test-setup.sh
+}
+
+## misc
 
 function hide() {
     chflags hidden $1
