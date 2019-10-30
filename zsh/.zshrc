@@ -67,10 +67,12 @@ alias g='git'
 alias ga='git add'
 alias gaa='git add --all'
 
-alias gst='git status'
+alias gs='git status'
 alias gu='git push'
 alias gl='git pull'
 alias gf='git fetch'
+alias gc='git commit -m'
+alias gca='git commit --ammend'
 
 # Misc
 
