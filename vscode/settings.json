@@ -29,5 +29,6 @@
         "terminal.ansiWhite":"#ABB2BF",
         "terminal.ansiYellow":"#D19A66"
       },
-      "terminal.integrated.drawBoldTextInBrightColors": false
+      "terminal.integrated.drawBoldTextInBrightColors": false,
+      "beancount.instantAlignment": false
 }
