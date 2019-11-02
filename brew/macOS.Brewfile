@@ -12,12 +12,15 @@ tap "homebrew/cask-fonts"
 ############################################################################
 brew "mas"
 brew "git"
+brew "git-lfs"
 brew "python"
 brew "python@2"
 brew "rbenv"
 brew "swiftlint"
 brew "nodenv"
 brew "zsh-history-substring-search"
+brew "rabbitmq"
+brew "postgresql"
 
 ############################################################################
 # cask
