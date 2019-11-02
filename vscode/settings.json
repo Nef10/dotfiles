@@ -30,5 +30,7 @@
         "terminal.ansiYellow":"#D19A66"
       },
       "terminal.integrated.drawBoldTextInBrightColors": false,
-      "beancount.instantAlignment": false
+      "beancount.instantAlignment": false,
+      "terminal.integrated.shell.osx": "/bin/zsh",
+      "debug.node.autoAttach": "on"
 }
