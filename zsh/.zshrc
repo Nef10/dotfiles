@@ -72,7 +72,7 @@ alias gu='git push'
 alias gl='git pull'
 alias gf='git fetch'
 alias gc='git commit -m'
-alias gca='git commit --ammend'
+alias gca='git commit --amend --reuse-message=HEAD'
 
 # Misc
 
