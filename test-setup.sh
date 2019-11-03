@@ -4,6 +4,7 @@ main() {
     diff_mas
     diff_brew_packages
     diff_brew_casks
+    diff_git
     diff_vscode_extensions
     diff_vscode_settings
 }
@@ -79,13 +80,21 @@ function diff_vscode_extensions() {
 }
 
 function diff_vscode_settings() {
-    step "VSCode Settings"
-    VSCODE_SETTINGS=$HOME/Library/Application\ Support/Code/User/settings.json
-    if diff -q $DOTFILES_REPO/vscode/settings.json $VSCODE_SETTINGS &> /dev/null; then
+    diff_file "VSCode Settings" $DOTFILES_REPO/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+}
+
+function diff_git() {
+    diff_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig $HOME/.gitconfig
+    diff_file ".gitignore" $DOTFILES_REPO/git/.gitignore $HOME/.gitignore
+}
+
+function diff_file() {
+    step "${1}"
+    if diff -q $2 $3 &> /dev/null; then
         success "No difference found"
     else
-        warning "Settings are different:"
-        diff $DOTFILES_REPO/vscode/settings.json $VSCODE_SETTINGS || true
+        warning "${1} different:"
+        diff $2 $3 || true
     fi
 }
 
