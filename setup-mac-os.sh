@@ -7,6 +7,7 @@ main() {
     install_packages_with_brewfile
     setup_macOS_defaults
     configure_zsh
+    configure_git
     configure_vscode
     finish
 }
@@ -107,22 +108,16 @@ function configure_zsh() {
     addToZshrcIfNeeded "source $DOTFILES_REPO/zsh/.zshrc" "link to .zshrc"
 }
 
+function configure_git() {
+    copy_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig $HOME/.gitconfig
+    copy_file ".gitignore" $DOTFILES_REPO/git/.gitignore $HOME/.gitignore
+}
+
 function configure_vscode() {
-    VSCODE_FOLDER=$DOTFILES_REPO/vscode
-    VSCODE_SETTINGS=$HOME/Library/Application\ Support/Code/User/settings.json
-    step "Copying VSCode settings"
-    if diff -q $VSCODE_FOLDER/settings.json $VSCODE_SETTINGS &> /dev/null; then
-        info "VSCode settings already the same"
-    else
-        if cp $VSCODE_FOLDER/settings.json $VSCODE_SETTINGS; then
-            success "VSCode settings copied"
-        else
-            error "Failed to copy VSCode settings"
-        fi
-    fi
+    copy_file "VSCode settings" $DOTFILES_REPO/vscode $HOME/Library/Application\ Support/Code/User/settings.json
 
     EXTENSIONS_INSTALLED=$(code --list-extensions)
-    for extension in `cat $VSCODE_FOLDER/extensions.txt`
+    for extension in `cat $DOTFILES_REPO/vscode/extensions.txt`
     do
         step "Installing VSCode extension $extension"
         if echo $EXTENSIONS_INSTALLED | grep -c $extension &> /dev/null; then
@@ -153,6 +148,19 @@ function install_packages_with_brewfile() {
 
 function clone_dotfiles_repo() {
     clone_or_update "Dotfiles" ${DOTFILES_REPO} "https://github.com/Nef10/dotfiles.git"
+}
+
+function copy_file() {
+    step "Copying ${1}"
+    if diff -q $2 $3 &> /dev/null; then
+        info "${1} already the same"
+    else
+        if cp $2 $3; then
+            success "${1} copied"
+        else
+            error "Failed to copy ${1}"
+        fi
+    fi
 }
 
 function clone_or_update() {
