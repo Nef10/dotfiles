@@ -33,6 +33,7 @@ cask "slack"
 cask "zoomus"
 cask "fastlane"
 cask "font-fira-code"
+cask "pgadmin4"
 
 ############################################################################
 # mas
