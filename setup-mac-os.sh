@@ -26,31 +26,29 @@ function ask_for_sudo() {
     fi
 }
 
-function addToZshrcIfNeeded() {
-    createZshrcIfNeeded
-    FILE=$HOME/.zshrc
-    step "Setting up ${2} in $FILE"
-    if grep -Fxq $1 $FILE; then
-        info "${2} alread set up in $FILE"
+function addToFileIfNeeded() {
+    createFileIfNeeded $3
+    step "Setting up ${2} in ${3}"
+    if grep -Fxq $1 $3; then
+        info "${2} alread set up in ${3}"
     else
-        if echo "\n${1}" >> $FILE; then
-            success "${2} successfully set up in $FILE"
+        if echo "\n${1}" >> $3; then
+            success "${2} successfully set up in ${3}"
         else
-            error "Failed to set up ${2} in $FILE"
+            error "Failed to set up ${2} in ${3}"
         fi
     fi
 }
 
-function createZshrcIfNeeded() {
-    FILE=$HOME/.zshrc
-    step "creating $FILE if needed"
-    if test -e $FILE; then
-        info "$FILE already exists"
+function createFileIfNeeded() {
+    step "creating {$1} if needed"
+    if test -e $1; then
+        info "${1} already exists"
     else
-        if touch $FILE; then
-            success "$FILE created successfully"
+        if touch $1; then
+            success "${1} created successfully"
         else
-            error "$FILE could not be created"
+            error "${1} could not be created"
         fi
     fi
 }
@@ -105,7 +103,7 @@ function configure_zsh() {
     SYNTAX_HIGHLIGHTING_DIR="$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
     clone_or_update "zsh-syntax-highlighting" $SYNTAX_HIGHLIGHTING_DIR "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
-    addToZshrcIfNeeded "source $DOTFILES_REPO/zsh/.zshrc" "link to .zshrc"
+    addToFileIfNeeded "source $DOTFILES_REPO/zsh/.zshrc" "link to .zshrc" $HOME/.zshrc
 }
 
 function configure_git() {
