@@ -1,6 +1,6 @@
 [core]
 
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.dotfiles/.gitignore
 
 	# Make `git rebase` safer on macOS (http://www.git-tower.com/blog/make-git-rebase-safe-on-osx)
 	trustctime = false
@@ -12,15 +12,15 @@
 	untrackedCache = true
 
 [user]
-    name = Steffen Kötte
-    email = steffen.koette@gmail.com
+	name = Steffen Kötte
+	email = steffen.koette@gmail.com
 
 [diff]
 
 	# Detect copies as well as renames
 	renames = copies
 
-    compactionHeuristic = true
+	compactionHeuristic = true
 
 [help]
 
@@ -34,7 +34,7 @@
 
 [credential]
 
-    helper = osxkeychain
+	helper = osxkeychain
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

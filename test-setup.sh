@@ -85,7 +85,6 @@ function diff_vscode_settings() {
 
 function diff_git() {
     diff_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig $HOME/.gitconfig
-    diff_file ".gitignore" $DOTFILES_REPO/git/.gitignore $HOME/.gitignore
 }
 
 function diff_file() {
