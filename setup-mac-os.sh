@@ -108,7 +108,6 @@ function configure_zsh() {
 
 function configure_git() {
     copy_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig $HOME/.gitconfig
-    copy_file ".gitignore" $DOTFILES_REPO/git/.gitignore $HOME/.gitignore
 }
 
 function configure_vscode() {
