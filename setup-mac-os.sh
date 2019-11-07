@@ -30,7 +30,7 @@ function addToFileIfNeeded() {
     createFileIfNeeded $3
     step "Setting up ${2} in ${3}"
     if grep -Fxq $1 $3; then
-        info "${2} alread set up in ${3}"
+        info "${2} already set up in ${3}"
     else
         if echo "\n${1}" >> $3; then
             success "${2} successfully set up in ${3}"
