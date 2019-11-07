@@ -84,7 +84,7 @@ function diff_vscode_settings() {
 }
 
 function diff_git() {
-    diff_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig $HOME/.gitconfig
+    diff_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig_template $HOME/.gitconfig
 }
 
 function diff_file() {

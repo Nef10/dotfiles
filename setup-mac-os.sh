@@ -40,6 +40,20 @@ function addToFileIfNeeded() {
     fi
 }
 
+function addTemplateToFileIfNeeded() {
+    createFileIfNeeded $3
+    step "Setting up ${2} in ${3}"
+    if [[ -z $(comm -13 $3 $1) ]]; then
+        info "${2} already set up in ${3}"
+    else
+        if echo "$(cat ${1})" >> $3; then
+            success "${2} successfully set up in ${3}"
+        else
+            error "Failed to set up ${2} in ${3}"
+        fi
+    fi
+}
+
 function createFileIfNeeded() {
     step "creating {$1} if needed"
     if test -e $1; then
@@ -107,7 +121,7 @@ function configure_zsh() {
 }
 
 function configure_git() {
-    copy_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig $HOME/.gitconfig
+    addTemplateToFileIfNeeded $DOTFILES_REPO/git/.gitconfig_template ".gitconfig include" $HOME/.gitconfig
 }
 
 function configure_vscode() {
