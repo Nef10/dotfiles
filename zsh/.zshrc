@@ -76,6 +76,12 @@ alias gd='git diff'
 alias gc='git commit -m'
 alias gca='git commit --amend --reuse-message=HEAD'
 
+## Misc
+
+alias battery='pmset -g batt'
+alias software='system_profiler SPSoftwareDataType'
+alias hardware-'system_profiler SPHardwareDataType SPDisplaysDataType'
+
 # Misc
 
 eval "$(nodenv init -)"
@@ -141,4 +147,20 @@ function unhide() {
 
 function finder() {
     open .
+}
+
+function mute() {
+    osascript -e 'set volume output muted true'
+}
+
+function unmute() {
+    osascript -e 'set volume output muted false'
+}
+
+function volume() {
+    if [[ -z $1 ]]; then
+        osascript -e "output volume of (get volume settings)"
+    else
+        osascript -e "set volume output volume $1"
+    fi
 }
