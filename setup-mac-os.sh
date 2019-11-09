@@ -46,7 +46,7 @@ function addTemplateToFileIfNeeded() {
     if [[ -z $(comm -13 $3 $1) ]]; then
         info "${2} already set up in ${3}"
     else
-        if echo "\n$(cat ${1})" >> $3; then
+        if echo "$(cat ${1})" >> $3; then
             success "${2} successfully set up in ${3}"
         else
             error "Failed to set up ${2} in ${3}"
