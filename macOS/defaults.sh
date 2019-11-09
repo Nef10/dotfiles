@@ -88,6 +88,9 @@ function configure_dock() {
     # Disable Automatically rearrange Spaces based on most recent use
     defaults write com.apple.dock mru-spaces -bool false
 
+    # Allow scrolling to open and close stacks
+    defaults write com.apple.dock scroll-to-open -bool true
+
     ## Hot corners
     ## Possible values:
     ##  0: no-op
@@ -128,6 +131,9 @@ function configure_finder() {
     # enable path bar
     defaults write com.apple.finder ShowPathbar -bool true
 
+    # Show full path in title
+    defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
     # When performing a search, search the current folder by default
     defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
@@ -156,6 +162,10 @@ function configure_finder() {
     	General -bool true \
     	OpenWith -bool true \
     	Privileges -bool true
+
+    # Do not write .DS_Store files on Network and USB devices
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
     # Restart
     quit "Finder"
