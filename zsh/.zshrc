@@ -80,7 +80,7 @@ alias gca='git commit --amend --reuse-message=HEAD'
 
 alias battery='pmset -g batt'
 alias software='system_profiler SPSoftwareDataType'
-alias hardware-'system_profiler SPHardwareDataType SPDisplaysDataType'
+alias hardware='system_profiler SPHardwareDataType SPDisplaysDataType'
 
 # Misc
 
