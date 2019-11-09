@@ -1,6 +1,6 @@
 [core]
 
-	excludesfile = ~/.dotfiles/.gitignore
+	excludesfile = ~/.dotfiles/git/.gitignore
 
 	# Make `git rebase` safer on macOS (http://www.git-tower.com/blog/make-git-rebase-safe-on-osx)
 	trustctime = false
