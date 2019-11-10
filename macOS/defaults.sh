@@ -274,7 +274,7 @@ function configure_app_store() {
 
 function configure_terminal() {
     theme=$(<../terminal-theme/atom-one-dark.xml)
-    plutil -replace Window\ Settings.atom-one-dar -xml "$theme" ~/Library/Preferences/com.apple.Terminal.plist
+    plutil -replace Window\ Settings.atom-one-dark -xml "$theme" ~/Library/Preferences/com.apple.Terminal.plist
     defaults write com.apple.terminal "Default Window Settings" -string "atom-one-dark";
     defaults write com.apple.terminal "Startup Window Settings" -string "atom-one-dark";
 }
