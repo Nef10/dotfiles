@@ -137,6 +137,10 @@ function diff_dotfiles_setup() {
 
 ## misc
 
+function cdf() { # cd to folder open in finder
+	cd "$(osascript -e 'tell app "Finder" to get POSIX path of (insertion location as alias)')";
+}
+
 function hide() {
     chflags hidden $1
 }
