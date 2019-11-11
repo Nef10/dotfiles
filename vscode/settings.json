@@ -32,5 +32,6 @@
       "terminal.integrated.drawBoldTextInBrightColors": false,
       "beancount.instantAlignment": false,
       "terminal.integrated.shell.osx": "/bin/zsh",
-      "debug.node.autoAttach": "on"
+      "debug.node.autoAttach": "on",
+      "editor.renderWhitespace": "selection"
 }
