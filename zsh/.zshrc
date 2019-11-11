@@ -60,6 +60,8 @@ alias la='ls -AlhFpGO'
 
 alias grep="grep --color=auto"
 
+alias path='echo -e ${PATH//:/\\n}'
+
 ## Git
 
 alias g='git'
