@@ -130,7 +130,7 @@ function configure_ssh() {
 }
 
 function configure_vscode() {
-    copy_file "VSCode settings" $DOTFILES_REPO/vscode $HOME/Library/Application\ Support/Code/User/settings.json
+    copy_file "VSCode settings" $DOTFILES_REPO/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 
     EXTENSIONS_INSTALLED=$(code --list-extensions)
     for extension in `cat $DOTFILES_REPO/vscode/extensions.txt`
