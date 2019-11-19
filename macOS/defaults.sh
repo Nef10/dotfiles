@@ -27,7 +27,7 @@ function configure_system() {
 
     # Enable minimize on double click
     defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool true
-    defaults write NSGlobalDomain AppleActionOnDoubleClick "Minimize"
+    defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Minimize"
 
     # Increase window resize speed for Cocoa applications
     defaults write NSGlobalDomain NSWindowResizeTime -float 0.07
@@ -183,10 +183,10 @@ function configure_menu_bar() {
       "/System/Library/CoreServices/Menu Extras/Displays.menu"
 
     # Show battery percentage
-    defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+    defaults write com.apple.menuextra.battery ShowPercent -bool true
 
     # Format for clock
-    defaults write com.apple.menuextra.clock DateFormat 'EEE MMM d  HH:mm:ss'
+    defaults write com.apple.menuextra.clock DateFormat -string 'EEE MMM d  HH:mm:ss'
     defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
     defaults write com.apple.menuextra.clock IsAnalog -bool false
 
