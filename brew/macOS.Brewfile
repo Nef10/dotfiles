@@ -21,6 +21,10 @@ brew "nodenv"
 brew "zsh-history-substring-search"
 brew "rabbitmq"
 brew "postgresql"
+brew "carthage"
+brew "cloudfoundry/tap/cf-cli"
+brew "maven"
+brew "vegeta"
 
 ############################################################################
 # cask
@@ -34,6 +38,7 @@ cask "zoomus"
 cask "fastlane"
 cask "font-fira-code"
 cask "pgadmin4"
+cask "anaconda"
 
 ############################################################################
 # mas
