@@ -56,7 +56,7 @@ function addTemplateToFileIfNeeded() {
 }
 
 function createFileIfNeeded() {
-    step "creating {$1} if needed"
+    step "creating ${1} if needed"
     if test -e $1; then
         info "${1} already exists"
     else
