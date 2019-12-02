@@ -39,6 +39,7 @@ cask "fastlane"
 cask "font-fira-code"
 cask "pgadmin4"
 cask "anaconda"
+cask "postman"
 
 ############################################################################
 # mas
