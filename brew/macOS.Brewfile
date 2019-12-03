@@ -40,6 +40,7 @@ cask "font-fira-code"
 cask "pgadmin4"
 cask "anaconda"
 cask "postman"
+cask "sf-symbols"
 
 ############################################################################
 # mas
