@@ -25,6 +25,7 @@ brew "carthage"
 brew "cloudfoundry/tap/cf-cli"
 brew "maven"
 brew "vegeta"
+brew "tree"
 
 ############################################################################
 # cask
