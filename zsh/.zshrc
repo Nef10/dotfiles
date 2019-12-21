@@ -73,7 +73,9 @@ alias gs='git status'
 alias gu='git push'
 alias gl='git pull'
 alias gf='git fetch'
+
 alias gd='git diff'
+alias gds='git diff --staged'
 
 alias gc='git commit -m'
 alias gca='git commit --amend --reuse-message=HEAD'
