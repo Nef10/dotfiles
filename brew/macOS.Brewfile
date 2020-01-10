@@ -42,6 +42,7 @@ cask "pgadmin4"
 cask "anaconda"
 cask "postman"
 cask "sf-symbols"
+cask "1password"
 
 ############################################################################
 # mas
