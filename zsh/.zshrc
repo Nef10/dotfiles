@@ -111,6 +111,10 @@ export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=fg=black,bg=green,bold
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# Homebrew command not found (see https://github.com/Homebrew/homebrew-command-not-found)
+
+if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
+
 # Functions
 
 ## dotfiles
