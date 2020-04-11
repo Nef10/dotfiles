@@ -28,6 +28,7 @@ brew "vegeta"
 brew "tree"
 brew "htop"
 brew "beancount"
+brew "tldr"
 
 ############################################################################
 # cask
