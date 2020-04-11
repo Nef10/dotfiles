@@ -27,6 +27,7 @@ brew "maven"
 brew "vegeta"
 brew "tree"
 brew "htop"
+brew "beancount"
 
 ############################################################################
 # cask
