@@ -26,6 +26,7 @@ brew "cloudfoundry/tap/cf-cli"
 brew "maven"
 brew "vegeta"
 brew "tree"
+brew "htop"
 
 ############################################################################
 # cask
