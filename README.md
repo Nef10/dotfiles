@@ -31,6 +31,8 @@ It will check for new commits in the repo, pull them and execute the bootstrap a
 diff_dotfiles_setup
 ```
 
+## Other
 
+Additionally, this repository contains some additional documents in the docs folder, like which things not to forget when backup up your Mac.
 
 
