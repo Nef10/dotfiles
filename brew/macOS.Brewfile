@@ -30,6 +30,7 @@ brew "tree"
 brew "htop"
 brew "beancount"
 brew "tldr"
+brew "github/gh/gh"
 
 ############################################################################
 # cask
