@@ -154,7 +154,7 @@ function install_packages_with_brewfile() {
     if brew bundle check --file="$BREW_FILE_PATH" &> /dev/null; then
         info "Brewfile's dependencies are already satisfied"
     else
-        if brew bundle --file="$BREW_FILE_PATH"; then
+        if brew bundle --no-upgrade --file="$BREW_FILE_PATH"; then
             success "Brewfile installation succeeded"
         else
             error "Brewfile installation failed"
