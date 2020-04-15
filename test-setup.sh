@@ -59,7 +59,7 @@ function diff_mas() {
 function diff_brew_packages() {
     step "Additional Brew packages"
     BREW_SAME=0
-    BREW_TARGET=$(grep "brew \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
+    BREW_TARGET=$(brew bundle list --file=$DOTFILES_REPO/brew/macOS.Brewfile)
     brew leaves | while read -r brew_name ;
     do
         if ! echo $BREW_TARGET | grep -c $brew_name &> /dev/null; then
@@ -75,7 +75,7 @@ function diff_brew_packages() {
 function diff_brew_casks() {
     step "Additional Brew Casks"
     CASKS_SAME=0
-    CASKS_TARGET=$(grep "cask \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
+    CASKS_TARGET=$(brew bundle list --casks --file=$DOTFILES_REPO/brew/macOS.Brewfile)
     brew cask list | while read -r casks_name ;
     do
         if ! echo $CASKS_TARGET | grep -c $casks_name &> /dev/null; then
