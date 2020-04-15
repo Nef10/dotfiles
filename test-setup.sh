@@ -29,7 +29,7 @@ function diff_repo() {
 
 function diff_missing_brew() {
     step "Uninstalled from Brew"
-    if ! brew bundle check --file=$DOTFILES_REPO/brew/macOS.Brewfile &> /dev/null; then
+    if ! brew bundle check --no-upgrade --file=$DOTFILES_REPO/brew/macOS.Brewfile &> /dev/null; then
         warning "Not all brew requirements are installed"
     else
         success "No difference found"
