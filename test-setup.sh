@@ -14,11 +14,15 @@ DOTFILES_REPO=$HOME/.dotfiles
 
 function diff_repo() {
     step "dotfiles repository"
-    if [[ 'git -C $DOTFILES_REPO status --porcelain' ]]; then
+    if [[ $(git -C $DOTFILES_REPO status --porcelain) ]]; then
         warning "Changes found:"
         git -C $DOTFILES_REPO status -s
     else
-        success "No difference found"
+        if [[ $(git log origin/master..HEAD | cat) ]]; then
+            warning "Your local branch is ahead of remote"
+        else
+            success "No difference found"
+        fi
     fi
 }
 
