@@ -2,6 +2,7 @@
 
 main() {
     diff_repo
+    diff_missing_brew
     diff_mas
     diff_brew_packages
     diff_brew_casks
@@ -26,8 +27,17 @@ function diff_repo() {
     fi
 }
 
+function diff_missing_brew() {
+    step "Uninstalled from Brew"
+    if ! brew bundle check --file=$DOTFILES_REPO/brew/macOS.Brewfile &> /dev/null; then
+        warning "Not all brew requirements are installed"
+    else
+        success "No difference found"
+    fi
+}
+
 function diff_mas() {
-    step "AppStore Apps"
+    step "Additional AppStore Apps"
     MAS_SAME=0
     MAS_ID_TARGET=$(grep "mas \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo '[0-9]+')
     mas list | grep -Eo '^[0-9]+ ' | while read -r mas_id ;
@@ -46,7 +56,7 @@ function diff_mas() {
 }
 
 function diff_brew_packages() {
-    step "Brew packages"
+    step "Additional Brew packages"
     BREW_SAME=0
     BREW_TARGET=$(grep "brew \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
     brew leaves | while read -r brew_name ;
@@ -62,7 +72,7 @@ function diff_brew_packages() {
 }
 
 function diff_brew_casks() {
-    step "Brew Casks"
+    step "Additional Brew Casks"
     CASKS_SAME=0
     CASKS_TARGET=$(grep "cask \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo "\"[^\"]*\"")
     brew cask list | while read -r casks_name ;
