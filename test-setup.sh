@@ -8,6 +8,7 @@ main() {
     diff_brew_casks
     diff_brew_taps
     diff_git
+    diff_vscode_missing_extensions
     diff_vscode_extensions
     diff_vscode_settings
 }
@@ -104,6 +105,22 @@ function diff_brew_taps() {
         success "No difference found"
     fi
 
+}
+
+function diff_vscode_missing_extensions() {
+    step "Uninstalled VSCode Extensions"
+    EXTENSIONS_SAME=0
+    EXTENSIONS_TARGET=$(code --list-extensions)
+    cat $DOTFILES_REPO/vscode/extensions.txt | while read -r extension_name ;
+    do
+        if ! echo $EXTENSIONS_TARGET | grep -c $extension_name &> /dev/null; then
+            EXTENSIONS_SAME=1
+            warning "$extension_name is not installed but included in extensions.txt"
+        fi
+    done
+    if [[ "$EXTENSIONS_SAME" -eq 0 ]]; then
+        success "No difference found"
+    fi
 }
 
 function diff_vscode_extensions() {
