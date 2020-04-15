@@ -151,7 +151,7 @@ function configure_vscode() {
 function install_packages_with_brewfile() {
     BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
     step "Installing packages within ${BREW_FILE_PATH}"
-    if brew bundle check --file="$BREW_FILE_PATH" &> /dev/null; then
+    if brew bundle check --no-upgrade --file="$BREW_FILE_PATH" &> /dev/null; then
         info "Brewfile's dependencies are already satisfied"
     else
         if brew bundle --no-upgrade --file="$BREW_FILE_PATH"; then
