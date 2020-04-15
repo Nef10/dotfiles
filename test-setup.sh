@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 main() {
+    diff_repo
     diff_mas
     diff_brew_packages
     diff_brew_casks
@@ -10,6 +11,16 @@ main() {
 }
 
 DOTFILES_REPO=$HOME/.dotfiles
+
+function diff_repo() {
+    step "dotfiles repository"
+    if [[ 'git -C $DOTFILES_REPO status --porcelain' ]]; then
+        warning "Changes found:"
+        git -C $DOTFILES_REPO status -s
+    else
+        success "No difference found"
+    fi
+}
 
 function diff_mas() {
     step "AppStore Apps"
