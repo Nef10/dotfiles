@@ -6,6 +6,7 @@ main() {
     diff_mas
     diff_brew_packages
     diff_brew_casks
+    diff_brew_taps
     diff_git
     diff_vscode_extensions
     diff_vscode_settings
@@ -83,6 +84,23 @@ function diff_brew_casks() {
         fi
     done
     if [[ "$CASKS_SAME" -eq 0 ]]; then
+        success "No difference found"
+    fi
+
+}
+
+function diff_brew_taps() {
+    step "Additional Brew Taps"
+    TAPS_SAME=0
+    TAPS_TARGET=$(brew bundle list --taps --file=$DOTFILES_REPO/brew/macOS.Brewfile)
+    brew bundle dump --file=- | brew bundle list --taps --file=- | while read -r tap_name ;
+    do
+        if ! echo $TAPS_TARGET | grep -c $tap_name &> /dev/null; then
+            TAPS_SAME=1
+            warning "$tap_name is tapped but not included in the macOS.Brewfile"
+        fi
+    done
+    if [[ "$TAPS_SAME" -eq 0 ]]; then
         success "No difference found"
     fi
 
