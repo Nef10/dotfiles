@@ -54,3 +54,10 @@
 
 	# Remove tips how to stage / unstange / discard changes in git status output
 	statusHints = off
+	
+[filter "lfs"]
+
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
