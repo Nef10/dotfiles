@@ -7,6 +7,8 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "homebrew/command-not-found"
+tap "cloudfoundry/tap"
+tap "github/gh"
 
 ############################################################################
 # brew
