@@ -2,7 +2,9 @@
 
 main() {
     ask_for_sudo
-    clone_dotfiles_repo
+    if [[ "$1" != "--no-pull" ]]; then
+        clone_dotfiles_repo
+    fi
     install_homebrew
     install_packages_with_brewfile
     setup_macOS_defaults
