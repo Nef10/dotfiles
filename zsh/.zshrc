@@ -135,7 +135,7 @@ function update_dotfiles() {
         print -P "%F{white}===> Update needed%f"
         print -P "%F{blue}=> Updating...%f"
         git -C $HOME/.dotfiles pull # pull first, so the script is updated before executing
-        $HOME/.dotfiles/setup-mac-os.sh
+        $HOME/.dotfiles/setup-mac-os.sh --no-pull
     fi
 }
 
