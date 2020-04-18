@@ -273,7 +273,9 @@ function configure_app_store() {
 }
 
 function configure_terminal() {
-    theme=$(<../terminal-theme/atom-one-dark.xml)
+    start=$(grep -n "<dict>" ../terminal-theme/atom-one-dark.terminal | cut -f1 -d:)
+    end=$(grep -n "</dict>" ../terminal-theme/atom-one-dark.terminal | cut -f1 -d:)
+    theme=$(tail -n +$start ../terminal-theme/atom-one-dark.terminal | head -n $((end-start+1)))
     defaults write com.apple.terminal "Window Settings" -dict-add "atom-one-dark" "$theme"
     defaults write com.apple.terminal "Default Window Settings" -string "atom-one-dark"
     defaults write com.apple.terminal "Startup Window Settings" -string "atom-one-dark"
