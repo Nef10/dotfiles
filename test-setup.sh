@@ -126,7 +126,7 @@ function diff_vscode_missing_extensions() {
 }
 
 function diff_vscode_extensions() {
-    step "VSCode Extensions"
+    step "Additional VSCode Extensions"
     EXTENSIONS_SAME=0
     EXTENSIONS_TARGET=$(cat $DOTFILES_REPO/vscode/extensions.txt)
     code --list-extensions | while read -r extension_name ;
