@@ -78,6 +78,9 @@ function configure_dock() {
     # Set the icon size of Dock items to 53 pixels
     defaults write com.apple.dock tilesize -int 53
 
+    # Lock the dock size
+    defaults write com.apple.Dock size-immutable -bool yes
+
     # Enable Dock Magnification
     defaults write com.apple.dock magnification -bool true
 
