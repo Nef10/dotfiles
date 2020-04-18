@@ -176,3 +176,7 @@ function volume() {
         osascript -e "set volume output volume $1"
     fi
 }
+
+function port() {
+    sudo lsof -i :$1
+}
