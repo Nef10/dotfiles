@@ -29,20 +29,6 @@ function ask_for_sudo() {
     fi
 }
 
-function addToFileIfNeeded() {
-    createFileIfNeeded $3
-    step "Setting up ${2} in ${3}"
-    if grep -Fxq $1 $3; then
-        info "${2} already set up in ${3}"
-    else
-        if echo "\n${1}" >> $3; then
-            success "${2} successfully set up in ${3}"
-        else
-            error "Failed to set up ${2} in ${3}"
-        fi
-    fi
-}
-
 function addTemplateToFileIfNeeded() {
     createFileIfNeeded $3
     step "Setting up ${2} in ${3}"
@@ -120,7 +106,7 @@ function configure_zsh() {
     SYNTAX_HIGHLIGHTING_DIR="$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
     clone_or_update "zsh-syntax-highlighting" $SYNTAX_HIGHLIGHTING_DIR "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
-    addToFileIfNeeded "source $DOTFILES_REPO/zsh/.zshrc" "link to .zshrc" $HOME/.zshrc
+    addTemplateToFileIfNeeded $DOTFILES_REPO/zsh/.zshrc_template ".zshrc source" $HOME/.zshrc
 }
 
 function configure_git() {
@@ -128,7 +114,7 @@ function configure_git() {
 }
 
 function configure_ssh() {
-    addToFileIfNeeded "Include $DOTFILES_REPO/ssh/config" "ssh config include" $HOME/.ssh/config
+    addTemplateToFileIfNeeded $DOTFILES_REPO/ssh/config_template "ssh config include" $HOME/.ssh/config
 }
 
 function configure_vscode() {

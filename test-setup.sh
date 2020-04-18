@@ -8,6 +8,8 @@ main() {
     diff_brew_casks
     diff_brew_taps
     diff_git
+    diff_ssh
+    diff_zsh
     diff_vscode_missing_extensions
     diff_vscode_extensions
     diff_vscode_settings
@@ -145,6 +147,14 @@ function diff_vscode_settings() {
 
 function diff_git() {
     diff_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig_template $HOME/.gitconfig
+}
+
+function diff_ssh() {
+    diff_file "ssh config" $DOTFILES_REPO/ssh/config_template $HOME/.ssh/config
+}
+
+function diff_zsh() {
+    diff_file ".zshrc" $DOTFILES_REPO/zsh/.zshrc_template $HOME/.zshrc
 }
 
 function diff_file() {
