@@ -50,7 +50,7 @@ function diff_mas() {
             MAS_SAME=1
             SOFTWARE_ENTRY=$(mas list | grep $mas_id )
             SOFTWARE_NAME=${SOFTWARE_ENTRY#"$mas_id "}
-            warning "$SOFTWARE_NAME is installed but not included in the macOS.Brewfile"
+            warning "$SOFTWARE_NAME is installed but not included in the Brewfile"
         fi
     done
     if [[ "$MAS_SAME" -eq 0 ]]; then
@@ -67,7 +67,7 @@ function diff_brew_packages() {
     do
         if ! echo $BREW_TARGET | grep -c $brew_name &> /dev/null; then
             BREW_SAME=1
-            warning "$brew_name is installed but not included in the macOS.Brewfile"
+            warning "$brew_name is installed but not included in the Brewfile"
         fi
     done
     if [[ "$BREW_SAME" -eq 0 ]]; then
@@ -83,7 +83,7 @@ function diff_brew_casks() {
     do
         if ! echo $CASKS_TARGET | grep -c $casks_name &> /dev/null; then
             CASKS_SAME=1
-            warning "$casks_name is installed but not included in the macOS.Brewfile"
+            warning "$casks_name is installed but not included in the Brewfile"
         fi
     done
     if [[ "$CASKS_SAME" -eq 0 ]]; then
@@ -100,7 +100,7 @@ function diff_brew_taps() {
     do
         if ! echo $TAPS_TARGET | grep -c $tap_name &> /dev/null; then
             TAPS_SAME=1
-            warning "$tap_name is tapped but not included in the macOS.Brewfile"
+            warning "$tap_name is tapped but not included in the Brewfile"
         fi
     done
     if [[ "$TAPS_SAME" -eq 0 ]]; then
