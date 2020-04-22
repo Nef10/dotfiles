@@ -120,7 +120,7 @@ if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew comma
 ## dotfiles
 
 function update_dotfiles() {
-    $HOME/.dotfiles/update-dotfiles.sh
+    $HOME/.dotfiles/update-dotfiles.sh "$@"
 }
 
 function diff_dotfiles_setup() {
