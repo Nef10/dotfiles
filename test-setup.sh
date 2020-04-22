@@ -21,7 +21,7 @@ function diff_repo() {
     step "dotfiles repository"
     if [[ $(git -C $DOTFILES_REPO status --porcelain) ]]; then
         warning "Changes found:"
-        git -C $DOTFILES_REPO status -s
+        git -C $DOTFILES_REPO status -s | prependInfo
     else
         if [[ $(git log origin/master..HEAD | cat) ]]; then
             warning "Your local branch is ahead of remote"
@@ -35,6 +35,7 @@ function diff_missing_brew() {
     step "Uninstalled from Brew"
     if ! brew bundle check --no-upgrade --file=$DOTFILES_REPO/brew/macOS.Brewfile &> /dev/null; then
         warning "Not all brew requirements are installed"
+        brew bundle check --file=$DOTFILES_REPO/brew/macOS.Brewfile --verbose --no-upgrade | grep → --color=never | cut -c2- | prependInfo
     else
         success "No difference found"
     fi
@@ -172,11 +173,18 @@ function step() {
 }
 
 function warning() {
-    print -P "%F{yellow}===> $1%f"
+    print -P "%F{yellow}==> $1%f"
 }
 
 function success() {
-    print -P "%F{green}===> $1%f"
+    print -P "%F{green}==> $1%f"
+}
+
+function prependInfo() {
+    while read line;
+    do
+        print -P "%F{white}===> $line%f";
+    done;
 }
 
 main "$@"
