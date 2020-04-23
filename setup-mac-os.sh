@@ -151,12 +151,13 @@ function configure_vscode() {
 }
 
 function install_packages_with_brewfile() {
-    BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
-    step "Installing packages within ${BREW_FILE_PATH}"
-    if brew bundle check --no-upgrade --file="$BREW_FILE_PATH" &> /dev/null; then
+    DEFAULT_BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
+    PROFILE_BREW_FILE_PATH="${DOTFILES_REPO}/brew/${PROFILE}.Brewfile"
+    step "Installing software with brew"
+    if cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle check --no-upgrade --file=- &> /dev/null; then
         info "Brewfile's dependencies are already satisfied"
     else
-        if brew bundle --no-upgrade --file="$BREW_FILE_PATH"; then
+        if cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle --no-upgrade --file=-; then
             success "Brewfile installation succeeded"
         else
             error "Brewfile installation failed"
