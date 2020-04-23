@@ -18,6 +18,21 @@ main() {
         git -C $HOME/.dotfiles pull | prependInfo # pull first, so the script is updated before executing
         $HOME/.dotfiles/setup-mac-os.sh --no-pull
     fi
+    step "Update Homebrew"
+    update=$(brew update | head -n 1)
+    if [[ $update == "Already up-to-date." ]]; then
+        success "Already up to date"
+    else
+        echo $update | prependInfo
+    fi
+    step "Update Software installed via Homebrew"
+    if [[ $(brew outdated) ]]; then
+        warning "The following Software is outdated and will be updated:"
+        brew outdated -q | prependInfo
+        brew upgrade
+    else
+        success "Already up-to-date"
+    fi
 }
 
 function step() {
