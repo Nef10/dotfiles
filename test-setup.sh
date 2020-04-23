@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 
 main() {
+    PROFILE=$(cat $DOTFILES_REPO/profile)
+    DEFAULT_BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
+    PROFILE_BREW_FILE_PATH="${DOTFILES_REPO}/brew/${PROFILE}.Brewfile"
+
     diff_repo
     diff_missing_brew
     diff_mas
@@ -33,9 +37,9 @@ function diff_repo() {
 
 function diff_missing_brew() {
     step "Uninstalled from Brew"
-    if ! brew bundle check --no-upgrade --file=$DOTFILES_REPO/brew/macOS.Brewfile &> /dev/null; then
+    if ! cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle check --no-upgrade --file=- &> /dev/null; then
         warning "Not all brew requirements are installed"
-        brew bundle check --file=$DOTFILES_REPO/brew/macOS.Brewfile --verbose --no-upgrade | grep → --color=never | cut -c2- | prependInfo
+        cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle check --file=- --verbose --no-upgrade | grep → --color=never | cut -c2- | prependInfo
     else
         success "No difference found"
     fi
@@ -44,7 +48,7 @@ function diff_missing_brew() {
 function diff_mas() {
     step "Additional AppStore Apps"
     MAS_SAME=0
-    MAS_ID_TARGET=$(grep "mas \"" $DOTFILES_REPO/brew/macOS.Brewfile | grep -Eo '[0-9]+')
+    MAS_ID_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | grep "mas \"" | grep -Eo '[0-9]+')
     mas list | grep -Eo '^[0-9]+ ' | while read -r mas_id ;
     do
         if ! echo $MAS_ID_TARGET | grep -c $mas_id &> /dev/null; then
@@ -63,7 +67,7 @@ function diff_mas() {
 function diff_brew_packages() {
     step "Additional Brew packages"
     BREW_SAME=0
-    BREW_TARGET=$(brew bundle list --file=$DOTFILES_REPO/brew/macOS.Brewfile)
+    BREW_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle list --file=-)
     brew leaves | while read -r brew_name ;
     do
         if ! echo $BREW_TARGET | grep -c $brew_name &> /dev/null; then
@@ -79,7 +83,7 @@ function diff_brew_packages() {
 function diff_brew_casks() {
     step "Additional Brew Casks"
     CASKS_SAME=0
-    CASKS_TARGET=$(brew bundle list --casks --file=$DOTFILES_REPO/brew/macOS.Brewfile)
+    CASKS_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle list --casks --file=-)
     brew cask list | while read -r casks_name ;
     do
         if ! echo $CASKS_TARGET | grep -c $casks_name &> /dev/null; then
@@ -96,7 +100,7 @@ function diff_brew_casks() {
 function diff_brew_taps() {
     step "Additional Brew Taps"
     TAPS_SAME=0
-    TAPS_TARGET=$(brew bundle list --taps --file=$DOTFILES_REPO/brew/macOS.Brewfile)
+    TAPS_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle list --taps --file=-)
     brew bundle dump --file=- | brew bundle list --taps --file=- | while read -r tap_name ;
     do
         if ! echo $TAPS_TARGET | grep -c $tap_name &> /dev/null; then
