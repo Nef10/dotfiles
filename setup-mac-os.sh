@@ -26,7 +26,7 @@ function ask_for_profile() {
     else
         info "Please enter the profile to be used (private|work):"
         read PROFILE
-        echo $PROFILE > profile
+        echo $PROFILE > $DOTFILES_REPO/profile
         success "Using profile: $PROFILE"
     fi
 }
