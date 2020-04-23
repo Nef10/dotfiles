@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 main() {
+    ask_for_profile
     ask_for_sudo
     if [[ "$1" != "--no-pull" ]]; then
         clone_dotfiles_repo
@@ -16,6 +17,19 @@ main() {
 }
 
 DOTFILES_REPO=$HOME/.dotfiles
+
+function ask_for_profile() {
+    step "Asking for profile"
+    if [[ -f $DOTFILES_REPO/profile ]]; then
+        PROFILE=$(cat $DOTFILES_REPO/profile)
+        success "Found saved profile: $PROFILE"
+    else
+        info "Please enter the profile to be used (private|work):"
+        read PROFILE
+        echo $PROFILE > profile
+        success "Using profile: $PROFILE"
+    fi
+}
 
 function ask_for_sudo() {
     step "Prompting for sudo password"
