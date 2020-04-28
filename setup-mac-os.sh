@@ -54,7 +54,7 @@ function install_homebrew() {
     if hash brew 2>/dev/null; then
         info "Homebrew already exists"
     else
-        if /usr/bin/ruby -e ${DOTFILES_REPO}/installers/homebrew; then
+        if true | bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"; then
             success "Homebrew installation succeeded"
         else
             error "Homebrew installation failed"
