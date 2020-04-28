@@ -18,6 +18,8 @@ main() {
 
 DOTFILES_REPO=$HOME/.dotfiles
 
+# Steps
+
 function ask_for_profile() {
     step "Asking for profile"
     if [[ -f $DOTFILES_REPO/profile ]]; then
@@ -43,37 +45,8 @@ function ask_for_sudo() {
     fi
 }
 
-function addTemplateToFileIfNeeded() {
-    createFileIfNeeded $3
-    step "Setting up ${2} in ${3}"
-    if [[ -z $(comm -13 $3 $1) ]]; then
-        info "${2} already set up in ${3}"
-    else
-        if echo "$(cat ${1})" >> $3; then
-            success "${2} successfully set up in ${3}"
-        else
-            error "Failed to set up ${2} in ${3}"
-        fi
-    fi
-}
-
-function createFileIfNeeded() {
-    step "creating ${1} if needed"
-    if test -e $1; then
-        info "${1} already exists"
-    else
-        if touch $1; then
-            success "${1} created successfully"
-        else
-            error "${1} could not be created"
-        fi
-    fi
-}
-
-function finish() {
-    echo ""
-    success "Finished successfully!"
-    info "Please restart your Terminal for the applied changes to take effect."
+function clone_dotfiles_repo() {
+    clone_or_update "Dotfiles" ${DOTFILES_REPO} "https://github.com/Nef10/dotfiles.git"
 }
 
 function install_homebrew() {
@@ -86,6 +59,35 @@ function install_homebrew() {
         else
             error "Homebrew installation failed"
         fi
+    fi
+}
+
+function install_packages_with_brewfile() {
+    DEFAULT_BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
+    PROFILE_BREW_FILE_PATH="${DOTFILES_REPO}/brew/${PROFILE}.Brewfile"
+    step "Installing software with brew"
+    if cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle check --no-upgrade --file=- &> /dev/null; then
+        info "Brewfile's dependencies are already satisfied"
+    else
+        if cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle --no-upgrade --file=-; then
+            success "Brewfile installation succeeded"
+        else
+            error "Brewfile installation failed"
+        fi
+    fi
+}
+
+function setup_macOS_defaults() {
+    step "Updating macOS defaults"
+
+    current_dir=$(pwd)
+    cd ${DOTFILES_REPO}/macOS
+    if bash defaults.sh; then
+        cd $current_dir
+        success "macOS defaults updated successfully"
+    else
+        cd $current_dir
+        error "macOS defaults update failed"
     fi
 }
 
@@ -150,37 +152,13 @@ function configure_vscode() {
     done
 }
 
-function install_packages_with_brewfile() {
-    DEFAULT_BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
-    PROFILE_BREW_FILE_PATH="${DOTFILES_REPO}/brew/${PROFILE}.Brewfile"
-    step "Installing software with brew"
-    if cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle check --no-upgrade --file=- &> /dev/null; then
-        info "Brewfile's dependencies are already satisfied"
-    else
-        if cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle --no-upgrade --file=-; then
-            success "Brewfile installation succeeded"
-        else
-            error "Brewfile installation failed"
-        fi
-    fi
+function finish() {
+    echo ""
+    success "Finished successfully!"
+    info "Please restart your Terminal for the applied changes to take effect."
 }
 
-function clone_dotfiles_repo() {
-    clone_or_update "Dotfiles" ${DOTFILES_REPO} "https://github.com/Nef10/dotfiles.git"
-}
-
-function copy_file() {
-    step "Copying ${1}"
-    if diff -q $2 $3 &> /dev/null; then
-        info "${1} already the same"
-    else
-        if cp $2 $3; then
-            success "${1} copied"
-        else
-            error "Failed to copy ${1}"
-        fi
-    fi
-}
+# Git helper
 
 function clone_or_update() {
     step "Cloning ${1} repository into ${2}"
@@ -210,19 +188,49 @@ function pull_latest() {
     fi
 }
 
-function setup_macOS_defaults() {
-    step "Updating macOS defaults"
+# File helper
 
-    current_dir=$(pwd)
-    cd ${DOTFILES_REPO}/macOS
-    if bash defaults.sh; then
-        cd $current_dir
-        success "macOS defaults updated successfully"
+function createFileIfNeeded() {
+    step "creating ${1} if needed"
+    if test -e $1; then
+        info "${1} already exists"
     else
-        cd $current_dir
-        error "macOS defaults update failed"
+        if touch $1; then
+            success "${1} created successfully"
+        else
+            error "${1} could not be created"
+        fi
     fi
 }
+
+function copy_file() {
+    step "Copying ${1}"
+    if diff -q $2 $3 &> /dev/null; then
+        info "${1} already the same"
+    else
+        if cp $2 $3; then
+            success "${1} copied"
+        else
+            error "Failed to copy ${1}"
+        fi
+    fi
+}
+
+function addTemplateToFileIfNeeded() {
+    createFileIfNeeded $3
+    step "Setting up ${2} in ${3}"
+    if [[ -z $(comm -13 $3 $1) ]]; then
+        info "${2} already set up in ${3}"
+    else
+        if echo "$(cat ${1})" >> $3; then
+            success "${2} successfully set up in ${3}"
+        else
+            error "Failed to set up ${2} in ${3}"
+        fi
+    fi
+}
+
+# Print helper
 
 function step() {
     print -P "%F{blue}=> $1%f"
