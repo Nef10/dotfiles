@@ -164,7 +164,7 @@ function clone_or_update() {
     step "Cloning ${1} repository into ${2}"
     if test -e $2; then
         info "${2} already exists"
-        pull_latest $2
+        pull_latest $1 $2
     else
         if git clone "$3" $2; then
             success "${1} repository cloned into ${2}"
@@ -177,13 +177,13 @@ function clone_or_update() {
 function pull_latest() {
     step "Pulling latest changes in ${1} repository"
     git -C $1 fetch &> /dev/null
-    if [ $(git -C $HOME/.dotfiles rev-parse HEAD) '==' $(git -C $HOME/.dotfiles rev-parse @{u}) ]; then
+    if [ $(git -C $2 rev-parse HEAD) '==' $(git -C $2 rev-parse @{u}) ]; then
         info "${1} already up to date"
     else
-        if git -C $1 pull origin master &> /dev/null; then
+        if git -C $2 pull origin master &> /dev/null; then
             success "Pull in ${1} successful"
         else
-            error "Failed, Please pull latest changes in ${1} repository manually"
+            error "Failed, please pull latest changes in ${1} repository manually"
         fi
     fi
 }
