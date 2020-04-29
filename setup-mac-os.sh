@@ -8,7 +8,7 @@ main() {
     fi
     install_homebrew
     install_packages_with_brewfile
-    setup_macOS_defaults
+    set_settings
     configure_zsh
     configure_git
     configure_ssh
@@ -77,12 +77,19 @@ function install_packages_with_brewfile() {
     fi
 }
 
-function setup_macOS_defaults() {
-    step "Updating macOS defaults"
+function set_settings() {
+    step "Updating macOS settings"
     if zsh ${DOTFILES_REPO}/settings/macOS.sh $DOTFILES_REPO; then
-        success "macOS defaults updated successfully"
+        success "macOS settings updated successfully"
     else
-        error "macOS defaults update failed"
+        error "macOS settings update failed"
+    fi
+
+    step "Updating The Unarchiver settings"
+    if zsh ${DOTFILES_REPO}/settings/the_unarchiver.sh $DOTFILES_REPO; then
+        success "The Unarchiver settings updated successfully"
+    else
+        error "The Unarchiver settings update failed"
     fi
 }
 
