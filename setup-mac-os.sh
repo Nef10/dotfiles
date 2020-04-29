@@ -79,14 +79,9 @@ function install_packages_with_brewfile() {
 
 function setup_macOS_defaults() {
     step "Updating macOS defaults"
-
-    current_dir=$(pwd)
-    cd ${DOTFILES_REPO}/macOS
-    if bash defaults.sh; then
-        cd $current_dir
+    if zsh ${DOTFILES_REPO}/settings/macOS.sh $DOTFILES_REPO; then
         success "macOS defaults updated successfully"
     else
-        cd $current_dir
         error "macOS defaults update failed"
     fi
 }

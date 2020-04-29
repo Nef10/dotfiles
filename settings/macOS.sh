@@ -11,7 +11,7 @@ main() {
     configure_safari
     configure_text_edit
     configure_app_store
-    configure_terminal
+    configure_terminal $1
     configure_misc
 }
 
@@ -276,9 +276,9 @@ function configure_app_store() {
 }
 
 function configure_terminal() {
-    start=$(grep -n "<dict>" ../terminal-theme/atom-one-dark.terminal | cut -f1 -d:)
-    end=$(grep -n "</dict>" ../terminal-theme/atom-one-dark.terminal | cut -f1 -d:)
-    theme=$(tail -n +$start ../terminal-theme/atom-one-dark.terminal | head -n $((end-start+1)))
+    start=$(grep -n "<dict>" $1/terminal-theme/atom-one-dark.terminal | cut -f1 -d:)
+    end=$(grep -n "</dict>" $1/terminal-theme/atom-one-dark.terminal | cut -f1 -d:)
+    theme=$(tail -n +$start $1/terminal-theme/atom-one-dark.terminal | head -n $((end-start+1)))
     defaults write com.apple.terminal "Window Settings" -dict-add "atom-one-dark" "$theme"
     defaults write com.apple.terminal "Default Window Settings" -string "atom-one-dark"
     defaults write com.apple.terminal "Startup Window Settings" -string "atom-one-dark"
