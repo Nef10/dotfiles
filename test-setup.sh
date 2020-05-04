@@ -11,6 +11,8 @@ main() {
     diff_brew_packages
     diff_brew_casks
     diff_brew_taps
+    diff_settings
+    diff_terminal_theme
     diff_git
     diff_ssh
     diff_zsh
@@ -112,6 +114,18 @@ function diff_brew_taps() {
         success "No difference found"
     fi
 
+}
+
+function diff_settings() {
+    step "macOS Settings"
+    zsh $DOTFILES_REPO/settings/settings.sh $DOTFILES_REPO/settings/macOS.csv
+    step "The Unarchiver Settings"
+    zsh $DOTFILES_REPO/settings/settings.sh $DOTFILES_REPO/settings/the_unarchiver.csv
+}
+
+function diff_terminal_theme() {
+    step "Terminal Theme"
+    zsh $DOTFILES_REPO/terminal-theme/terminal-theme.sh
 }
 
 function diff_vscode_missing_extensions() {
