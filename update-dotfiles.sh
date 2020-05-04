@@ -16,7 +16,7 @@ main() {
         warning "Update needed"
         step "Updating..."
         git -C $HOME/.dotfiles pull | prependInfo # pull first, so the script is updated before executing
-        $HOME/.dotfiles/setup-mac-os.sh --no-pull
+        $HOME/.dotfiles/setup-mac-os.sh --update
     fi
     step "Update Homebrew"
     update=$(brew update | head -n 1)
