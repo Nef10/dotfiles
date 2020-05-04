@@ -1,0 +1,7 @@
+app,description,domain,setting,type,value,currentHost,overrideCurrentValueComparison
+The Unarchiver,Do not modify date of extracted files,cx.c3.theunarchiver,changeDateOfFiles,bool,false,false,false
+The Unarchiver,Create folder only if there is more than one top level item,cx.c3.theunarchiver,createFolder,int,1,false,false
+The Unarchiver,Delete archive after extraction,cx.c3.theunarchiver,deleteExtractedArchive,bool,true,false,false
+The Unarchiver,Extract to same folder as archive,cx.c3.theunarchiver,extractionDestination,int,1,false,false
+The Unarchiver,Set modification date of the extracted folder to the modification data of the archive,cx.c3.theunarchiver,folderModifiedDate,int,2,false,false
+The Unarchiver,Open extracted items in Finder,cx.c3.theunarchiver,selectExtractedItem,bool,true,false,false

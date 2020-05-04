@@ -9,6 +9,7 @@ main() {
     install_homebrew
     install_packages_with_brewfile
     set_settings
+    set_terminal_theme
     configure_zsh
     configure_git
     configure_ssh
@@ -79,18 +80,15 @@ function install_packages_with_brewfile() {
 
 function set_settings() {
     step "Updating macOS settings"
-    if zsh ${DOTFILES_REPO}/settings/macOS.sh $DOTFILES_REPO; then
-        success "macOS settings updated successfully"
-    else
-        error "macOS settings update failed"
-    fi
+    zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/macOS.csv set
 
     step "Updating The Unarchiver settings"
-    if zsh ${DOTFILES_REPO}/settings/the_unarchiver.sh $DOTFILES_REPO; then
-        success "The Unarchiver settings updated successfully"
-    else
-        error "The Unarchiver settings update failed"
-    fi
+    zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/the_unarchiver.csv set
+}
+
+function set_terminal_theme() {
+    step "Add Termial Theme"
+    zsh ${DOTFILES_REPO}/terminal-theme/terminal-theme.sh $DOTFILES_REPO/terminal-theme/atom-one-dark.terminal
 }
 
 function configure_zsh() {
