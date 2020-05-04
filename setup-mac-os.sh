@@ -3,7 +3,7 @@
 main() {
     ask_for_profile
     ask_for_sudo
-    if [[ "$1" != "--no-pull" ]]; then
+    if [[ "$1" != "--update" ]]; then
         clone_dotfiles_repo
     fi
     install_homebrew
@@ -14,7 +14,9 @@ main() {
     configure_git
     configure_ssh
     configure_vscode
-    finish
+    if [[ "$1" != "--update" ]]; then
+        finish
+    fi
 }
 
 DOTFILES_REPO=$HOME/.dotfiles
