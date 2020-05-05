@@ -64,7 +64,7 @@ function settings() {
         if [[ $current != $expected ]]; then
             allInAppCorrect=false
             if [[ $2 == "set" ]]; then
-                if [[ $type == "true" ]]; then
+                if [[ $currentHost == "true" ]]; then
                     if [[ $type == "xml" ]]; then
                         defaults -currentHost write $domain $setting $value
                     else
