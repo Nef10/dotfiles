@@ -27,13 +27,12 @@ function settings() {
             fi
             allInAppCorrect=true
 
-            if [[ $2 == "set" && $app != "Misc" ]]; then
+            if [[ $changed == true ]]; then
                 killall "$lastApp" > /dev/null 2>&1
+                changed=false
             fi
+
             print -P "%F{white}==> $app"
-            if [[ $2 == "set" && $app != "Misc" ]]; then
-                killall "$app" > /dev/null 2>&1
-            fi
         fi
 
         if [[ $currentHost == "true" ]]; then
@@ -64,6 +63,10 @@ function settings() {
         if [[ $current != $expected ]]; then
             allInAppCorrect=false
             if [[ $2 == "set" ]]; then
+                if [[ changed != true && $app != "Misc" ]]; then
+                    killall "$app" > /dev/null 2>&1
+                    changed=true
+                fi
                 if [[ $currentHost == "true" ]]; then
                     if [[ $type == "xml" ]]; then
                         defaults -currentHost write $domain $setting $value
