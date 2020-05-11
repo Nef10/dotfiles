@@ -16,7 +16,7 @@ function gb() { # git back after feature branch is merged
         if [[ ! -z $branchab ]]; then
             if [[ ! -z $(grep "+0" <<< $branchab) ]]; then
                 mainBranch="master"
-                branch=$(git name-rev --name-only HEAD)
+                branch=$(git rev-parse --abbrev-ref HEAD)
                 remote=$(git config branch.$branch.remote)
                 git fetch $remote $mainBranch &>/dev/null
                 if [[ ! $(git cherry $remote/$mainBranch $branch | grep "^+") ]]; then
