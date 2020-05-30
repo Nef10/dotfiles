@@ -7,3 +7,4 @@ HookyQR.beautify
 GitHub.vscode-pull-request-github
 ms-python.python
 syler.sass-indented
+donjayamanne.githistory
