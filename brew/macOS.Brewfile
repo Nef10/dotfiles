@@ -9,6 +9,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/command-not-found"
 tap "cloudfoundry/tap"
 tap "github/gh"
+tap "kylef/formulae"
 
 ############################################################################
 # brew
@@ -34,6 +35,9 @@ brew "htop"
 brew "beancount"
 brew "tldr"
 brew "github/gh/gh"
+brew "fastlane"
+brew "kylef/formulae/swiftenv"
+brew "mint"
 
 ############################################################################
 # cask
@@ -44,7 +48,6 @@ cask "visual-studio-code"
 cask "sourcetree"
 cask "slack"
 cask "zoomus"
-cask "fastlane"
 cask "font-fira-code"
 cask "pgadmin4"
 cask "anaconda"
