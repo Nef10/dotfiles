@@ -13,6 +13,7 @@ setopt share_history          # share command history data between zsh sessions
 
 HISTSIZE=50000
 SAVEHIST=10000
+CORRECT_IGNORE_FILE='.*'
 
 # Environment variables
 
