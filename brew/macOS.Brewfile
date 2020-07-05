@@ -69,3 +69,4 @@ mas "Quiver", id: 866773894
 mas "The Unarchiver", id: 425424353
 mas "iMovie", id: 408981434
 mas "SQLPro for SQLite (Lite)", id: 635299994
+mas "Developer", id: 640199958
