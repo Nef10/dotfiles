@@ -49,7 +49,7 @@ bindkey "^I" expand-or-complete-with-dots
 
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
-eval "$(swiftenv init -)"
+#eval "$(swiftenv init -)"
 
 # Spaceship promt
 
