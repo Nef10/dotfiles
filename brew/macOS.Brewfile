@@ -55,6 +55,7 @@ cask "postman"
 cask "sf-symbols"
 cask "1password"
 cask "swiftdefaultappsprefpane"
+cask "monitorcontrol"
 
 ############################################################################
 # mas
