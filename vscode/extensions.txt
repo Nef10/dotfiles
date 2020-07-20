@@ -13,3 +13,4 @@ bierner.markdown-checkbox
 bierner.markdown-emoji
 bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
+DotJoshJohnson.xml
