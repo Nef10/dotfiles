@@ -33,5 +33,6 @@
       "beancount.instantAlignment": false,
       "terminal.integrated.shell.osx": "/bin/zsh",
       "debug.node.autoAttach": "on",
-      "editor.renderWhitespace": "selection"
+      "editor.renderWhitespace": "selection",
+      "workbench.editor.highlightModifiedTabs": true
 }
