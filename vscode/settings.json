@@ -34,5 +34,26 @@
       "terminal.integrated.shell.osx": "/bin/zsh",
       "debug.node.autoAttach": "on",
       "editor.renderWhitespace": "selection",
-      "workbench.editor.highlightModifiedTabs": true
+      "workbench.editor.highlightModifiedTabs": true,
+      "maptz.regionfolder": {
+        "[beancount]": {
+          "foldEnd": "; END",
+          "foldEndRegex": "; END [*] .*",
+          "foldStart": "; * [NAME]",
+          "foldStartRegex": "; [*] .*",
+          "disableFolding": false,
+          "foldDefinitions": [
+            {
+              "foldEndRegex": "; END [*][*] .*",
+              "foldStartRegex": "; [*][*] .*",
+              "isFoldedByDefault": false
+            },
+            {
+              "foldEndRegex": "; END [*][*][*] .*",
+              "foldStartRegex": "; [*][*][*] .*",
+              "isFoldedByDefault": false
+            }
+          ]
+        }
+      }
 }
