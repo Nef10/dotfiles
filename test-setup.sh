@@ -86,7 +86,7 @@ function diff_brew_casks() {
     step "Additional Brew Casks"
     CASKS_SAME=0
     CASKS_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle list --casks --file=-)
-    brew cask list | while read -r casks_name ;
+    brew list --cask | while read -r casks_name ;
     do
         if ! echo $CASKS_TARGET | grep -c $casks_name &> /dev/null; then
             CASKS_SAME=1
