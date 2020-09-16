@@ -164,6 +164,7 @@ function diff_vscode_extensions() {
 
 function diff_vscode_settings() {
     diff_file "VSCode Settings" $DOTFILES_REPO/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+    diff_file "VSCode Keybindings" $DOTFILES_REPO/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 }
 
 function diff_git() {
