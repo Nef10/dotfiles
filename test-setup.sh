@@ -172,7 +172,8 @@ function diff_git() {
 }
 
 function diff_ssh() {
-    diff_file "ssh config" $DOTFILES_REPO/ssh/config_template $HOME/.ssh/config
+    SSH_CONFIG_TEMPLATE="$DOTFILES_REPO/ssh/config_template_$PROFILE"
+    diff_file "ssh config" $SSH_CONFIG_TEMPLATE $HOME/.ssh/config
 }
 
 function diff_zsh() {

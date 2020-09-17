@@ -135,7 +135,8 @@ function configure_git() {
 }
 
 function configure_ssh() {
-    addTemplateToFileIfNeeded $DOTFILES_REPO/ssh/config_template "ssh config include" $HOME/.ssh/config
+    SSH_CONFIG_TEMPLATE="$DOTFILES_REPO/ssh/config_template_$PROFILE"
+    addTemplateToFileIfNeeded $SSH_CONFIG_TEMPLATE "ssh config include" $HOME/.ssh/config
 }
 
 function configure_vscode() {

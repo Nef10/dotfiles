@@ -1,0 +1,6 @@
+Include ~/.dotfiles/ssh/config
+
+Host bitbucket.org
+  User git
+  IdentityFile ~/.ssh/id_rsa_ghg
+  IdentitiesOnly yes
