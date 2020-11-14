@@ -53,7 +53,7 @@ Finder,Enable AirDrop over Ethernet and on unsupported Macs running Lion,com.app
 Finder,Set expanded sections in the info panel,com.apple.finder,FXInfoPanesExpanded,xml,<dict><key>Comments</key><false/><key>General</key><true/><key>MetaData</key><true/><key>Name</key><false/><key>OpenWith</key><true/><key>Privileges</key><true/></dict>,false,{Comments=0;General=1;MetaData=1;Name=0;OpenWith=1;Privileges=1;}
 Finder,Do not write .DS_Store files on Network devices,com.apple.desktopservices,DSDontWriteNetworkStores,bool,true,false,false
 Finder,Do not write .DS_Store files on USB devices,com.apple.desktopservices,DSDontWriteUSBStores,bool,true,false,false
-SystemUIServer,Set clock format in menu bar,com.apple.menuextra.clock,DateFormat,string,EEE MMM d  HH:mm:ss,false,false
+SystemUIServer,Set clock format in menu bar,com.apple.menuextra.clock,DateFormat,string,EEE MMM d  H:mm:ss,false,false
 SystemUIServer,Set clock format in menu bar,com.apple.menuextra.clock,FlashDateSeparators,bool,false,false,false
 SystemUIServer,Set clock format in menu bar,com.apple.menuextra.clock,IsAnalog,bool,false,false,false
 Calendar,Start Week on Monday,com.apple.iCal,first day of week,int,1,false,false
