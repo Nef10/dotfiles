@@ -16,3 +16,4 @@ bierner.markdown-yaml-preamble
 DotJoshJohnson.xml
 maptz.regionfolder
 ms-dotnettools.csharp
+ms-toolsai.jupyter
