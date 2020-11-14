@@ -7,6 +7,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "homebrew/command-not-found"
+tap "homebrew/cask-versions"
 tap "cloudfoundry/tap"
 tap "kylef/formulae"
 
