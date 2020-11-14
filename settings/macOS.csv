@@ -42,6 +42,7 @@ Finder,Show icons for mounted servers on Desktop,com.apple.finder,ShowMountedSer
 Finder,Show icons for removable media on Desktop,com.apple.finder,ShowRemovableMediaOnDesktop,bool,true,false,false
 Finder,Enable status bar,com.apple.finder,ShowStatusBar,bool,true,false,false
 Finder,Enable path bar,com.apple.finder,ShowPathbar,bool,true,false,false
+Finder,Always show tab bar,com.apple.finder,NSWindowTabbingShoudShowTabBarKey-com.apple.finder.TBrowserWindow,bool,true,false,false
 Finder,Show full path in title,com.apple.finder,_FXShowPosixPathInTitle,bool,true,false,false
 Finder,Search the current folder by default,com.apple.finder,FXDefaultSearchScope,string,SCcf,false,false
 Finder,Show all filename extensions,NSGlobalDomain,AppleShowAllExtensions,bool,true,false,false
