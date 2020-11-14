@@ -8,7 +8,7 @@ It does:
 - configure my dotfiles for various tools (git, ssh, zsh)
 - configure VSCode, and install extensions
 
-This work was inspried by https://github.com/sam-hosseini/dotfiles and https://github.com/mathiasbynens/dotfiles. The terminal theme is based on https://github.com/nathanbuchar/atom-one-dark-terminal. It is intended for Macs running on Catalina with zsh as shell.
+This work was inspried by https://github.com/sam-hosseini/dotfiles and https://github.com/mathiasbynens/dotfiles. The terminal theme is based on https://github.com/nathanbuchar/atom-one-dark-terminal. It is intended for Macs running on Catalina or newer with zsh as shell.
 
 ## Use
 
