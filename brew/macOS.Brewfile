@@ -13,6 +13,7 @@ tap "kylef/formulae"
 ############################################################################
 # mas (Needs to be first because some other formulas depend on Xcode)
 ############################################################################
+brew "mas"
 mas "Xcode", id: 497799835
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
@@ -24,11 +25,9 @@ mas "SQLPro for SQLite (Lite)", id: 635299994
 mas "Developer", id: 640199958
 mas "CopyClip", id: 595191960
 
-
 ############################################################################
 # brew
 ############################################################################
-brew "mas"
 brew "git"
 brew "git-lfs"
 brew "repo"
