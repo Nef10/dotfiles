@@ -143,7 +143,7 @@ function configure_ssh() {
 }
 
 function configure_vscode() {
-    if [[ ! -d $HOME/.ssh ]]; then
+    if [[ ! -d $HOME/Library/Application\ Support/Code/User ]]; then
         mkdir -p $HOME/Library/Application\ Support/Code/User
     fi
     copy_file "VSCode settings" $DOTFILES_REPO/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
