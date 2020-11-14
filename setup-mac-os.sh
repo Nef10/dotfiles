@@ -3,10 +3,10 @@
 main() {
     ask_for_profile
     ask_for_sudo
+    install_homebrew
     if [[ "$1" != "--update" ]]; then
         clone_dotfiles_repo
     fi
-    install_homebrew
     install_packages_with_brewfile
     set_settings
     set_terminal_theme
