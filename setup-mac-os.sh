@@ -176,7 +176,7 @@ function finish() {
 
 function clone_or_update() {
     step "Cloning ${1} repository into ${2}"
-    if test -e $2; then
+    if test -e $2/.git; then
         info "${2} already exists"
         pull_latest $1 $2
     else
