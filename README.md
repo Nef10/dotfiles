@@ -12,6 +12,12 @@ This work was inspried by https://github.com/sam-hosseini/dotfiles and https://g
 
 ## Use
 
+### Requirements
+
+Before installing please make sure the following conditions are fullfilled:
+
+- You are signed in to the Mac App Store
+
 ### Install
 
 To install use the following line at own risk: (Please don't actually do this - it is not good practice to just execute random code from the internet - and it uses my settings which you probably want to adjust beforehand - at least the git user)
