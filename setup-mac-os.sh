@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 main() {
-    create_folder_if_necessary
     ask_for_profile
     ask_for_sudo
     install_homebrew
@@ -24,12 +23,6 @@ DOTFILES_REPO=$HOME/.dotfiles
 
 # Steps
 
-function create_folder_if_necessary() {
-    if [[ ! -d $DOTFILES_REPO ]]; then
-        mkdir $DOTFILES_REPO
-    fi
-}
-
 function ask_for_profile() {
     step "Asking for profile"
     if [[ -f $DOTFILES_REPO/profile ]]; then
@@ -38,7 +31,6 @@ function ask_for_profile() {
     else
         info "Please enter the profile to be used (private|work):"
         read PROFILE
-        echo $PROFILE > $DOTFILES_REPO/profile
         success "Using profile: $PROFILE"
     fi
 }
@@ -57,6 +49,7 @@ function ask_for_sudo() {
 
 function clone_dotfiles_repo() {
     clone_or_update "Dotfiles" ${DOTFILES_REPO} "https://github.com/Nef10/dotfiles.git"
+    echo $PROFILE > $DOTFILES_REPO/profile
 }
 
 function install_homebrew() {
@@ -176,7 +169,7 @@ function finish() {
 
 function clone_or_update() {
     step "Cloning ${1} repository into ${2}"
-    if test -e $2/.git; then
+    if test -e $2; then
         info "${2} already exists"
         pull_latest $1 $2
     else
