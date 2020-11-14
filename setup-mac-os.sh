@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 main() {
+    create_folder_if_necessary
     ask_for_profile
     ask_for_sudo
     install_homebrew
@@ -22,6 +23,12 @@ main() {
 DOTFILES_REPO=$HOME/.dotfiles
 
 # Steps
+
+function create_folder_if_necessary() {
+    if [[ ! -d $DOTFILES_REPO ]]; then
+        mkdir $DOTFILES_REPO
+    fi
+}
 
 function ask_for_profile() {
     step "Asking for profile"
