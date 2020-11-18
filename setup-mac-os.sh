@@ -88,6 +88,9 @@ function set_settings() {
     step "Updating The Unarchiver settings"
     zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/the_unarchiver.csv set
 
+    step "Updating KeepingYouAwake settings"
+    zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/keeping_you_awake.csv set
+
     step "Updating macOS configuration"
     zsh ${DOTFILES_REPO}/macOS/macOS.sh set
 }
