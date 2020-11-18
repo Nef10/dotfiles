@@ -19,6 +19,7 @@ main() {
     diff_vscode_missing_extensions
     diff_vscode_extensions
     diff_vscode_settings
+    diff_quartz_filters
 }
 
 DOTFILES_REPO=$HOME/.dotfiles
@@ -180,6 +181,24 @@ function diff_ssh() {
 
 function diff_zsh() {
     diff_file ".zshrc" $DOTFILES_REPO/zsh/.zshrc_template $HOME/.zshrc
+}
+
+function diff_quartz_filters() {
+    diff_file "Quartz Filter Minimal" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Minimal.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Minimal.qfilter
+    diff_file "Quartz Filter Medium" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Medium.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Medium.qfilter
+    diff_file "Quartz Filter Extreme" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Extreme.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Extreme.qfilter
+    step "Additional Quartz filters"
+    ADDITIONAL_FILTERS=0
+    ls $HOME/Library/Filters/*.qfilter | while read filename ;
+    do
+        if [[ ! ( "$filename" = "$HOME/Library/Filters/Reduce File Size Minimal.qfilter" || "$filename" = "$HOME/Library/Filters/Reduce File Size Medium.qfilter" || "$filename" = "$HOME/Library/Filters/Reduce File Size Extreme.qfilter" ) ]] then
+            ADDITIONAL_FILTERS=1
+            warning "Quartz filter $filename is installed but not included in the dotfiles"
+        fi
+    done
+    if [[ "$ADDITIONAL_FILTERS" -eq 0 ]]; then
+        success "No additional quartz filters found"
+    fi
 }
 
 function diff_file() {
