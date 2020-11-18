@@ -5,7 +5,7 @@
 - Documents no synced to a cloud (check home dir)
 - Keys / Certificates (SSH, GPG, Apple Developer)
 - Changes in repositories which are not pushed
-- Configurations (e.g. BetterTouchTool)
+- Configurations (e.g. BetterTouchTool, SwiftBeanCountImporter)
 - Quartz Filters
 - Bookmarks
 - Desktop background pictures
