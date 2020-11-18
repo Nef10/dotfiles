@@ -14,6 +14,7 @@ main() {
     configure_git
     configure_ssh
     configure_vscode
+    install_quartz_filter
     if [[ "$1" != "--update" ]]; then
         finish
     fi
@@ -163,6 +164,15 @@ function configure_vscode() {
             fi
         fi
     done
+}
+
+function install_quartz_filter() {
+    if [[ ! -d $HOME/Library/Filters ]]; then
+        mkdir -p $HOME/Library/Filters
+    fi
+    copy_file "Quartz Filter Minimal" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Minimal.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Minimal.qfilter
+    copy_file "Quartz Filter Medium" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Medium.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Medium.qfilter
+    copy_file "Quartz Filter Extreme" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Extreme.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Extreme.qfilter
 }
 
 function finish() {
