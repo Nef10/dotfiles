@@ -6,7 +6,6 @@
 - Keys / Certificates (SSH, GPG, Apple Developer)
 - Changes in repositories which are not pushed
 - Configurations (e.g. BetterTouchTool, SwiftBeanCountImporter)
-- Quartz Filters
 - Bookmarks
 - Desktop background pictures
 - Password manager recovery document
