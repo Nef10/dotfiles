@@ -89,7 +89,7 @@ BREW_PREFIX="$(brew --prefix)"
 # Syntax Highlighting
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-source $HOME/.dotfiles/checkout/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # History Searching
 
