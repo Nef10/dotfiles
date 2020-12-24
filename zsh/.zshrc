@@ -88,6 +88,8 @@ BREW_PREFIX="$(brew --prefix)"
 
 # Auto Suggestions
 
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Syntax Highlighting
