@@ -82,6 +82,10 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
+# Helper
+
+BREW_PREFIX="$(brew --prefix)"
+
 # Syntax Highlighting
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
@@ -89,14 +93,14 @@ source $HOME/.dotfiles/checkout/zsh-syntax-highlighting/zsh-syntax-highlighting.
 
 # History Searching
 
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source "$BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=fg=black,bg=green,bold
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Homebrew command not found (see https://github.com/Homebrew/homebrew-command-not-found)
 
-HB_CNF_HANDLER="$(brew --prefix)/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+HB_CNF_HANDLER="$BREW_PREFIX/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER";
 fi
