@@ -52,6 +52,7 @@ brew "gh"
 brew "fastlane"
 brew "kylef/formulae/swiftenv"
 brew "mint"
+brew "jq"
 
 ############################################################################
 # cask
