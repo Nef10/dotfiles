@@ -86,6 +86,10 @@ SPACESHIP_PROMPT_ORDER=(
 
 BREW_PREFIX="$(brew --prefix)"
 
+# Auto Suggestions
+
+source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
 # Syntax Highlighting
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
