@@ -42,9 +42,9 @@ function ask_for_sudo() {
         # Keep-alive
         while true; do sudo --non-interactive true; \
             sleep 10; kill -0 "$$" || exit; done 2>/dev/null &
-        success "Sudo password updated"
+        success "Temporary sudo mode activated"
     else
-        error "Sudo password update failed"
+        error "sudo failed"
     fi
 }
 
