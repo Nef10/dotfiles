@@ -41,6 +41,11 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+[mergetool]
+
+	# Do not keep backups of the merge tool input files
+	keepBackup = false
+
 [rebase]
 
 	# Automatically stash and unstash your local changes
