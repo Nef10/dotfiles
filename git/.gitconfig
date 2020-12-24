@@ -11,7 +11,12 @@
 	# Speed up commands involving untracked files (https://git-scm.com/docs/git-update-index#_untracked_cache)
 	untrackedCache = true
 
+[init]
+
+	defaultBranch = main
+
 [user]
+
 	name = Steffen Kötte
 	email = steffen.koette@gmail.com
 
