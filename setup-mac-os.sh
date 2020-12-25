@@ -15,6 +15,7 @@ main() {
     configure_ssh
     configure_vscode
     install_quartz_filter
+    configure_openjdk
     if [[ "$1" != "--update" ]]; then
         finish
     fi
@@ -173,6 +174,15 @@ function install_quartz_filter() {
     copy_file "Quartz Filter Minimal" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Minimal.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Minimal.qfilter
     copy_file "Quartz Filter Medium" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Medium.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Medium.qfilter
     copy_file "Quartz Filter Extreme" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Extreme.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Extreme.qfilter
+}
+
+function configure_openjdk() {
+    if test -L "/Library/Java/JavaVirtualMachines/openjdk.jdk"; then
+        info "openjdk already linked"
+    else
+        ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+        success "openjdk linked"
+    fi
 }
 
 function finish() {
