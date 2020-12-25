@@ -21,6 +21,7 @@ export LESS=-R # let less output ANSI color escape sequences in raw, so the outp
 
 # Completion
 
+fpath=( "$HOME/.zfunctions" $fpath )
 autoload -Uz compinit compaudit
 compinit
 compaudit
@@ -53,7 +54,6 @@ eval "$(rbenv init -)"
 
 # Spaceship promt
 
-fpath=( "$HOME/.zfunctions" $fpath )
 autoload -U promptinit; promptinit
 prompt spaceship
 export SPACESHIP_EXIT_CODE_SHOW=true   # Show exit code
