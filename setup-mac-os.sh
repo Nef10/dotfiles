@@ -177,6 +177,7 @@ function install_quartz_filter() {
 }
 
 function configure_openjdk() {
+    step "Linking openjdk"
     if test -L "/Library/Java/JavaVirtualMachines/openjdk.jdk"; then
         info "openjdk already linked"
     else
