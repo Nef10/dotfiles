@@ -26,6 +26,8 @@ alias gu='git push'
 alias gl='git pull'
 alias gf='git fetch'
 
+alias glb='git checkout -b'
+
 alias gd='git diff'
 alias gds='git diff --staged'
 

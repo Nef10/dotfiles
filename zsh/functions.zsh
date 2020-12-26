@@ -43,6 +43,13 @@ function gb() { # git back after feature branch is merged
     fi
 }
 
+function grb() { # git create remote tracked branch
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    remote=$(git config branch.$branch.remote)
+    git checkout -b $1
+    git push $remote $1
+}
+
 # misc
 
 function cdf() { # cd to folder open in finder
