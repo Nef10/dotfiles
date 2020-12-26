@@ -47,7 +47,7 @@ function grb() { # git create remote tracked branch
     branch=$(git rev-parse --abbrev-ref HEAD)
     remote=$(git config branch.$branch.remote)
     git checkout -b $1
-    git push $remote $1
+    git push --set-upstream $remote $1
 }
 
 # misc
