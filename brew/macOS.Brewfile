@@ -56,6 +56,7 @@ brew "kylef/formulae/swiftenv"
 brew "mint"
 brew "jq"
 brew "bfg"
+brew "thefuck"
 
 ############################################################################
 # cask

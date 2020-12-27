@@ -48,6 +48,7 @@ bindkey "^I" expand-or-complete-with-dots
 
 # Misc
 
+eval "$(thefuck --alias fix)"
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
 #eval "$(swiftenv init -)"
