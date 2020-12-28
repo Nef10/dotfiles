@@ -18,6 +18,7 @@ CORRECT_IGNORE_FILE='.*'
 # Environment variables
 
 export LESS=-R # let less output ANSI color escape sequences in raw, so the output can be colorized
+export EDITOR=nano
 
 # Completion
 
