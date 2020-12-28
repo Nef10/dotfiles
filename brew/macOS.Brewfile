@@ -10,6 +10,7 @@ tap "homebrew/command-not-found"
 tap "homebrew/cask-versions"
 tap "cloudfoundry/tap"
 tap "kylef/formulae"
+tap "nef10/tap"
 
 ############################################################################
 # mas (Needs to be first because some other formulas depend on Xcode)
