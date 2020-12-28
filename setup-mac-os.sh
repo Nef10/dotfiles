@@ -181,8 +181,12 @@ function configure_openjdk() {
     if test -L "/Library/Java/JavaVirtualMachines/openjdk.jdk"; then
         info "openjdk already linked"
     else
-        ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-        success "openjdk linked"
+        if test -L "/usr/local/opt/openjdk"; then
+            ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+            success "openjdk linked"
+        else
+            warning "openjdk is not installed"
+        fi
     fi
 }
 
@@ -272,6 +276,10 @@ function step() {
 
 function info() {
     print -P "%F{white}===> $1%f"
+}
+
+function warning() {
+    print -P "%F{warning}===> $1%f"
 }
 
 function success() {

@@ -1,3 +1,5 @@
+brew "openjdk"
+
 cask "keepingyouawake"
 cask "spotify"
 cask "adobe-acrobat-reader"
