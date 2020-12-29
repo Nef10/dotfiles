@@ -35,6 +35,8 @@ function settings() {
             print -P "%F{white}==> $app"
         fi
 
+        domain=${domain:gs/~/$HOME}
+
         if [[ $currentHost == "true" ]]; then
             current=$(defaults -currentHost read $domain $setting)
         else

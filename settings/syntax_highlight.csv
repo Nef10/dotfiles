@@ -1,0 +1,5 @@
+app,description,domain,setting,type,value,currentHost,overrideCurrentValueComparison
+Syntax Highlight,Light Theme,~/Library/Preferences/org.sbarex.SourceCodeSyntaxHighlight.plist,theme-light,string,base16/one-light,false,false
+Syntax Highlight,Light Theme,~/Library/Preferences/org.sbarex.SourceCodeSyntaxHighlight.plist,theme-light-color,string,#fafafa,false,false
+Syntax Highlight,Dark Theme,~/Library/Preferences/org.sbarex.SourceCodeSyntaxHighlight.plist,theme-dark,string,base16/onedark,false,false
+Syntax Highlight,Dark Theme,~/Library/Preferences/org.sbarex.SourceCodeSyntaxHighlight.plist,theme-dark-color,string,#282c34,false,false
