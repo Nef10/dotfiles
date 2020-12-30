@@ -76,3 +76,4 @@
 
     last = log -1 HEAD
     remotes = remote -v
+    branches = branch -vv --all
