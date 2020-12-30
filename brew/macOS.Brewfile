@@ -58,6 +58,7 @@ brew "mint"
 brew "jq"
 brew "bfg"
 brew "thefuck"
+brew "gnupg"
 
 ############################################################################
 # cask
