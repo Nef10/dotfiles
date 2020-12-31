@@ -64,6 +64,7 @@ Calendar,Show 18 hours,com.apple.iCal,number of hours displayed,int,18,false,fal
 Xcode,Trim trailing whitespace,com.apple.dt.Xcode,DVTTextEditorTrimTrailingWhitespace,bool,true,false,false
 Xcode,Trim whitespace only lines,com.apple.dt.Xcode,DVTTextEditorTrimWhitespaceOnlyLines,bool,true,false,false
 Xcode,Show line numbers,com.apple.dt.Xcode,DVTTextShowLineNumbers,bool,true,false,false
+Xcode,Show build time,com.apple.dt.Xcode,ShowBuildOperationDuration,bool,true,false,false
 TextEdit,Enable Grammar check,com.apple.TextEdit,CheckGrammarWithSpelling,bool,true,false,false
 TextEdit,Use plain text mode for new TextEdit documents,com.apple.TextEdit,RichText,int,0,false,false
 TextEdit,Show HTML as source code,com.apple.TextEdit,IgnoreHTML,bool,true,false,false
