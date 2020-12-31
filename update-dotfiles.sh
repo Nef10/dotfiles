@@ -33,6 +33,12 @@ main() {
     else
         success "Already up-to-date"
     fi
+    step "Update tldr"
+    if tldr --update; then
+        success "Updated"
+    else
+        warning "Could not update tldr"
+    fi
 }
 
 function step() {
