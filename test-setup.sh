@@ -20,6 +20,7 @@ main() {
     diff_vscode_extensions
     diff_vscode_settings
     diff_quartz_filters
+    diff_home_applications
 }
 
 DOTFILES_REPO=$HOME/.dotfiles
@@ -200,6 +201,19 @@ function diff_quartz_filters() {
     done
     if [[ "$ADDITIONAL_FILTERS" -eq 0 ]]; then
         success "No additional quartz filters found"
+    fi
+}
+
+function diff_home_applications() {
+    step "Hidden flag of Application folder in home directory"
+    if [[ -d $HOME/Applications ]]; then
+        if [[ $(stat -f "%Xf" $HOME/Applications) -eq 8000 ]]; then
+            success "No difference found"
+        else
+            warning "Folder not hidden"
+        fi
+    else
+        warning "Application folder in home directory does not exist"
     fi
 }
 

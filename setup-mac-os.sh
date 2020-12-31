@@ -16,6 +16,7 @@ main() {
     configure_vscode
     install_quartz_filter
     configure_openjdk
+    hide_home_applications
     if [[ "$1" != "--update" ]]; then
         finish
     fi
@@ -190,6 +191,20 @@ function configure_openjdk() {
         else
             warning "openjdk is not installed"
         fi
+    fi
+}
+
+function hide_home_applications() {
+    step "Hiding Application folder in home directory"
+    if [[ -d $HOME/Applications ]]; then
+        if [[ $(stat -f "%Xf" $HOME/Applications) -eq 8000 ]]; then
+            info "folder already hidden"
+        else
+            chflags hidden $HOME/Applications
+            success "successfully hidden"
+        fi
+    else
+        warning "Application folder in home directory does not exist"
     fi
 }
 
