@@ -15,9 +15,9 @@ function gb() { # git back after feature branch is merged
         branchab=$(git status --porcelain=2 --branch | grep "# branch.ab")
         if [[ ! -z $branchab ]]; then
             if [[ ! -z $(grep "+0" <<< $branchab) ]]; then
-                mainBranch="master"
                 branch=$(git rev-parse --abbrev-ref HEAD)
                 remote=$(git config branch.$branch.remote)
+                mainBranch=$(git remote show $remote | sed -n "s/.*HEAD branch: \([^ ]*\).*/\1/p")
                 git fetch $remote $mainBranch &>/dev/null
                 if [[ ! $(git cherry $remote/$mainBranch $branch | grep "^+") ]]; then
                     if [[ $(git remote prune $remote --dry-run | grep "\[would prune\] $remote/$branch") ]]; then
