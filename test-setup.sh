@@ -21,6 +21,7 @@ main() {
     diff_vscode_settings
     diff_quartz_filters
     diff_home_applications
+    profile_specifics
 }
 
 DOTFILES_REPO=$HOME/.dotfiles
@@ -215,6 +216,10 @@ function diff_home_applications() {
     else
         warning "Application folder in home directory does not exist"
     fi
+}
+
+function profile_specifics() {
+    . ${DOTFILES_REPO}/profiles/test-${PROFILE}.sh
 }
 
 function diff_file() {

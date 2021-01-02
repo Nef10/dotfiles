@@ -17,6 +17,7 @@ main() {
     install_quartz_filter
     configure_openjdk
     hide_home_applications
+    profile_specifics
     if [[ "$1" != "--update" ]]; then
         finish
     fi
@@ -206,6 +207,10 @@ function hide_home_applications() {
     else
         warning "Application folder in home directory does not exist"
     fi
+}
+
+function profile_specifics() {
+    . ${DOTFILES_REPO}/profiles/setup-${PROFILE}.sh
 }
 
 function finish() {
