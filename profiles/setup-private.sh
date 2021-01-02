@@ -5,7 +5,7 @@ PROJECTS_DIR="$HOME/Projects"
 if [[ -d "${PROJECTS_DIR}" ]]; then
     info "Project folder already exists"
 else
-    mkdir "{$PROJECTS_DIR}"
+    mkdir "${PROJECTS_DIR}"
     success "Project folder created"
     step "Initializing repo"
     (cd "${PROJECTS_DIR}"; repo init -u git@github.com:Nef10/repo-manifest.git)
