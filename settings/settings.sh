@@ -38,9 +38,9 @@ function settings() {
         domain=${domain:gs/~/$HOME}
 
         if [[ $currentHost == "true" ]]; then
-            current=$(defaults -currentHost read $domain $setting)
+            current=$(defaults -currentHost read $domain $setting 2>/dev/null)
         else
-            current=$(defaults read $domain $setting)
+            current=$(defaults read $domain $setting 2>/dev/null)
         fi
 
         if [[ $value == *"$"* ]]; then
