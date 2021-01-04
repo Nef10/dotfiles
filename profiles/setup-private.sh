@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+step "Updating KeepingYouAwake settings"
+zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/keeping_you_awake.csv set
+
 step "Setup Project folder"
 PROJECTS_DIR="$HOME/Projects"
 if [[ -d "${PROJECTS_DIR}" ]]; then

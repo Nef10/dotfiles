@@ -124,8 +124,6 @@ function diff_settings() {
     zsh $DOTFILES_REPO/settings/settings.sh $DOTFILES_REPO/settings/macOS.csv
     step "The Unarchiver Settings"
     zsh $DOTFILES_REPO/settings/settings.sh $DOTFILES_REPO/settings/the_unarchiver.csv
-    step "KeepingYouAwake Settings"
-    zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/keeping_you_awake.csv
     step "Syntax Highlight Settings"
     zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/syntax_highlight.csv
     step "Rectangle Settings"
