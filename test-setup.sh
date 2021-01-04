@@ -128,6 +128,8 @@ function diff_settings() {
     zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/keeping_you_awake.csv
     step "Syntax Highlight Settings"
     zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/syntax_highlight.csv
+    step "Rectangle Settings"
+    zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/rectangle.csv
     step "macOS Configuration"
     zsh $DOTFILES_REPO/macOS/macOS.sh
 }
