@@ -187,7 +187,7 @@ function configure_openjdk() {
         info "openjdk already linked"
     else
         if test -L "/usr/local/opt/openjdk"; then
-            ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+            sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
             success "openjdk linked"
         else
             warning "openjdk is not installed"
