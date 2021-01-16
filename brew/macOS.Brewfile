@@ -25,7 +25,6 @@ mas "The Unarchiver", id: 425424353
 mas "iMovie", id: 408981434
 mas "SQLPro for SQLite (Lite)", id: 635299994
 mas "Developer", id: 640199958
-mas "CopyClip", id: 595191960
 
 ############################################################################
 # brew
@@ -80,3 +79,4 @@ cask "monitorcontrol"
 cask "syntax-highlight"
 cask "controlroom"
 cask "rectangle"
+cask "Maccy"
