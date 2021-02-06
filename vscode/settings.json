@@ -62,5 +62,7 @@
   "files.trimFinalNewlines": true,
   "files.insertFinalNewline": true,
   "search.useGlobalIgnoreFiles": true,
-  "git.autoStash": true
+  "git.autoStash": true,
+  "workbench.editor.decorations.badges": true,
+  "workbench.editor.decorations.colors": true
 }
