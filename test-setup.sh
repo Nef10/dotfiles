@@ -6,6 +6,7 @@ main() {
     PROFILE_BREW_FILE_PATH="${DOTFILES_REPO}/brew/${PROFILE}.Brewfile"
 
     diff_repo
+    diff_brew_completions
     diff_missing_brew
     diff_mas
     diff_brew_packages
@@ -38,6 +39,15 @@ function diff_repo() {
         else
             success "No difference found"
         fi
+    fi
+}
+
+function diff_brew_completions() {
+    step "Brew completions"
+    if brew completions state | grep -q "are linked"; then
+        success "Brew completions are linked"
+    else
+        warning "brew completions are not linked"
     fi
 }
 

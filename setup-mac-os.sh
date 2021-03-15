@@ -8,6 +8,7 @@ main() {
         clone_dotfiles_repo
     fi
     install_packages_with_brewfile
+    link_brew_completions
     set_settings
     set_terminal_theme
     configure_zsh
@@ -81,6 +82,16 @@ function install_packages_with_brewfile() {
         else
             error "Brewfile installation failed"
         fi
+    fi
+}
+
+function link_brew_completions() {
+    step "Linking brew completions"
+    if brew completions state | grep -q "are linked"; then
+        info "Brew completions are already linked"
+    else
+        brew completions link &> /dev/null
+        success "Brew completions linked successfully"
     fi
 }
 
