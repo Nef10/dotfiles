@@ -6,6 +6,7 @@ everettjf.filter-line
 HookyQR.beautify
 GitHub.vscode-pull-request-github
 ms-python.python
+ms-python.vscode-pylance
 syler.sass-indented
 donjayamanne.githistory
 bierner.github-markdown-preview
