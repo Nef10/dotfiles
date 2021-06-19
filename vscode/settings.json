@@ -31,8 +31,12 @@
   },
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "beancount.instantAlignment": false,
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "debug.node.autoAttach": "on",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "editor.renderWhitespace": "selection",
   "workbench.editor.highlightModifiedTabs": true,
   "maptz.regionfolder": {
@@ -64,5 +68,6 @@
   "search.useGlobalIgnoreFiles": true,
   "git.autoStash": true,
   "workbench.editor.decorations.badges": true,
-  "workbench.editor.decorations.colors": true
+  "workbench.editor.decorations.colors": true,
+  "editor.suggest.preview": true
 }
