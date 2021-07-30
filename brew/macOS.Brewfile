@@ -58,6 +58,7 @@ brew "jq"
 brew "bfg"
 brew "thefuck"
 brew "gnupg"
+brew "awscli"
 
 ############################################################################
 # cask
