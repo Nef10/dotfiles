@@ -7,6 +7,7 @@ main() {
 
     diff_repo
     diff_brew_completions
+    diff_swift_completions
     diff_missing_brew
     diff_mas
     diff_brew_packages
@@ -48,6 +49,15 @@ function diff_brew_completions() {
         success "Brew completions are linked"
     else
         warning "brew completions are not linked"
+    fi
+}
+
+function diff_swift_completions() {
+    step "Swift completions"
+    if test -e ~/.zfunctions/_swift; then
+        success "Swift completions already installed"
+    else
+        warning "Swift completions are not installed"
     fi
 }
 

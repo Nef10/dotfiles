@@ -9,6 +9,7 @@ main() {
     fi
     install_packages_with_brewfile
     link_brew_completions
+    install_swift_completions
     set_settings
     set_terminal_theme
     configure_zsh
@@ -92,6 +93,16 @@ function link_brew_completions() {
     else
         brew completions link &> /dev/null
         success "Brew completions linked successfully"
+    fi
+}
+
+function install_swift_completions() {
+    step "Installing swift completions"
+    if test -e ~/.zfunctions/_swift; then
+        info "Swift completions already installed"
+    else
+        swift package completion-tool generate-zsh-script > ~/.zfunctions/_swift
+        success "Swift completions installed successfully"
     fi
 }
 
