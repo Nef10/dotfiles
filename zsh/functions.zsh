@@ -50,6 +50,17 @@ function grb() { # git create remote tracked branch
     git push --set-upstream $remote $1
 }
 
+function geb() { # git create empty branch
+    if [[ -z $(git status --porcelain) ]]; then
+        git checkout --orphan $1
+        git rm -rf .
+        git commit --allow-empty -m "Create empty $1 branch"
+        git push origin $1
+    else
+        print -P "%F{red}You have uncommitted changes%f"
+    fi
+}
+
 # misc
 
 function cdf() { # cd to folder open in finder
