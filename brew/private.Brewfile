@@ -1,4 +1,5 @@
 brew "openjdk"
+brew "act"
 
 cask "keepingyouawake"
 cask "spotify"
