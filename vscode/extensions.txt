@@ -20,3 +20,4 @@ ms-dotnettools.csharp
 ms-toolsai.jupyter
 vknabel.vscode-swiftlint
 cschleiden.vscode-github-actions
+hediet.vscode-drawio
