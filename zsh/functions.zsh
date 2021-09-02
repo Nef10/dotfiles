@@ -8,6 +8,17 @@ function diff_dotfiles_setup() {
     $HOME/.dotfiles/test-setup.sh
 }
 
+# projects
+
+function update_projects() {
+    PROJECTS_DIR="$HOME/Projects"
+    if [[ -d "${PROJECTS_DIR}" ]]; then
+        (cd "${PROJECTS_DIR}"; repo --no-pager forall -p -c 'if [[ -z "$(git status --porcelain)" ]]; then git pull; else echo "Local changes exist, not updating."; fi' | cat)
+    else
+        print -P "%F{red}Project folder does not exist%f"
+    fi
+}
+
 # git
 
 function gb() { # git back after feature branch is merged
