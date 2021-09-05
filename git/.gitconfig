@@ -51,6 +51,11 @@
 	# Automatically stash and unstash your local changes
 	autoStash = true
 
+[fetch]
+
+	# Automatically prune with every fetch (and pull)
+	prune = true
+
 [pull]
 
 	# Rebase instead of merge
