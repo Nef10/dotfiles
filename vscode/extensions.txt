@@ -16,7 +16,6 @@ bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
 DotJoshJohnson.xml
 maptz.regionfolder
-ms-dotnettools.csharp
 ms-toolsai.jupyter
 vknabel.vscode-swiftlint
 cschleiden.vscode-github-actions

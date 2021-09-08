@@ -1,0 +1,2 @@
+ms-dotnettools.csharp
+JHeilingbrunner.vscode-gnupg-tool

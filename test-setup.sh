@@ -162,7 +162,7 @@ function diff_vscode_missing_extensions() {
     step "Uninstalled VSCode Extensions"
     EXTENSIONS_SAME=0
     EXTENSIONS_TARGET=$(code --list-extensions)
-    cat $DOTFILES_REPO/vscode/extensions.txt | while read -r extension_name ;
+    cat $DOTFILES_REPO/vscode/extensions.txt $DOTFILES_REPO/vscode/extensions-$PROFILE.txt | while read -r extension_name ;
     do
         if ! echo $EXTENSIONS_TARGET | grep -c $extension_name &> /dev/null; then
             EXTENSIONS_SAME=1
@@ -177,7 +177,7 @@ function diff_vscode_missing_extensions() {
 function diff_vscode_extensions() {
     step "Additional VSCode Extensions"
     EXTENSIONS_SAME=0
-    EXTENSIONS_TARGET=$(cat $DOTFILES_REPO/vscode/extensions.txt)
+    EXTENSIONS_TARGET=$(cat $DOTFILES_REPO/vscode/extensions.txt $DOTFILES_REPO/vscode/extensions-$PROFILE.txt)
     code --list-extensions | while read -r extension_name ;
     do
         if ! echo $EXTENSIONS_TARGET | grep -c $extension_name &> /dev/null; then

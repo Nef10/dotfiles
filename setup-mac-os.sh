@@ -179,7 +179,7 @@ function configure_vscode() {
     copy_file "VSCode keybindings" $DOTFILES_REPO/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
     EXTENSIONS_INSTALLED=$(code --list-extensions)
-    for extension in `cat $DOTFILES_REPO/vscode/extensions.txt`
+    for extension in `cat $DOTFILES_REPO/vscode/extensions.txt $DOTFILES_REPO/vscode/extensions-$PROFILE.txt`
     do
         step "Installing VSCode extension $extension"
         if echo $EXTENSIONS_INSTALLED | grep -c $extension &> /dev/null; then
