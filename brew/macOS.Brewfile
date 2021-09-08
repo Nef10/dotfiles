@@ -59,6 +59,8 @@ brew "bfg"
 brew "thefuck"
 brew "gnupg"
 brew "awscli"
+brew "typescript"
+brew "wget"
 
 ############################################################################
 # cask
