@@ -57,7 +57,7 @@ brew "thefuck"
 brew "awscli"
 brew "typescript"
 brew "wget"
-brew "swift-test-coverage"
+brew "nef10/tap/swift-test-coverage"
 
 #brew "vegeta"
 
