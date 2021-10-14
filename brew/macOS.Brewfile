@@ -61,6 +61,7 @@ brew "gnupg"
 brew "awscli"
 brew "typescript"
 brew "wget"
+brew "swift-test-coverage"
 
 ############################################################################
 # cask
