@@ -70,5 +70,6 @@
   "workbench.editor.decorations.badges": true,
   "workbench.editor.decorations.colors": true,
   "editor.suggest.preview": true,
-  "editor.bracketPairColorization.enabled": true
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true
 }
