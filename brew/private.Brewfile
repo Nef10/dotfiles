@@ -1,5 +1,7 @@
 brew "openjdk"
 brew "act"
+brew "gnupg"
+brew "mitmproxy"
 
 cask "keepingyouawake"
 cask "spotify"
