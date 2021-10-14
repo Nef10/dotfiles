@@ -21,3 +21,4 @@ vknabel.vscode-swiftlint
 cschleiden.vscode-github-actions
 hediet.vscode-drawio
 ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
