@@ -14,6 +14,7 @@
         1. show sound in Menu Bar
         1. show Battery percentage
         1. rearrange (`cmd` + drag): Battery, WiFi, Bluetooth, Sound, Control Center, Siri
+    1. User & Groups: Configure Login Items
     1. Security & Privacy
         1. Require password immediately
         1. Use Apple watch to unlock
