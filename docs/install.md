@@ -5,7 +5,7 @@
     1. activate FileVault (no reset with iCloud, write down recovery key)
     1. login with Apple ID
 2. Login AppStore
-3. Restore Certificates / ssh Keys / gpg keys
+3. Restore Certificates / gpg keys
 4. install dotfiles
 5. System Preferences
     1. AppleID: enable Desktop & Documents for iCloud Drive
