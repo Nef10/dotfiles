@@ -343,7 +343,7 @@ function info() {
 }
 
 function warning() {
-    print -P "%F{warning}===> $1%f"
+    print -P "%F{yellow}===> $1%f"
 }
 
 function success() {
