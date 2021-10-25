@@ -10,3 +10,11 @@ if [[ -d "${PROJECTS_DIR}" ]]; then
 else
     warning "Project folder does not exist"
 fi
+
+step "SSH Keys"
+checkFileExists "id_rsa" "$HOME/.ssh/id_rsa"
+checkFileExists "id_rsa.pub" "$HOME/.ssh/id_rsa.pub"
+checkFileExists "id_rsa_ci" "$HOME/.ssh/id_rsa_ci"
+checkFileExists "id_rsa_ci.pub" "$HOME/.ssh/id_rsa_ci.pub"
+checkFileExists "id_rsa_ghg" "$HOME/.ssh/id_rsa_ghg"
+checkFileExists "id_rsa_ghg.pub" "$HOME/.ssh/id_rsa_ghg.pub"

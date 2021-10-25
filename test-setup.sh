@@ -256,6 +256,8 @@ function profile_specifics() {
     . ${DOTFILES_REPO}/profiles/test-${PROFILE}.sh
 }
 
+# helpers
+
 function diff_file() {
     step "${1}"
     if diff -q $2 $3 &> /dev/null; then
@@ -263,6 +265,14 @@ function diff_file() {
     else
         warning "${1} different:"
         diff $2 $3 || true
+    fi
+}
+
+function checkFileExists() {
+    if [[ -f "$2" ]]; then
+       success "$1 exists"
+    else
+        warning "$1 does not exist"
     fi
 }
 
