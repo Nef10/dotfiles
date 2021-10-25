@@ -22,30 +22,6 @@ else
 fi
 
 step "Setup SSH Keys"
-SSH_DIR="$HOME/.ssh"
-if [[ -d "${SSH_DIR}" ]]; then
-    info ".ssh folder already exists"
-else
-    mkdir "${SSH_DIR}"
-fi
 install_ssh_key "id_rsa"
 install_ssh_key "id_rsa_ci"
 install_ssh_key "id_rsa_ghg"
-
-# Helper
-
-function install_ssh_key() {
-    if [[ -f "$SSH_DIR/$1" ]]; then
-        info "$1 already installed"
-    else
-        if [[ -z "$OP_SESSION_my" ]]; then
-            warning "Logging into 1Password, your credentials are required:"
-            eval "$(op signin my.1password.ca steffen.koette@gmail.com)"
-        fi
-        cp "$DOTFILES_REPO/ssh/publicKeys/$1.pub" "$SSH_DIR/$1.pub"
-        op get document "$1" --output $SSH_DIR/$1
-        chmod 600 "$SSH_DIR/$1"
-        ssh-add -K "$SSH_DIR/$1"
-        success "Installed $1"
-    fi
-}

@@ -313,6 +313,25 @@ function addTemplateToFileIfNeeded() {
     fi
 }
 
+## helper
+
+function install_ssh_key() {
+    SSH_DIR="$HOME/.ssh"
+    if [[ -f "$SSH_DIR/$1" ]]; then
+        info "$1 already installed"
+    else
+        if [[ -z "$OP_SESSION_my" ]]; then
+            warning "Logging into 1Password, your credentials are required:"
+            eval "$(op signin my.1password.ca steffen.koette@gmail.com)"
+        fi
+        cp "$DOTFILES_REPO/ssh/publicKeys/$1.pub" "$SSH_DIR/$1.pub"
+        op get document "$1" --output $SSH_DIR/$1
+        chmod 600 "$SSH_DIR/$1"
+        ssh-add -K "$SSH_DIR/$1"
+        success "Installed $1"
+    fi
+}
+
 # Print helper
 
 function step() {
