@@ -50,7 +50,7 @@ bindkey "^I" expand-or-complete-with-dots
 # Brew
 
 if [ "$(uname -p)" = "i386" ]; then
-  eval "$(/usr/local/homebrew/bin/brew shellenv)"
+  eval "$(/usr/local/bin/brew shellenv)"
 else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
