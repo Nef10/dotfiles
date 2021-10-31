@@ -20,9 +20,17 @@ CORRECT_IGNORE_FILE='.*'
 export LESS=-R # let less output ANSI color escape sequences in raw, so the output can be colorized
 export EDITOR=nano
 
+# Brew
+
+if [ "$(uname -p)" = "i386" ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+else
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Completion
 
-fpath=( "$HOME/.zfunctions" $fpath )
+fpath=( "$HOME/.zfunctions" "$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath )
 autoload -Uz compinit compaudit
 compinit
 compaudit
@@ -47,13 +55,7 @@ expand-or-complete-with-dots() { # Display red dots while waiting for completion
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
-# Brew
 
-if [ "$(uname -p)" = "i386" ]; then
-  eval "$(/usr/local/bin/brew shellenv)"
-else
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
 
 # Misc
 
