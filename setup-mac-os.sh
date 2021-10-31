@@ -17,7 +17,6 @@ main() {
     configure_ssh
     configure_vscode
     install_quartz_filter
-    configure_openjdk
     hide_home_applications
     profile_specifics
     if [[ "$1" != "--update" ]]; then
@@ -201,20 +200,6 @@ function install_quartz_filter() {
     copy_file "Quartz Filter Minimal" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Minimal.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Minimal.qfilter
     copy_file "Quartz Filter Medium" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Medium.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Medium.qfilter
     copy_file "Quartz Filter Extreme" $DOTFILES_REPO/quartz/Reduce\ File\ Size\ Extreme.qfilter $HOME/Library/Filters/Reduce\ File\ Size\ Extreme.qfilter
-}
-
-function configure_openjdk() {
-    step "Linking openjdk"
-    if test -L "/Library/Java/JavaVirtualMachines/openjdk.jdk"; then
-        info "openjdk already linked"
-    else
-        if test -L "/usr/local/opt/openjdk"; then
-            sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-            success "openjdk linked"
-        else
-            warning "openjdk is not installed"
-        fi
-    fi
 }
 
 function hide_home_applications() {

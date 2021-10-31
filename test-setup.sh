@@ -22,7 +22,6 @@ main() {
     diff_vscode_extensions
     diff_vscode_settings
     diff_quartz_filters
-    diff_openjdk
     diff_home_applications
     profile_specifics
 }
@@ -223,19 +222,6 @@ function diff_quartz_filters() {
     done
     if [[ "$ADDITIONAL_FILTERS" -eq 0 ]]; then
         success "No additional quartz filters found"
-    fi
-}
-
-function diff_openjdk() {
-    step "openjdk link"
-    if test -L "/Library/Java/JavaVirtualMachines/openjdk.jdk"; then
-        success "No difference found"
-    else
-        if test -L "/usr/local/opt/openjdk"; then
-            warning "openjdk is not linked"
-        else
-            warning "openjdk is not installed"
-        fi
     fi
 }
 
