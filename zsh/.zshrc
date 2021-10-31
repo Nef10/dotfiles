@@ -47,6 +47,14 @@ expand-or-complete-with-dots() { # Display red dots while waiting for completion
 zle -N expand-or-complete-with-dots
 bindkey "^I" expand-or-complete-with-dots
 
+# Brew
+
+if [ "$(uname -p)" = "i386" ]; then
+  eval "$(/usr/local/homebrew/bin/brew shellenv)"
+else
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Misc
 
 eval "$(thefuck --alias fix)"
@@ -84,31 +92,27 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
-# Helper
-
-BREW_PREFIX="$(brew --prefix)"
-
 # Auto Suggestions
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_USE_ASYNC=1
-source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Syntax Highlighting
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # History Searching
 
-source "$BREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+source "$HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=fg=black,bg=green,bold
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Homebrew command not found (see https://github.com/Homebrew/homebrew-command-not-found)
 
-HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+HB_CNF_HANDLER="$HOMEBREW_REPOSITORY/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER";
 fi
