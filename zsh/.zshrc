@@ -108,7 +108,7 @@ bindkey '^[[B' history-substring-search-down
 
 # Homebrew command not found (see https://github.com/Homebrew/homebrew-command-not-found)
 
-HB_CNF_HANDLER="$BREW_PREFIX/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER";
 fi
