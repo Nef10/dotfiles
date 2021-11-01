@@ -23,7 +23,9 @@ export EDITOR=nano
 # Brew
 
 if [ "$(uname -p)" = "i386" ]; then
-  eval "$(/usr/local/bin/brew shellenv)"
+  if [ -f "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
 else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
