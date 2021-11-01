@@ -9,3 +9,4 @@
 - Changes in repositories which are not pushed yet
 - Configurations (e.g. SwiftBeanCountImporter)
 - Desktop background pictures
+- Saved game files
