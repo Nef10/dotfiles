@@ -14,9 +14,9 @@ $package\
 $dotnet\
 $golang\
 $helm\
+$nodejs\
 $java\
 $kotlin\
-$nodejs\
 $php\
 $python\
 $rlang\
