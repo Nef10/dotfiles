@@ -18,3 +18,9 @@ checkFileExists "id_rsa_ci" "$HOME/.ssh/id_rsa_ci"
 checkFileExists "id_rsa_ci.pub" "$HOME/.ssh/id_rsa_ci.pub"
 checkFileExists "id_rsa_ghg" "$HOME/.ssh/id_rsa_ghg"
 checkFileExists "id_rsa_ghg.pub" "$HOME/.ssh/id_rsa_ghg.pub"
+
+if [[ $(gpg --list-secret-keys 2>/dev/null | grep -w C8AACEF6A67C274C511187F231655A5065AD2BFD) ]] ; then
+    success "GPG key installed"
+else
+    warning "GPG key not installed"
+fi

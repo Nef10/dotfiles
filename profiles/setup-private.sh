@@ -8,6 +8,22 @@ install_ssh_key "id_rsa"
 install_ssh_key "id_rsa_ci"
 install_ssh_key "id_rsa_ghg"
 
+if [[ $(gpg --list-secret-keys 2>/dev/null | grep -w C8AACEF6A67C274C511187F231655A5065AD2BFD) ]] ; then
+    info "GPG key already installed"
+else
+    if [[ -z "$OP_SESSION_my" ]]; then
+        warning "Logging into 1Password, your credentials are required:"
+        eval "$(op signin my.1password.ca steffen.koette@gmail.com)"
+    fi
+    temp_file=$(mktemp)
+    trap "rm -f $temp_file" 0 2 3 15
+    op get document "private.key" --output $temp_file
+    gpg --import --batch $temp_file &> /dev/null
+    expect -c 'spawn gpg --edit-key C8AACEF6A67C274C511187F231655A5065AD2BFD trust quit; send "5\ry\r"; expect eof' &> /dev/null
+    success "Installed GPG Key"
+    rm -f $temp_file
+fi
+
 step "Setup Project folder"
 PROJECTS_DIR="$HOME/Projects"
 if [[ -d "${PROJECTS_DIR}" ]]; then
