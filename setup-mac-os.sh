@@ -97,10 +97,21 @@ function link_brew_completions() {
 
 function install_swift_completions() {
     step "Installing swift completions"
-    if test -e ~/.zfunctions/_swift; then
+    ZSH_FUNCTIONS_DIR="$HOME/.zfunctions"
+    if test -e "$ZSH_FUNCTIONS_DIR/_swift"; then
         info "Swift completions already installed"
     else
-        swift package completion-tool generate-zsh-script > ~/.zfunctions/_swift
+        step "Creating $ZSH_FUNCTIONS_DIR dir"
+        if test -e $ZSH_FUNCTIONS_DIR; then
+            info "$ZSH_FUNCTIONS_DIR already exists"
+        else
+            if mkdir $ZSH_FUNCTIONS_DIR; then
+                success "$ZSH_FUNCTIONS_DIR dir created"
+            else
+                error "failed to create $ZSH_FUNCTIONS_DIR dir"
+            fi
+        fi
+        swift package completion-tool generate-zsh-script > "$ZSH_FUNCTIONS_DIR/_swift"
         success "Swift completions installed successfully"
     fi
 }
@@ -128,33 +139,6 @@ function set_terminal_theme() {
 }
 
 function configure_zsh() {
-    ZSH_PLUGIN_DIR="$DOTFILES_REPO/checkout"
-
-    SPACESHIP_DIR="$ZSH_PLUGIN_DIR/spaceship-prompt"
-    clone_or_update "Spaceship prompt" $SPACESHIP_DIR "https://github.com/denysdovhan/spaceship-prompt.git"
-
-    step "Linking spaceship prompt"
-    ZSH_FUNCTIONS_DIR="$HOME/.zfunctions"
-    if test -L "$ZSH_FUNCTIONS_DIR/prompt_spaceship_setup"; then
-        info "spaceship prompt already linked"
-    else
-        step "creating $ZSH_FUNCTIONS_DIR dir"
-        if test -e $ZSH_FUNCTIONS_DIR; then
-            info "$ZSH_FUNCTIONS_DIR already exists"
-        else
-            if mkdir $ZSH_FUNCTIONS_DIR; then
-                success "$ZSH_FUNCTIONS_DIR dir created"
-            else
-                error "failed to create $ZSH_FUNCTIONS_DIR dir"
-            fi
-            if ln -sf "$SPACESHIP_DIR/spaceship.zsh" "$ZSH_FUNCTIONS_DIR/prompt_spaceship_setup"; then
-                success "spaceship prompt linked"
-            else
-                error "spaceship prompt linking failed"
-            fi
-        fi
-    fi
-
     addTemplateToFileIfNeeded $DOTFILES_REPO/zsh/.zshrc_template ".zshrc source" $HOME/.zshrc
 }
 

@@ -1,0 +1,61 @@
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$package\
+$dotnet\
+$golang\
+$helm\
+$java\
+$kotlin\
+$nodejs\
+$php\
+$python\
+$rlang\
+$ruby\
+$swift\
+$terraform\
+$vagrant\
+$conda\
+$memory_usage\
+$openstack\
+$custom\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$character"""
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[status]
+disabled = false
+
+[aws]
+disabled = true
+
+[git_metrics]
+disabled = false
+
+[git_status]
+stashed = ""
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+
+[java]
+style = "52"
+
+[nodejs]
+symbol = "⬢ "
