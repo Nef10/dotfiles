@@ -33,6 +33,7 @@ $line_break\
 $jobs\
 $battery\
 $status\
+${custom.architecture}\
 $character"""
 
 [character]
@@ -41,6 +42,9 @@ error_symbol = "[➜](bold red)"
 
 [status]
 disabled = false
+
+[directory]
+read_only = " 🔒"
 
 [aws]
 disabled = true
@@ -59,3 +63,9 @@ style = "52"
 
 [nodejs]
 symbol = "⬢ "
+
+[custom.architecture]
+description = "Architecture when using Rosetta 2"
+when = """[ "$(sysctl -in sysctl.proc_translated)" = "1" ]"""
+format = "[ Rosetta ](242)"
+shell = ["bash", "--noprofile", "--norc"]
