@@ -8,6 +8,7 @@ install_ssh_key "id_rsa"
 install_ssh_key "id_rsa_ci"
 install_ssh_key "id_rsa_ghg"
 
+step "Setup GPG Key"
 if [[ $(gpg --list-secret-keys 2>/dev/null | grep -w C8AACEF6A67C274C511187F231655A5065AD2BFD) ]] ; then
     info "GPG key already installed"
 else
