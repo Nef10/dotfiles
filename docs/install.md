@@ -65,7 +65,8 @@
 10. Dock: Pin Apps (Finder, Safari, Hey, Mail, Messages, Slack, Maps, Photos, Calendar, Reminders, Notes, Spotify, SourceTree, VS Code, XCode, Terminal)
 11. Dictionary: Select dictionaries (add Wikipedia Deutsch, Duden Wissensnetz, Oxford German-English
 12. Messages: Enable Messages in iCloud
-13. SourceTree
+13. Main: Enable GHG Account
+14. SourceTree
     1. Disallow write config files
     2. Set Project dir
     3. Use fixed width font for commit message
@@ -76,19 +77,19 @@
     8. Enable auto update
     9. Allow force push
     10. Staging view mode
-14. Spotify
+15. Spotify
     1. login
     1. download quality very high
     1. don’t automatically start with Mac
-15. Chrome
+16. Chrome
     1. don’t warn before quitting
     1. continue where left off
     1. Install 1Password extension
-16. Dropbox
+17. Dropbox
     1. Do not sync mac files
     2. Disable photo upload
     3. Deny accessibility
-17. Zoom
+18. Zoom
     1. do not ask to confirm before leaving
     2. show meeting duration
     3. do not add zoom to the menu bar     
