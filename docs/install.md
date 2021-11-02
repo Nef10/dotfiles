@@ -88,10 +88,18 @@
     1. Do not sync mac files
     2. Disable photo upload
     3. Deny accessibility
-17. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
-18. Set desktop background to change randomly every 15 min
-19. Open zip files by default with The Unarchiver
-20. Outlook:
+17. Zoom
+    1. do not ask to confirm before leaving
+    2. show meeting duration
+    3. do not add zoom to the menu bar     
+    4. HD
+    5. always display name on video
+    6. automatically join computer audio
+    7. mute when joining
+19. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
+20. Set desktop background to change randomly every 15 min
+21. Open zip files by default with The Unarchiver
+22. Outlook:
     1. Only mark mail as read when opened in new window
     2. Show calendar week numbers
     3. Set first week of the day to Monday
