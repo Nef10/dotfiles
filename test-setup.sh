@@ -34,7 +34,7 @@ function diff_repo() {
         warning "Changes found:"
         git -C $DOTFILES_REPO status -s | prependInfo
     else
-        if [[ $(git -C $DOTFILES_REPO log origin/master..HEAD | cat) ]]; then
+        if [[ $(git -C $DOTFILES_REPO log origin/main..HEAD | cat) ]]; then
             warning "Your local branch is ahead of remote"
         else
             success "No difference found"
