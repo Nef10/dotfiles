@@ -232,7 +232,7 @@ function pull_latest() {
     if [ $(git -C $2 rev-parse HEAD) '==' $(git -C $2 rev-parse @{u}) ]; then
         info "${1} already up to date"
     else
-        if git -C $2 pull origin master &> /dev/null; then
+        if git -C $2 pull origin main &> /dev/null; then
             success "Pull in ${1} successful"
         else
             error "Failed, please pull latest changes in ${1} repository manually"

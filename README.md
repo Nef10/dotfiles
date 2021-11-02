@@ -22,7 +22,7 @@ Before installing please make sure the following conditions are fullfilled:
 
 To install use the following line at own risk: (Please don't actually do this - it is not good practice to just execute random code from the internet - and it uses my settings which you probably want to adjust beforehand - at least the git user)
 ```
-curl --silent https://raw.githubusercontent.com/Nef10/dotfiles/master/setup-mac-os.sh > setup-mac-os.sh && zsh setup-mac-os.sh && rm setup-mac-os.sh
+curl --silent https://raw.githubusercontent.com/Nef10/dotfiles/main/setup-mac-os.sh > setup-mac-os.sh && zsh setup-mac-os.sh && rm setup-mac-os.sh
 ```
 
 ### Tracking changes and updates
@@ -40,5 +40,3 @@ diff_dotfiles_setup
 ## Other
 
 Additionally, this repository contains some additional documents in the docs folder, like which things not to forget when backing up your Mac.
-
-
