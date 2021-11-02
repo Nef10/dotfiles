@@ -63,6 +63,11 @@ function install_homebrew() {
         info "Homebrew already exists"
     else
         if true | bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; then
+            if [ "$(uname -p)" = "i386" ]; then
+                eval "$(/usr/local/bin/brew shellenv)"
+            else
+                eval "$(/opt/homebrew/bin/brew shellenv)"
+            fi
             success "Homebrew installation succeeded"
         else
             error "Homebrew installation failed"
