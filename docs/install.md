@@ -96,10 +96,11 @@
     5. always display name on video
     6. automatically join computer audio
     7. mute when joining
-19. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
-20. Set desktop background to change randomly every 15 min
-21. Open zip files by default with The Unarchiver
-22. Outlook:
+20. Disable iCloud Photos
+21. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
+22. Set desktop background to change randomly every 15 min
+23. Open zip files by default with The Unarchiver
+24. Outlook:
     1. Only mark mail as read when opened in new window
     2. Show calendar week numbers
     3. Set first week of the day to Monday
