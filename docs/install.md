@@ -65,7 +65,7 @@
 10. Dock: Pin Apps (Finder, Safari, Hey, Mail, Messages, Slack, Maps, Photos, Calendar, Reminders, Notes, Spotify, SourceTree, VS Code, XCode, Terminal)
 11. Dictionary: Select dictionaries (add Wikipedia Deutsch, Duden Wissensnetz, Oxford German-English
 12. Messages: Enable Messages in iCloud
-13. Main: Enable GHG Account
+13. Mail: Enable GHG Account
 14. SourceTree
     1. Disallow write config files
     2. Set Project dir
