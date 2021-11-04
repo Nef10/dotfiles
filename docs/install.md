@@ -92,16 +92,20 @@
 18. Zoom
     1. do not ask to confirm before leaving
     2. show meeting duration
-    3. do not add zoom to the menu bar     
+    3. do not add zoom to the menu bar
     4. HD
     5. always display name on video
     6. automatically join computer audio
     7. mute when joining
-20. Disable iCloud Photos
-21. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
-22. Set desktop background to change randomly every 15 min
-23. Open zip files by default with The Unarchiver
-24. Outlook:
+19. Install Steam games
+20. Activate AirBuddy
+21. Monitor Control: Start at login
+22. Maccy: Start at login
+23. Disable iCloud Photos
+24. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
+25. Set desktop background to change randomly every 15 min
+26. Open zip files by default with The Unarchiver
+27. Outlook:
     1. Only mark mail as read when opened in new window
     2. Show calendar week numbers
     3. Set first week of the day to Monday
