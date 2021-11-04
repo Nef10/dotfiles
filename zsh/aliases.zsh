@@ -33,3 +33,8 @@ alias gds='git diff --staged'
 
 alias gc='git commit -m'
 alias gca='git commit --amend --reuse-message=HEAD'
+
+# M1
+
+alias armzsh='arch -arm64 zsh'
+alias rosettazsh='arch -x86_64 zsh'
