@@ -11,7 +11,7 @@ function main() {
 }
 
 function set_macos_configuration() {
-    if filevault_configuration_correct && software_updates_installed && autopoweroffdelay_configuration_correct && powernap_configuration_correct ; then
+    if filevault_configuration_correct && software_updates_installed && powernap_configuration_correct ; then
         print -P "%F{white}==> macOS configuration already set correctly"
         return
     fi
