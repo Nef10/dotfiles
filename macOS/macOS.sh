@@ -25,10 +25,6 @@ function set_macos_configuration() {
          print -P "%F{green}==> Installing Software Updates"
          softwareupdate --install --all
     fi
-    if ! autopoweroffdelay_configuration_correct; then
-        print -P "%F{green}==> Set auto power off delay to 1 day"
-        sudo pmset -a autopoweroffdelay 86400
-    fi
     if ! powernap_configuration_correct; then
         print -P "%F{green}==> Enable power nap for all power modes"
         sudo pmset -a powernap 1
@@ -47,10 +43,6 @@ function check_macos_configuration() {
         all_correct=false
         print -P "%F{yellow}==> Please update macOS / Software from the AppStore%f"
     fi
-    if ! autopoweroffdelay_configuration_correct; then
-        all_correct=false
-        print -P "%F{yellow}==> Auto power off delay is not set to one day%f"
-    fi
     if ! powernap_configuration_correct; then
         all_correct=false
         print -P "%F{yellow}==> Power nap is not enabled on all power modes%f"
@@ -67,10 +59,6 @@ function filevault_configuration_correct() {
 
 function software_updates_installed() {
     [[ $(softwareupdate -l 2>&1 | grep $Q "No new software available.") ]]
-}
-
-function autopoweroffdelay_configuration_correct() {
-    [[ $(pmset -g custom 2>&1 | grep autopoweroffdelay | awk '{print $2}' | tail -1) == 86400 && $(pmset -g custom 2>&1 | grep -m 1 autopoweroffdelay | awk '{print $2}') == 86400 ]]
 }
 
 function powernap_configuration_correct() {
