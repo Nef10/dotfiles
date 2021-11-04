@@ -97,15 +97,20 @@
     5. always display name on video
     6. automatically join computer audio
     7. mute when joining
-19. Install Steam games
-20. Activate AirBuddy
-21. Monitor Control: Start at login
-22. Maccy: Start at login
-23. Disable iCloud Photos
-24. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
-25. Set desktop background to change randomly every 15 min
-26. Open zip files by default with The Unarchiver
-27. Outlook:
+19. Set Widgets
+    1. Medium Calendar
+    2. Small Reminders
+    3. Small Stock
+    4. Large Weather
+20. Install Steam games
+21. Activate AirBuddy
+22. Monitor Control: Start at login
+23. Maccy: Start at login
+24. Disable iCloud Photos
+25. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
+26. Set desktop background to change randomly every 15 min
+27. Open zip files by default with The Unarchiver
+28. Outlook:
     1. Only mark mail as read when opened in new window
     2. Show calendar week numbers
     3. Set first week of the day to Monday
