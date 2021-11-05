@@ -29,7 +29,6 @@
         3. show Battery percentage
         4. do not show Spotlight
         5. rearrange (`cmd` + drag): Battery, WiFi, Bluetooth, Sound, Control Center, Siri
-    1. User & Groups: Configure Login Items
     1. Security & Privacy
         1. Require password immediately
         1. Use Apple watch to unlock
@@ -94,6 +93,7 @@
     1. Do not sync mac files
     2. Disable photo upload
     3. Deny accessibility
+    4. Remove Finder toolbar item
 19. Zoom
     1. do not ask to confirm before leaving
     2. show meeting duration
@@ -102,19 +102,25 @@
     5. always display name on video
     6. automatically join computer audio
     7. mute when joining
-20. Install Steam games
-21. Launch Apps and make sure they start at login:
+20. Steam
+    1. Install games
+    2. Remove auto start item under System Preferences, User & Groups, Login Items
+22. Launch Apps and make sure they start at login:
     1. AirBuddy
     2. Monitor Control
     3. Maccy
     4. Rectangle
     5. KeepingYouAwake
-22. Disable iCloud Photos
-23. Check dotfiles differences
-24. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
-25. Set desktop background to change randomly every 15 min
-26. Open zip files by default with The Unarchiver
-27. Outlook:
+    6. Alfred
+    7. Synatx Highlighting
+23. Customize Finder toolbar: Path, Space, View, Group, Space, Tag, Share, Info, Space, New Folder, Space
+24. Check dotfiles differences
+25. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
+26. Disable iCloud Photos, enable Photostream
+27. Setup Time Machine
+28. Set desktop background to change randomly every 15 min
+29. Open zip files by default with The Unarchiver
+30. Outlook:
     1. Only mark mail as read when opened in new window
     2. Show calendar week numbers
     3. Set first week of the day to Monday
