@@ -23,18 +23,20 @@
 3. install dotfiles
 4. System Preferences
     1. AppleID: enable Desktop & Documents for iCloud Drive
-    1. Dock & Menu Bar
+    2. Dock & Menu Bar
         1. show Bluetooth in Menu Bar
         2. always show Sound in Menu Bar
         3. show Battery percentage
         4. do not show Spotlight
         5. rearrange (`cmd` + drag): Battery, WiFi, Bluetooth, Sound, Control Center, Siri
-    1. Security & Privacy
+    3. Accessibility
+        1. Pointer Control, Trackpad options, enable three finger drag  
+    4. Security & Privacy
         1. Require password immediately
         1. Use Apple watch to unlock
         1. Turn firewall on
-    1. Software Update: Keep my Mac automatically up to date
-    1. Display:
+    5. Software Update: Keep my Mac automatically up to date
+    6. Display:
         1. Resolution scaled between default and more space
         1. Nightshift between sunset and sunrise
         1. Nightshift more warm
