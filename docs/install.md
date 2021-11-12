@@ -28,7 +28,7 @@
         2. always show Sound in Menu Bar
         3. show Battery percentage
         4. do not show Spotlight
-        5. rearrange (`cmd` + drag): Battery, WiFi, Bluetooth, Sound, Control Center, Siri
+        5. rearrange (`cmd` + drag): Time Machine, Battery, WiFi, Bluetooth, Sound, Control Center, Siri
     3. Accessibility
         1. Pointer Control, Trackpad options, enable three finger drag  
     4. Security & Privacy
