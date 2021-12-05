@@ -117,7 +117,7 @@
     7. Synatx Highlighting
 23. Customize Finder toolbar: Path, Space, View, Group, Space, Tag, Share, Info, Space, New Folder, Space
 24. Check dotfiles differences
-25. Restore files not in the could: Photos, Desktop Backgrounds, ... (See backup list)
+25. Restore files not in a Cloud, e.g. Photos (See backup list)
 26. Disable iCloud Photos, enable Photostream
 27. Setup Time Machine
 28. Set desktop background to change randomly every 15 min
