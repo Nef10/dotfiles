@@ -20,7 +20,6 @@ mas "Xcode", id: 497799835
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Quiver", id: 866773894
 mas "The Unarchiver", id: 425424353
 mas "iMovie", id: 408981434
 mas "SQLPro for SQLite (Lite)", id: 635299994
