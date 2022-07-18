@@ -4,9 +4,9 @@ step "Updating KeepingYouAwake settings"
 zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/keeping_you_awake.csv set
 
 step "Setup SSH Keys"
-install_ssh_key "id_rsa"
-install_ssh_key "id_rsa_ci"
-install_ssh_key "id_rsa_ghg"
+cp "$DOTFILES_REPO/ssh/publicKeys/id_rsa.pub" "$SSH_DIR/id_rsa.pub"
+cp "$DOTFILES_REPO/ssh/publicKeys/id_rsa_ci.pub" "$SSH_DIR/id_rsa_ci.pub"
+cp "$DOTFILES_REPO/ssh/publicKeys/id_rsa_ghg.pub" "$SSH_DIR/id_rsa_ghg.pub"
 
 step "Setup GPG Key"
 if [[ $(gpg --list-secret-keys 2>/dev/null | grep -w C8AACEF6A67C274C511187F231655A5065AD2BFD) ]] ; then

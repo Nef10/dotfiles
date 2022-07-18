@@ -1,6 +1,9 @@
 Include ~/.dotfiles/ssh/config
 
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
 Host bitbucket.org
   User git
-  IdentityFile ~/.ssh/id_rsa_ghg
+  IdentityFile ~/.ssh/id_rsa_ghg.pub
   IdentitiesOnly yes

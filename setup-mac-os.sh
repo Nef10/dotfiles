@@ -289,20 +289,6 @@ function addTemplateToFileIfNeeded() {
 
 ## helper
 
-function install_ssh_key() {
-    SSH_DIR="$HOME/.ssh"
-    if [[ -f "$SSH_DIR/$1" ]]; then
-        info "$1 already installed"
-    else
-        opsignin
-        cp "$DOTFILES_REPO/ssh/publicKeys/$1.pub" "$SSH_DIR/$1.pub"
-        op document get "$1" --output $SSH_DIR/$1
-        chmod 600 "$SSH_DIR/$1"
-        ssh-add --apple-use-keychain "$SSH_DIR/$1"
-        success "Installed $1"
-    fi
-}
-
 function opsignin() {
     if op whoami 2>&1 | grep -c 'ERROR' &> /dev/null; then
         warning "Logging into 1Password, your credentials are required:"

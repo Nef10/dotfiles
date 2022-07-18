@@ -1,0 +1,5 @@
+Include ~/.dotfiles/ssh/config
+
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
