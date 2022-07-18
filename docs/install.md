@@ -30,7 +30,7 @@
         4. do not show Spotlight
         5. rearrange (`cmd` + drag): Time Machine, Battery, WiFi, Bluetooth, Sound, Control Center, Siri
     3. Accessibility
-        1. Pointer Control, Trackpad options, enable three finger drag  
+        1. Pointer Control, Trackpad options, enable three finger drag
     4. Security & Privacy
         1. Require password immediately
         1. Use Apple watch to unlock
@@ -42,10 +42,12 @@
         1. Nightshift more warm
 5. 1Password
     1. login
-    1. enable Safari extension
-    1. show object count in sidebar
+    1. compact density
+    1. show categories and tags in sidebar
+    1. hold option to toggle revealed fields
     1. enable all watchtower options
-    1. Open logins in current tab
+    1. enable biometric unlock for CLI
+    1. enable SSH agent and display key names
 6. Calendar
     1. show/hide calendars
 7. Xcode
