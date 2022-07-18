@@ -37,6 +37,8 @@ autoload -Uz compinit compaudit
 compinit
 compaudit
 
+eval "$(op completion zsh)"; compdef _op op # 1password CLI completion
+
 zstyle ':completion:*:*:*:*:*' menu select                # Show completion menu which allows navigation with arrow keys
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive completion
 zstyle ':completion:*' list-colors ''                     # Color the completion menu

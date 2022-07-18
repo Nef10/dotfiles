@@ -294,15 +294,23 @@ function install_ssh_key() {
     if [[ -f "$SSH_DIR/$1" ]]; then
         info "$1 already installed"
     else
-        if [[ -z "$OP_SESSION_my" ]]; then
-            warning "Logging into 1Password, your credentials are required:"
-            eval "$(op signin my.1password.ca steffen.koette@gmail.com)"
-        fi
+        opsignin
         cp "$DOTFILES_REPO/ssh/publicKeys/$1.pub" "$SSH_DIR/$1.pub"
-        op get document "$1" --output $SSH_DIR/$1
+        op document get "$1" --output $SSH_DIR/$1
         chmod 600 "$SSH_DIR/$1"
         ssh-add --apple-use-keychain "$SSH_DIR/$1"
         success "Installed $1"
+    fi
+}
+
+function opsignin() {
+    if op whoami 2>&1 | grep -c 'ERROR' &> /dev/null; then
+        warning "Logging into 1Password, your credentials are required:"
+        if op account list 2>&1 | grep -c 'steffen.koette@gmail.com' &> /dev/null; then
+            eval "$(op signin)"
+        else
+            eval "$(op account add --address my.1password.ca --email steffen.koette@gmail.com --signin)"
+        fi
     fi
 }
 

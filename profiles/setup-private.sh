@@ -12,13 +12,10 @@ step "Setup GPG Key"
 if [[ $(gpg --list-secret-keys 2>/dev/null | grep -w C8AACEF6A67C274C511187F231655A5065AD2BFD) ]] ; then
     info "GPG key already installed"
 else
-    if [[ -z "$OP_SESSION_my" ]]; then
-        warning "Logging into 1Password, your credentials are required:"
-        eval "$(op signin my.1password.ca steffen.koette@gmail.com)"
-    fi
+    opsignin
     temp_file=$(mktemp)
     trap "rm -f $temp_file" 0 2 3 15
-    op get document "private.key" --output $temp_file
+    op document get "private.key" --output $temp_file
     gpg --import --batch $temp_file &> /dev/null
     expect -c 'spawn gpg --edit-key C8AACEF6A67C274C511187F231655A5065AD2BFD trust quit; send "5\ry\r"; expect eof' &> /dev/null
     success "Installed GPG Key"
