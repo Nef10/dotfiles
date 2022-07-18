@@ -4,6 +4,7 @@ step "Updating KeepingYouAwake settings"
 zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/keeping_you_awake.csv set
 
 step "Setup SSH Keys"
+SSH_DIR="$HOME/.ssh"
 cp "$DOTFILES_REPO/ssh/publicKeys/id_rsa.pub" "$SSH_DIR/id_rsa.pub"
 cp "$DOTFILES_REPO/ssh/publicKeys/id_rsa_ci.pub" "$SSH_DIR/id_rsa_ci.pub"
 cp "$DOTFILES_REPO/ssh/publicKeys/id_rsa_ghg.pub" "$SSH_DIR/id_rsa_ghg.pub"
