@@ -23,3 +23,4 @@ ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
 tomoki1207.pdf
 bierner.markdown-footnotes
+bierner.markdown-mermaid
