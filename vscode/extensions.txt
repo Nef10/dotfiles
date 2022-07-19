@@ -25,3 +25,4 @@ tomoki1207.pdf
 bierner.markdown-footnotes
 bierner.markdown-mermaid
 jakearl.search-editor-apply-changes
+dbaeumer.vscode-eslint
