@@ -26,3 +26,5 @@ bierner.markdown-footnotes
 bierner.markdown-mermaid
 jakearl.search-editor-apply-changes
 dbaeumer.vscode-eslint
+sswg.swift-lang
+vadimcn.vscode-lldb
