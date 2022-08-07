@@ -61,6 +61,11 @@
 	# Rebase instead of merge
 	rebase = true
 
+[push]
+
+    # automatically create/set upstream branch for new branches when pushing
+    autoSetupRemote = true
+
 [credential]
 
 	helper = osxkeychain
