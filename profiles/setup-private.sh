@@ -40,3 +40,9 @@ else
     (cd "${PROJECTS_DIR}"; repo --no-pager forall -p -c 'git checkout $REPO_RREV && git lfs pull' | cat)
     success "Checked out branches and downloaded git lfs files"
 fi
+
+step "AWS"
+if [[ ! -d $HOME/.aws ]]; then
+    mkdir $HOME/.aws
+fi
+copy_file "AWS Config" $DOTFILES_REPO/aws/config $HOME/.aws/config

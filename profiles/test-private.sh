@@ -22,3 +22,6 @@ if [[ $(gpg --list-secret-keys 2>/dev/null | grep -w C8AACEF6A67C274C511187F2316
 else
     warning "GPG key not installed"
 fi
+
+step "AWS"
+diff_file "AWS Config" $DOTFILES_REPO/aws/config $HOME/.aws/config
