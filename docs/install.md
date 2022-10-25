@@ -23,23 +23,22 @@
 3. install dotfiles
 4. System Preferences
     1. AppleID: enable Desktop & Documents for iCloud Drive
-    2. Dock & Menu Bar
+    2. Network: Enable Firewall
+    3. Control Center
         1. show Bluetooth in Menu Bar
         2. always show Sound in Menu Bar
         3. show Battery percentage
         4. do not show Spotlight
-        5. rearrange (`cmd` + drag): Time Machine, Battery, WiFi, Bluetooth, Sound, Control Center, Siri
-    3. Accessibility
-        1. Pointer Control, Trackpad options, enable three finger drag
-    4. Security & Privacy
-        1. Require password immediately
-        1. Use Apple watch to unlock
-        1. Turn firewall on
-    5. Software Update: Keep my Mac automatically up to date
-    6. Display:
+        5. do not show Siri
+        6. Clock: always show date, use 24h format, flash indicators and show seconds
+        7. rearrange (`cmd` + drag): Time Machine, Focus, Battery, WiFi, Bluetooth, Sound, Control Center, Siri
+    4. Displays:
         1. Resolution scaled between default and more space
         1. Nightshift between sunset and sunrise
         1. Nightshift more warm
+    5. Lock Screen: Require password immediately
+    6. Touch ID & Password: Use Apple watch to unlock
+    7. Software Update: Keep my Mac automatically up to date
 5. 1Password
     1. login
     1. compact density
@@ -50,6 +49,7 @@
     1. enable SSH agent and display key names
 6. Calendar
     1. show/hide calendars
+    2. start week on Monday
 7. Xcode
     1. launch to install additional tools
     2. login Apple ID
@@ -63,7 +63,7 @@
     1. show developer menu
     1. show status bar
 9. Finder:
-    1. Adjust sidebar (Steffen, Desktop, Documents, Projects, Downloads, iCloud Drive, Applications, Recents, AirDrop, MacBook, HD, Tags)
+    1. Adjust sidebar (Steffen, Desktop, Documents, Projects, Downloads, Applications, Recents, AirDrop, iCloud Drive, Shared, MacBook, HD, Tags)
     1. Automatically remove files from trash after 30 days
 10. Dock: Pin Apps (Finder, Safari, Hey, Mail, Messages, Slack, Maps, Photos, Calendar, Reminders, Notes, Spotify, SourceTree, VS Code, XCode, Terminal)
 11. Set Widgets
@@ -128,3 +128,4 @@
     1. Only mark mail as read when opened in new window
     2. Show calendar week numbers
     3. Set first week of the day to Monday
+    4. Disable focus inbox
