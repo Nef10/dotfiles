@@ -85,7 +85,7 @@ function install_packages_with_brewfile() {
         if cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle --no-upgrade --file=-; then
             success "Brewfile installation succeeded"
         else
-            error "Brewfile installation failed"
+            warning "Brewfile installation failed"
         fi
     fi
 }
