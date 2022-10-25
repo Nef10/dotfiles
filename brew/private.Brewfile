@@ -1,6 +1,7 @@
 brew "act"
 brew "gnupg"
 brew "mitmproxy"
+brew "awscli"
 
 cask "keepingyouawake"
 cask "spotify"
