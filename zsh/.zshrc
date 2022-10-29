@@ -96,6 +96,8 @@ if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER";
 fi
 
+export HOMEBREW_NO_ENV_HINTS=1
+
 # Source
 
 source ~/.dotfiles/zsh/aliases.zsh
