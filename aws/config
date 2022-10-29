@@ -1,12 +1,12 @@
 [profile amplify]
 region = ca-central-1
 output = json
-credential_process = "../.dotfiles/aws/op-credential-helper.sh" "x47sjyjywrhf3lhkxbas2jg5um"
+credential_process = "/Users/Steffen/.dotfiles/aws/op-credential-helper.sh" "x47sjyjywrhf3lhkxbas2jg5um"
 
 [profile ghgsandbox]
 region = ca-central-1
 output = json
-credential_process = "../.dotfiles/aws/op-credential-helper.sh" "qrij4ndxvpxr5knqvqk5kz4x4e"
+credential_process = "/Users/Steffen/.dotfiles/aws/op-credential-helper.sh" "qrij4ndxvpxr5knqvqk5kz4x4e"
 
 [default]
 region = ca-central-1
