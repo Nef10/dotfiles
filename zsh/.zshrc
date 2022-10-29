@@ -65,6 +65,7 @@ eval "$(thefuck --alias fix)"
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
 #eval "$(swiftenv init -)"
+eval "$(direnv hook zsh)"
 
 # Starship promt
 

@@ -54,8 +54,7 @@ brew "typescript"
 brew "wget"
 brew "nef10/tap/swift-test-coverage"
 brew "starship"
-
-#brew "vegeta"
+brew "direnv"
 
 ############################################################################
 # cask
