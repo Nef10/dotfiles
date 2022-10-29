@@ -30,7 +30,7 @@
         3. show Battery percentage
         4. do not show Spotlight
         5. do not show Siri
-        6. Clock: always show date, use 24h format, flash indicators and show seconds
+        6. Clock: always show date, use 24h format, and show seconds
         7. rearrange (`cmd` + drag): Time Machine, Focus, Battery, WiFi, Bluetooth, Sound, Control Center, Siri
     4. Displays:
         1. Resolution scaled between default and more space
@@ -93,6 +93,7 @@
     1. don’t warn before quitting
     1. continue where left off
     1. Install 1Password extension
+    1. Disable offer to save passwords
 18. Dropbox
     1. Do not sync mac files
     2. Disable photo upload
@@ -130,3 +131,5 @@
     3. Set first week of the day to Monday
     4. Disable focus inbox
     5. Use macOS Notifications for event reminders 
+    6. Swipe left: Delete, Swift Right: Mark as read
+    7. Quick Actions: Delete, Pin and Mark Read
