@@ -129,3 +129,4 @@
     2. Show calendar week numbers
     3. Set first week of the day to Monday
     4. Disable focus inbox
+    5. Use macOS Notifications for event reminders 
