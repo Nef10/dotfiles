@@ -25,3 +25,4 @@ fi
 
 step "AWS"
 diff_file "AWS Config" $DOTFILES_REPO/aws/config $HOME/.aws/config
+checkFileExists ".aws/credentials" $HOME/.aws/credentials

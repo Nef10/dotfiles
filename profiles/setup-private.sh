@@ -46,3 +46,4 @@ if [[ ! -d $HOME/.aws ]]; then
     mkdir $HOME/.aws
 fi
 copy_file "AWS Config" $DOTFILES_REPO/aws/config $HOME/.aws/config
+touch $HOME/.aws/credentials
