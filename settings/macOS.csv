@@ -56,7 +56,7 @@ Finder,Do not write .DS_Store files on USB devices,com.apple.desktopservices,DSD
 SystemUIServer,Set clock format in menu bar,com.apple.menuextra.clock,DateFormat,string,EEE MMM d  H:mm:ss,false,false
 SystemUIServer,Set clock format in menu bar,com.apple.menuextra.clock,FlashDateSeparators,bool,false,false,false
 SystemUIServer,Set clock format in menu bar,com.apple.menuextra.clock,IsAnalog,bool,false,false,false
-Calendar,Start Week on Monday,com.apple.iCal,first day of week,int,1,false,false
+Calendar,Start Week on Monday,com.apple.iCal,first day of week,int,2,false,false
 Calendar,Show week numbers,com.apple.iCal,Show Week Numbers,bool,true,false,false
 Calendar,Show events in year view,com.apple.iCal,Show heat map in Year View,bool,true,false,false
 Calendar,Enable time zone support,com.apple.iCal,TimeZone support enabled,bool,true,false,false
