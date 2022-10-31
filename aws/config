@@ -11,3 +11,4 @@ credential_process = "/Users/Steffen/.dotfiles/aws/op-credential-helper.sh" "qri
 [default]
 region = ca-central-1
 output = json
+cli_pager =
