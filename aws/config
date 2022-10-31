@@ -2,11 +2,13 @@
 region = ca-central-1
 output = json
 credential_process = "/Users/Steffen/.dotfiles/aws/op-credential-helper.sh" "x47sjyjywrhf3lhkxbas2jg5um"
+cli_pager =
 
 [profile ghgsandbox]
 region = ca-central-1
 output = json
 credential_process = "/Users/Steffen/.dotfiles/aws/op-credential-helper.sh" "qrij4ndxvpxr5knqvqk5kz4x4e"
+cli_pager =
 
 [default]
 region = ca-central-1
