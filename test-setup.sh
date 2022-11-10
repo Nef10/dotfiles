@@ -142,6 +142,8 @@ function diff_brew_taps() {
 function diff_settings() {
     step "macOS Settings"
     zsh $DOTFILES_REPO/settings/settings.sh $DOTFILES_REPO/settings/macOS.csv
+    step "Xcode Settings"
+    zsh $DOTFILES_REPO/settings/settings.sh $DOTFILES_REPO/settings/xcode.csv
     step "The Unarchiver Settings"
     zsh $DOTFILES_REPO/settings/settings.sh $DOTFILES_REPO/settings/the_unarchiver.csv
     step "Syntax Highlight Settings"

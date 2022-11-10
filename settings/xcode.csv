@@ -1,0 +1,3 @@
+app,description,domain,setting,type,value,currentHost,overrideCurrentValueComparison
+Xcode,Automatically trim trailing whitespace,com.apple.dt.Xcode,DVTTextEditorTrimTrailingWhitespace,bool,true,false,false
+Xcode,Including whitespace-only lines,com.apple.dt.Xcode,DVTTextEditorTrimWhitespaceOnlyLines,bool,true,false,false

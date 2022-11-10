@@ -125,6 +125,9 @@ function set_settings() {
     step "Updating macOS settings"
     zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/macOS.csv set
 
+    step "Updating Xcode settings"
+    zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/xcode.csv set
+
     step "Updating The Unarchiver settings"
     zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/the_unarchiver.csv set
 
