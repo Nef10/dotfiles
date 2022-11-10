@@ -2,6 +2,8 @@ brew "act"
 brew "gnupg"
 brew "mitmproxy"
 brew "awscli"
+brew "swiftlint"
+brew "node"
 
 cask "keepingyouawake"
 cask "spotify"
