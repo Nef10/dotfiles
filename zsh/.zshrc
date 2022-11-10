@@ -99,6 +99,10 @@ fi
 
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Path
+
+path+=~/.mint/bin
+
 # Source
 
 source ~/.dotfiles/zsh/aliases.zsh
