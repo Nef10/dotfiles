@@ -22,7 +22,7 @@ hediet.vscode-drawio
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
 ms-toolsai.vscode-jupyter-cell-tags
-ms-toolsai.vscode-jupyter-slideshow 
+ms-toolsai.vscode-jupyter-slideshow
 tomoki1207.pdf
 bierner.markdown-footnotes
 bierner.markdown-mermaid
@@ -31,3 +31,4 @@ dbaeumer.vscode-eslint
 sswg.swift-lang
 vadimcn.vscode-lldb
 nemesv.copy-file-name
+ms-python.isort
