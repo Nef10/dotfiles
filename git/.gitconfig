@@ -20,9 +20,6 @@
 	name = Steffen Kötte
 	email = steffen.koette@gmail.com
 
-[includeIf "gitdir:SAPDevelop/"]
-	path = ~/.dotfiles/git/.gitconfig_work
-
 [diff]
 
 	# Detect copies as well as renames

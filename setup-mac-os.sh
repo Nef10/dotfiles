@@ -151,7 +151,8 @@ function configure_zsh() {
 }
 
 function configure_git() {
-    addTemplateToFileIfNeeded $DOTFILES_REPO/git/.gitconfig_template ".gitconfig include" $HOME/.gitconfig
+    GIT_CONFIG_TEMPLATE="$DOTFILES_REPO/git/.gitconfig_template_$PROFILE"
+    addTemplateToFileIfNeeded $GIT_CONFIG_TEMPLATE ".gitconfig include" $HOME/.gitconfig
 }
 
 function configure_ssh() {

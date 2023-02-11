@@ -1,0 +1,6 @@
+
+[include]
+	path = ~/.dotfiles/git/.gitconfig
+
+[include]
+	path = ~/.dotfiles/git/.gitconfig_private

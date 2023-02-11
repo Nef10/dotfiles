@@ -197,7 +197,8 @@ function diff_vscode_settings() {
 }
 
 function diff_git() {
-    diff_file ".gitconfig" $DOTFILES_REPO/git/.gitconfig_template $HOME/.gitconfig
+    GIT_CONFIG_TEMPLATE="$DOTFILES_REPO/git/.gitconfig_template_$PROFILE"
+    diff_file ".gitconfig" $GIT_CONFIG_TEMPLATE $HOME/.gitconfig
 }
 
 function diff_ssh() {

@@ -1,0 +1,6 @@
+
+[include]
+	path = ~/.dotfiles/git/.gitconfig
+
+[includeIf "gitdir:SAPDevelop/"]
+	path = ~/.dotfiles/git/.gitconfig_work
