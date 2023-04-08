@@ -2,7 +2,6 @@ Lencerf.beancount
 mechatroner.rainbow-csv
 dnicolson.binary-plist
 everettjf.filter-line
-HookyQR.beautify
 GitHub.vscode-pull-request-github
 ms-python.python
 ms-python.vscode-pylance
