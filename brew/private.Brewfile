@@ -1,3 +1,4 @@
+brew "python"
 brew "act"
 brew "gnupg"
 brew "mitmproxy"

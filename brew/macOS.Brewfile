@@ -31,7 +31,6 @@ mas "1Password for Safari", id: 1569813296
 brew "git"
 brew "git-lfs"
 brew "repo"
-brew "python"
 brew "rbenv"
 brew "nodenv"
 brew "nodenv/nodenv/node-build-update-defs"
