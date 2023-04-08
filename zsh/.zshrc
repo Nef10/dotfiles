@@ -65,7 +65,6 @@ eval "$(thefuck --alias fix)"
 export NODE_BUILD_DEFINITIONS="$(brew --prefix node-build-update-defs)/share/node-build"
 eval "$(nodenv init -)"
 eval "$(rbenv init -)"
-#eval "$(swiftenv init -)"
 eval "$(direnv hook zsh)"
 
 # Starship promt
