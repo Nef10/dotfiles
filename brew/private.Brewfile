@@ -5,6 +5,7 @@ brew "mitmproxy"
 brew "awscli"
 brew "swiftlint"
 brew "node"
+brew "vegeta"
 
 cask "keepingyouawake"
 cask "spotify"
