@@ -17,7 +17,7 @@ DotJoshJohnson.xml
 maptz.regionfolder
 ms-toolsai.jupyter
 vknabel.vscode-swiftlint
-cschleiden.vscode-github-actions
+github.vscode-github-actions
 hediet.vscode-drawio
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
