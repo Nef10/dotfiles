@@ -72,5 +72,9 @@
   "editor.suggest.preview": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
-  "window.commandCenter": true
+  "window.commandCenter": true,
+  "[python]": {
+    "editor.formatOnType": true
+   },
+   "editor.inlayHints.enabled": "offUnlessPressed"
 }
