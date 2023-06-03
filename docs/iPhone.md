@@ -22,4 +22,4 @@
     1. Maps
 1. Re-login to all apps
 1. WhatsApp registration
-1. Turn of Developer Mode
+1. Turn on Developer Mode
