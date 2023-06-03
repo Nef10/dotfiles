@@ -1,9 +1,4 @@
-tap "sap/sapmachine"
-
-brew "python@3.9"
-
 cask "zeplin"
-cask "sapmachine11-jdk"
 cask "pencil"
 cask "Maccy"
 
