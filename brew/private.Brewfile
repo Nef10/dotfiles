@@ -25,5 +25,6 @@ cask "balenaetcher"
 cask "temurin"
 cask "alfred"
 cask "vlc"
+cask "xcodes"
 
 mas "Quiver", id: 866773894
