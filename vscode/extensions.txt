@@ -31,3 +31,4 @@ sswg.swift-lang
 vadimcn.vscode-lldb
 nemesv.copy-file-name
 ms-python.isort
+ms-vscode.hexeditor
