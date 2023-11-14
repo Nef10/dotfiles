@@ -115,9 +115,8 @@
     2. Monitor Control
     3. Maccy
     4. Rectangle
-    5. KeepingYouAwake
-    6. Alfred
-    7. Synatx Highlighting
+    5. Alfred
+    6. Synatx Highlighting
 23. Customize Finder toolbar: Path, Space, View, Group, Space, Tag, Share, Info, Space, New Folder, Space
 24. Check dotfiles differences
 25. Restore files not in a Cloud, e.g. Photos (See backup list)
@@ -130,6 +129,6 @@
     2. Show calendar week numbers
     3. Set first week of the day to Monday
     4. Disable focus inbox
-    5. Use macOS Notifications for event reminders 
+    5. Use macOS Notifications for event reminders
     6. Swipe left: Delete, Swift Right: Mark as read
     7. Quick Actions: Delete, Pin and Mark Read

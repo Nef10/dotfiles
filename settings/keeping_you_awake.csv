@@ -1,6 +1,0 @@
-app,description,domain,setting,type,value,currentHost,overrideCurrentValueComparison
-KeepingYouAwake,Disable when Battery is low,info.marcel-dierkes.KeepingYouAwake,info.marcel-dierkes.KeepingYouAwake.BatteryCapacityThreshold,int,10,false,false
-KeepingYouAwake,Disable when Battery is low,info.marcel-dierkes.KeepingYouAwake,info.marcel-dierkes.KeepingYouAwake.BatteryCapacityThresholdEnabled,bool,true,false,false
-KeepingYouAwake,Launch at Login,info.marcel-dierkes.KeepingYouAwake,info.marcel-dierkes.KeepingYouAwake.LaunchAtLogin,bool,true,false,false
-KeepingYouAwake,Show Notifications,info.marcel-dierkes.KeepingYouAwake,info.marcel-dierkes.KeepingYouAwake.NotificationsEnabled,bool,true,false,false
-KeepingYouAwake,Default time interval,info.marcel-dierkes.KeepingYouAwake,info.marcel-dierkes.KeepingYouAwake.TimeInterval,int,3600,false,false

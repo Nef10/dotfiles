@@ -7,7 +7,6 @@ brew "swiftlint"
 brew "node"
 brew "vegeta"
 
-cask "keepingyouawake"
 cask "spotify"
 cask "adobe-acrobat-reader"
 cask "steam"
