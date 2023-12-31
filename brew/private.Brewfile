@@ -1,7 +1,6 @@
 brew "python"
 brew "act"
 brew "gnupg"
-brew "mitmproxy"
 brew "awscli"
 brew "swiftlint"
 brew "node"
@@ -26,5 +25,6 @@ cask "alfred"
 cask "vlc"
 cask "handbrake"
 cask "gramps"
+cask "mitmproxy"
 
 mas "Quiver", id: 866773894
