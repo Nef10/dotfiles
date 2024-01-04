@@ -75,10 +75,10 @@
   "window.commandCenter": true,
   "[python]": {
     "editor.formatOnType": true
-   },
-   "editor.inlayHints.enabled": "offUnlessPressed",
-   "typescript.updateImportsOnFileMove.enabled": "always",
-   "explorer.confirmDragAndDrop": false,
-   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-   "lldb.launch.expressions": "native"
+  },
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native"
 }
