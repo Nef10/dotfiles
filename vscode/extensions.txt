@@ -1,8 +1,8 @@
-Lencerf.beancount
+lencerf.beancount
 mechatroner.rainbow-csv
 dnicolson.binary-plist
 everettjf.filter-line
-GitHub.vscode-pull-request-github
+github.vscode-pull-request-github
 ms-python.python
 ms-python.vscode-pylance
 syler.sass-indented
@@ -12,7 +12,7 @@ bierner.markdown-checkbox
 bierner.markdown-emoji
 bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
-DotJoshJohnson.xml
+dotjoshjohnson.xml
 maptz.regionfolder
 ms-toolsai.jupyter
 vknabel.vscode-swiftlint

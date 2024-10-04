@@ -1,4 +1,4 @@
 ms-dotnettools.csharp
-JHeilingbrunner.vscode-gnupg-tool
+jheilingbrunner.vscode-gnupg-tool
 ms-azuretools.vscode-docker
 alexcvzz.vscode-sqlite
