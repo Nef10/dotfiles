@@ -134,9 +134,6 @@ function set_settings() {
     step "Updating Syntax Highlight settings"
     zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/syntax_highlight.csv set
 
-    step "Updating Rectangle settings"
-    zsh ${DOTFILES_REPO}/settings/settings.sh $DOTFILES_REPO/settings/rectangle.csv set
-
     step "Updating macOS configuration"
     zsh ${DOTFILES_REPO}/macOS/macOS.sh set
 }

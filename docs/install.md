@@ -71,7 +71,8 @@
     2. Small Reminders
     3. Small Stock
     4. Large Weather
-12. Dictionary: Select dictionaries (add Wikipedia Deutsch, Duden Wissensnetz, Oxford German-English
+    5. Medium Days
+12. Dictionary: Select dictionaries (add Wikipedia Deutsch, Duden Wissensnetz, Oxford German-English)
 13. Messages: Enable Messages in iCloud
 14. Mail: Enable GHG Account
 15. SourceTree
@@ -113,18 +114,15 @@
 22. Launch Apps and make sure they start at login:
     1. AirBuddy
     2. Monitor Control
-    3. Maccy
-    4. Rectangle
-    5. Alfred
-    6. Synatx Highlighting
+    3. Raycast
+    4. Synatx Highlighting
 23. Customize Finder toolbar: Path, Space, View, Group, Space, Tag, Share, Info, Space, New Folder, Space
 24. Check dotfiles differences
-25. Restore files not in a Cloud, e.g. Photos (See backup list)
-26. Disable iCloud Photos, enable Photostream
-27. Setup Time Machine
-28. Set desktop background to change randomly every 15 min
-29. Open zip files by default with The Unarchiver
-30. Outlook:
+25. Restore files not in a Cloud (See backup list)
+26. Setup Time Machine
+27. Set desktop background to change randomly every 15 min
+28. Open zip files by default with The Unarchiver
+29. Outlook:
     1. Only mark mail as read when opened in new window
     2. Show calendar week numbers
     3. Set first week of the day to Monday

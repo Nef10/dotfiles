@@ -1,4 +1,0 @@
-app,description,domain,setting,type,value,currentHost,overrideCurrentValueComparison
-Rectangle,Automatic updates,com.knollsoft.Rectangle,SUEnableAutomaticChecks,bool,true,false,false
-Rectangle,Launch on login,com.knollsoft.Rectangle,launchOnLogin,bool,true,false,false
-Rectangle,Hide menubar icon,com.knollsoft.Rectangle,hideMenubarIcon,bool,true,false,false
