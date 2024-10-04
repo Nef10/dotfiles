@@ -28,3 +28,4 @@ cask "gramps"
 cask "mitmproxy"
 
 mas "Quiver", id: 866773894
+mas "Brother iPrint&Scan", id: 1193539993
