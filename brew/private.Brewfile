@@ -26,6 +26,7 @@ cask "vlc"
 cask "handbrake"
 cask "gramps"
 cask "mitmproxy"
+cask "discord"
 
 mas "Quiver", id: 866773894
 mas "Brother iPrint&Scan", id: 1193539993
