@@ -6,6 +6,7 @@ brew "swiftlint"
 brew "node"
 brew "vegeta"
 brew "rsync"
+brew "librsvg"
 
 cask "spotify"
 cask "adobe-acrobat-reader"
