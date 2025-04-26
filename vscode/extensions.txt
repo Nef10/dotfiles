@@ -35,3 +35,4 @@ ms-vscode.hexeditor
 github.copilot
 github.copilot-chat
 ms-python.debugpy
+vknabel.swift-coverage

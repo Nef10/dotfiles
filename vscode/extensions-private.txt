@@ -1,3 +1,4 @@
 jheilingbrunner.vscode-gnupg-tool
 ms-azuretools.vscode-docker
 alexcvzz.vscode-sqlite
+docker.docker
