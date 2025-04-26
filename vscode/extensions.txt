@@ -27,7 +27,7 @@ bierner.markdown-footnotes
 bierner.markdown-mermaid
 jakearl.search-editor-apply-changes
 dbaeumer.vscode-eslint
-sswg.swift-lang
+swiftlang.swift-vscode
 vadimcn.vscode-lldb
 nemesv.copy-file-name
 ms-python.isort
