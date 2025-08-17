@@ -28,6 +28,8 @@ cask "handbrake-app"
 cask "gramps"
 cask "mitmproxy"
 cask "discord"
+cask "microsoft-auto-update"
+cask "microsoft-teams"
 
 mas "Quiver", id: 866773894
 mas "Brother iPrint&Scan", id: 1193539993
