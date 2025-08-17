@@ -4,7 +4,6 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "homebrew/command-not-found"
-tap "homebrew/cask-versions"
 tap "nodenv/nodenv"
 tap "nef10/tap"
 
