@@ -3,7 +3,6 @@
 ############################################################################
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "homebrew/cask-fonts"
 tap "homebrew/command-not-found"
 tap "homebrew/cask-versions"
 tap "nodenv/nodenv"
