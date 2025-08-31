@@ -23,6 +23,7 @@ main() {
     diff_vscode_settings
     diff_quartz_filters
     diff_home_applications
+    diff_github_cli_extensions
     profile_specifics
 }
 
@@ -236,6 +237,19 @@ function diff_home_applications() {
         fi
     else
         warning "Application folder in home directory does not exist"
+    fi
+}
+
+function diff_github_cli_extensions() {
+    step "GitHub CLI Extensions"
+    if command -v gh &> /dev/null; then
+        if gh extension list | grep -q "github/gh-copilot"; then
+            success "GitHub Copilot extension is installed"
+        else
+            warning "GitHub Copilot extension is not installed"
+        fi
+    else
+        warning "GitHub CLI (gh) is not installed"
     fi
 }
 
