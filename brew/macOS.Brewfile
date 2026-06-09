@@ -21,6 +21,7 @@ mas "SQLPro for SQLite (Lite)", id: 635299994
 mas "Developer", id: 640199958
 mas "1Password for Safari", id: 1569813296
 mas "Special Dates", id: 1532853488
+mas "Foodnoms", id: 1479461686
 
 ############################################################################
 # brew
