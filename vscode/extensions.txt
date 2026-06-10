@@ -15,7 +15,6 @@ bierner.markdown-yaml-preamble
 dotjoshjohnson.xml
 maptz.regionfolder
 ms-toolsai.jupyter
-vknabel.vscode-swiftlint
 github.vscode-github-actions
 hediet.vscode-drawio
 ms-toolsai.jupyter-keymap
@@ -32,8 +31,5 @@ vadimcn.vscode-lldb
 nemesv.copy-file-name
 ms-python.isort
 ms-vscode.hexeditor
-github.copilot
-github.copilot-chat
 ms-python.debugpy
-vknabel.swift-coverage
 llvm-vs-code-extensions.lldb-dap
