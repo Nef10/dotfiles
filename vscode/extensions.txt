@@ -5,6 +5,7 @@ everettjf.filter-line
 github.vscode-pull-request-github
 ms-python.python
 ms-python.vscode-pylance
+ms-python.vscode-python-envs
 syler.sass-indented
 donjayamanne.githistory
 bierner.github-markdown-preview
