@@ -9,9 +9,9 @@ tap "nef10/tap"
 ############################################################################
 brew "mas"
 mas "Xcode", id: 497799835
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+mas "Keynote", id: 361285480
+mas "Numbers", id: 361304891
+mas "Pages", id: 361309726
 mas "The Unarchiver", id: 425424353
 mas "iMovie", id: 408981434
 mas "SQLPro for SQLite (Lite)", id: 635299994
