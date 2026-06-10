@@ -11,7 +11,6 @@ main() {
     install_packages_with_brewfile
     link_brew_completions
     install_swift_completions
-    install_gh_extensions
     set_settings
     set_terminal_theme
     configure_zsh
@@ -143,16 +142,6 @@ function install_swift_completions() {
         fi
         swift package completion-tool generate-zsh-script > "$ZSH_FUNCTIONS_DIR/_swift"
         success "Swift completions installed successfully"
-    fi
-}
-
-function install_gh_extensions() {
-    step "Installing GitHub CLI extensions"
-    if gh extension list | grep -q "github/gh-copilot"; then
-        info "GitHub Copilot extension already installed"
-    else
-        gh extension install github/gh-copilot
-        success "Installed GitHub Copilot extension"
     fi
 }
 
