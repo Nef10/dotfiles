@@ -7,6 +7,7 @@ main() {
     if [[ "$1" != "--update" ]]; then
         clone_dotfiles_repo
     fi
+    trust_brew_formulae
     install_packages_with_brewfile
     link_brew_completions
     install_swift_completions
@@ -74,6 +75,29 @@ function install_homebrew() {
             error "Homebrew installation failed"
         fi
     fi
+}
+
+function trust_brew_formulae() {
+    step "Trusting third-party brew formulae and casks"
+    DEFAULT_BREW_FILE_PATH="${DOTFILES_REPO}/brew/macOS.Brewfile"
+    PROFILE_BREW_FILE_PATH="${DOTFILES_REPO}/brew/${PROFILE}.Brewfile"
+    TRUSTED=$(brew trust 2>/dev/null)
+    grep -hE '^(brew|cask) "[^/]+/[^/]+/[^/"]+"' \
+        $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH \
+    | while read -r line; do
+        kind=${line%% *}
+        [[ "$kind" == "brew" ]] && flag="formula" || flag="cask"
+        name=${${line#* \"}%\"*}
+        if echo $TRUSTED | grep -q -F "  $name"; then
+            info "$flag $name is already trusted"
+        else
+            if brew trust --$flag "$name" &> /dev/null; then
+                success "Trusted $flag $name"
+            else
+                warning "Failed to trust $flag $name"
+            fi
+        fi
+    done
 }
 
 function install_packages_with_brewfile() {

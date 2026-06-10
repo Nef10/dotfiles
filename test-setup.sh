@@ -13,6 +13,7 @@ main() {
     diff_brew_packages
     diff_brew_casks
     diff_brew_taps
+    diff_brew_trust
     diff_settings
     diff_terminal_theme
     diff_git
@@ -138,6 +139,26 @@ function diff_brew_taps() {
         success "No difference found"
     fi
 
+}
+
+function diff_brew_trust() {
+    step "Brew trust"
+    TRUST_SAME=0
+    TRUSTED=$(brew trust 2>/dev/null)
+    grep -hE '^(brew|cask) "[^/]+/[^/]+/[^/"]+"' \
+        $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH \
+    | while read -r line; do
+        kind=${line%% *}
+        [[ "$kind" == "brew" ]] && flag="formula" || flag="cask"
+        name=${${line#* \"}%\"*}
+        if ! echo $TRUSTED | grep -q -F "  $name"; then
+            TRUST_SAME=1
+            warning "$flag $name is in the Brewfile but not trusted"
+        fi
+    done
+    if [[ "$TRUST_SAME" -eq 0 ]]; then
+        success "No difference found"
+    fi
 }
 
 function diff_settings() {
