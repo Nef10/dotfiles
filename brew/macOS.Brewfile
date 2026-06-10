@@ -3,6 +3,7 @@
 ############################################################################
 tap "nodenv/nodenv"
 tap "nef10/tap"
+tap "darrylmorley/whatcable"
 
 ############################################################################
 # mas (Needs to be first because some other formulas depend on Xcode)
@@ -47,6 +48,7 @@ brew "wget"
 brew "nef10/tap/swift-test-coverage"
 brew "starship"
 brew "direnv"
+brew "darrylmorley/whatcable/whatcable-cli"
 
 ############################################################################
 # cask
