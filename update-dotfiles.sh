@@ -21,7 +21,7 @@ main() {
     step "Update Homebrew"
     update=$(brew update | head -n 1)
     if [[ $update == "Already up-to-date." ]]; then
-        success "Already up to date"
+        success "Already up-to-date"
     else
         echo $update | prependInfo
     fi
