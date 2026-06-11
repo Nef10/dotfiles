@@ -93,7 +93,7 @@ function diff_mas() {
 function diff_brew_packages() {
     step "Additional Brew packages"
     BREW_SAME=0
-    BREW_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle list --file=-)
+    BREW_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH ${ADDITIONAL_BREW_FILES[@]} | brew bundle list --file=-)
     brew leaves | while read -r brew_name ;
     do
         if ! echo $BREW_TARGET | grep -c $brew_name &> /dev/null; then
@@ -109,7 +109,7 @@ function diff_brew_packages() {
 function diff_brew_casks() {
     step "Additional Brew Casks"
     CASKS_SAME=0
-    CASKS_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle list --casks --file=-)
+    CASKS_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH ${ADDITIONAL_BREW_FILES[@]} | brew bundle list --casks --file=-)
     brew list --cask | while read -r casks_name ;
     do
         if ! echo $CASKS_TARGET | grep -c $casks_name &> /dev/null; then
@@ -126,7 +126,7 @@ function diff_brew_casks() {
 function diff_brew_taps() {
     step "Additional Brew Taps"
     TAPS_SAME=0
-    TAPS_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH | brew bundle list --taps --file=-)
+    TAPS_TARGET=$(cat $DEFAULT_BREW_FILE_PATH $PROFILE_BREW_FILE_PATH ${ADDITIONAL_BREW_FILES[@]} | brew bundle list --taps --file=-)
     brew bundle dump --file=- | brew bundle list --taps --file=- | while read -r tap_name ;
     do
         if ! echo $TAPS_TARGET | grep -c $tap_name &> /dev/null; then
