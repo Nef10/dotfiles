@@ -304,7 +304,7 @@ function copy_file() {
 function addTemplateToFileIfNeeded() {
     createFileIfNeeded $3
     step "Setting up ${2} in ${3}"
-    if [[ -z $(comm -13 $3 $1) ]]; then
+    if [[ -z $(comm -13 <(sort $3) <(sort $1)) ]]; then
         info "${2} already set up in ${3}"
     else
         if echo "$(cat ${1})" >> $3; then
