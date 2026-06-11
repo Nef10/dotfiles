@@ -34,10 +34,14 @@ main() {
         success "Already up-to-date"
     fi
     step "Update tldr"
-    if tldr --update; then
-        success "Updated"
-    else
+    tldr_output=$(tldr --update 2>&1)
+    if [[ $? -ne 0 ]]; then
         warning "Could not update tldr"
+        echo $tldr_output | prependInfo
+    elif [[ $tldr_output == *"there is nothing to do"* ]]; then
+        success "Already up-to-date"
+    else
+        success "Updated"
     fi
 }
 
