@@ -24,6 +24,7 @@ System Preferences,Enable three finger drag,NSGlobalDomain,com.apple.trackpad.th
 System Preferences,Map `Tap with three fingers` to look up,com.apple.AppleMultitouchTrackpad,TrackpadThreeFingerTapGesture,int,2,false,false
 System Preferences,Map `Tap with three fingers` to look up,com.apple.driver.AppleBluetoothMultitouch.trackpad,TrackpadThreeFingerTapGesture,int,2,false,false
 System Preferences,Enable full keyboard access for all controls which enables Tab selection in modal dialogs,NSGlobalDomain,AppleKeyboardUIMode,int,3,false,false
+System Preferences,Set first day of week to Monday,NSGlobalDomain,AppleFirstWeekday,xml,<dict><key>gregorian</key><integer>2</integer></dict>,false,{gregorian=2;}
 Menu Bar,Show seconds,com.apple.menuextra.clock,ShowSeconds,bool,true,false,false
 Dock,Set the icon size of Dock items to 53 pixels,com.apple.dock,tilesize,int,53,false,false
 Dock,Lock the dock size,com.apple.Dock,size-immutable,bool,true,false,false
