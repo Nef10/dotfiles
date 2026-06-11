@@ -87,7 +87,7 @@ function trust_brew_formulae() {
         kind=${line%% *}
         [[ "$kind" == "brew" ]] && flag="formula" || flag="cask"
         name=${${line#* \"}%\"*}
-        if echo $TRUSTED | grep -q -F "  $name"; then
+        if echo $TRUSTED | grep -q -i -F "  $name"; then
             info "$flag $name is already trusted"
         else
             if brew trust --$flag "$name" &> /dev/null; then

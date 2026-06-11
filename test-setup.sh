@@ -150,7 +150,7 @@ function diff_brew_trust() {
         kind=${line%% *}
         [[ "$kind" == "brew" ]] && flag="formula" || flag="cask"
         name=${${line#* \"}%\"*}
-        if ! echo $TRUSTED | grep -q -F "  $name"; then
+        if ! echo $TRUSTED | grep -q -i -F "  $name"; then
             TRUST_SAME=1
             warning "$flag $name is in the Brewfile but not trusted"
         fi
