@@ -1,0 +1,10 @@
+app,description,domain,setting,type,value,currentHost,overrideCurrentValueComparison
+Microsoft Outlook,Set message list hover actions,com.microsoft.Outlook,MessageListHoverActions,xml,<array><string>hoverActionDelete</string><string>hoverActionMarkAsRead</string><string>hoverActionSnooze</string></array>,false,(hoverActionDelete,hoverActionMarkAsRead,hoverActionSnooze)
+Microsoft Outlook,Disable Focused Inbox,com.microsoft.Outlook,FocusedInboxEnabled,bool,false,false,false
+Microsoft Outlook,Mark items as read after viewing in reading pane,com.microsoft.Outlook,MarkItemsAsReadPreferencesKey,int,2,false,false
+Microsoft Outlook,Show week numbers in calendar headers,com.microsoft.Outlook,OLCalendarViewShowWeekNumberInHeaders,bool,true,false,false
+Microsoft Outlook,Show reminders as notifications,com.microsoft.Outlook,RemindersDisplayType,int,2,false,false
+Microsoft Outlook,Show weather in calendar,com.microsoft.Outlook,Show_weather_in_calendar,bool,true,false,false
+Microsoft Outlook,Automatically download external content,com.microsoft.Outlook,AutomaticallyDownloadExternalContent,int,1,false,false
+Microsoft Outlook,Set leading swipe action to flag,com.microsoft.Outlook,MessageListLeadingSwipeAction,int,3,false,false
+Microsoft Outlook,Set trailing swipe action to delete,com.microsoft.Outlook,MessageListTrailingSwipeAction,int,1,false,false
