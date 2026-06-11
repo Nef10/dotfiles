@@ -1,0 +1,6 @@
+app,description,domain,setting,type,value,currentHost,overrideCurrentValueComparison
+SourceTree,Allow force push,com.torusknot.SourceTreeNotMAS,allowForcePush,bool,true,false,false
+SourceTree,Do not prompt to update Git config,com.torusknot.SourceTreeNotMAS,agreedToUpdateConfig,bool,false,false,false
+SourceTree,Always display full command output,com.torusknot.SourceTreeNotMAS,alwaysDisplayFullOutput,bool,true,false,false
+SourceTree,Use fixed-width font for commit messages,com.torusknot.SourceTreeNotMAS,useFixedWithCommitFont,bool,true,false,false
+SourceTree,Open files with default app on double click,com.torusknot.SourceTreeNotMAS,fileDoubleClickBehaviour,bool,true,false,false
