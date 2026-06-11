@@ -63,10 +63,6 @@
     # automatically create/set upstream branch for new branches when pushing
     autoSetupRemote = true
 
-[credential]
-
-	helper = osxkeychain
-
 [advice]
 
 	# Remove tips how to stage / unstange / discard changes in git status output
