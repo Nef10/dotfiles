@@ -82,5 +82,6 @@
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "lldb.launch.expressions": "native",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "terminal.integrated.initialHint": false
+  "terminal.integrated.initialHint": false,
+  "editor.accessibilitySupport": "off"
 }
