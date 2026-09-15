@@ -1,7 +1,6 @@
 tap "basecamp/tap"
 
 brew "python"
-brew "act"
 brew "gnupg"
 brew "awscli"
 brew "node"
