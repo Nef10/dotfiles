@@ -58,11 +58,46 @@ diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 ahead = "⇡${count}"
 behind = "⇣${count}"
 
+[package]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[golang]
+disabled = true
+
+[helm]
+disabled = true
+
 [java]
+disabled = true
 style = "52"
 
+[kotlin]
+disabled = true
+
 [nodejs]
+disabled = true
 symbol = "⬢ "
+
+[php]
+disabled = true
+
+[python]
+disabled = true
+
+[rlang]
+disabled = true
+
+[ruby]
+disabled = true
+
+[swift]
+disabled = true
+
+[vagrant]
+disabled = true
 
 [custom.architecture]
 description = "Architecture when using Rosetta 2"

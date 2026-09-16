@@ -1,5 +1,11 @@
 # Options
 
+if [[ -n ${_DOTFILES_ZSHRC_LOADED:-} ]]; then
+  return
+fi
+typeset -g _DOTFILES_ZSHRC_LOADED=1
+typeset -gU path fpath
+
 setopt auto_pushd             # Make cd push the old directory onto the directory stack
 setopt auto_cd                # If a command can’t be executed and is the name of a directory, perform cd into it
 setopt correct_all            # Try to correct the spelling of all arguments in a line
@@ -22,12 +28,14 @@ export EDITOR=nano
 
 # Brew
 
-if [ "$(uname -p)" = "i386" ]; then
-  if [ -f "/usr/local/bin/brew" ]; then
-    eval "$(/usr/local/bin/brew shellenv)"
+if [[ -z ${HOMEBREW_PREFIX:-} ]]; then
+  if [ "$(uname -p)" = "i386" ]; then
+    if [ -f "/usr/local/bin/brew" ]; then
+      eval "$(/usr/local/bin/brew shellenv)"
+    fi
+  else
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
-else
-  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Completion
@@ -62,9 +70,15 @@ bindkey "^I" expand-or-complete-with-dots
 # Misc
 
 eval "$(thefuck --alias fix)"
-export NODE_BUILD_DEFINITIONS="$(brew --prefix node-build-update-defs)/share/node-build"
-eval "$(nodenv init -)"
-eval "$(rbenv init -)"
+if [[ -z ${NODE_BUILD_DEFINITIONS:-} ]] && (( $+commands[brew] )); then
+  export NODE_BUILD_DEFINITIONS="$(brew --prefix node-build-update-defs)/share/node-build"
+fi
+if (( $+commands[nodenv] )) && (( ! $+functions[nodenv] )); then
+  eval "$(nodenv init -)"
+fi
+if (( $+commands[rbenv] )) && (( ! $+functions[rbenv] )); then
+  eval "$(rbenv init - zsh)"
+fi
 eval "$(direnv hook zsh)"
 
 # Starship promt
